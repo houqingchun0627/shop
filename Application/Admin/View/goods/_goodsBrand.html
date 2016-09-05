@@ -1,0 +1,153 @@
+<!-- $Id: brand_info.htm 14216 2008-03-10 02:27:21Z testyang $ -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>ECSHOP 管理中心 - 添加品牌 </title>
+<meta name="robots" content="noindex, nofollow">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="__PUBLIC__/Admin/Style/general.css" rel="stylesheet" type="text/css" />
+<link href="__PUBLIC__/Admin/Style/main.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="__PUBLIC__/Home/Js/jquery-1.8.3.min.js"></script>
+</head>
+<body>
+<style>
+    ul li {list-style:none;}
+    .ulstyle{margin:0px;}
+    .ulstyle li{margin:5px 0px 5px -40px;}
+    td.attr{
+        /*font-weight: bold;*/
+        padding: 5px 1em;
+        text-align: right;
+        vertical-align: top;
+        width: 30%;
+    }
+</style>
+<h1>
+    <span class="action-span"><a href="{:U('goodsBrand')}">商品品牌</a></span>
+    <span class="action-span1"><a href="{:U('Admin/index')}" target="_top">ECSHOP 管理中心</a></span>
+    <span id="search_id" class="action-span1"> - 添加品牌 </span>
+    <div style="clear:both"></div>
+</h1>
+<div class="main-div">
+    <form enctype="multipart/form-data" action="__SELF__" method="post">
+        <table cellspacing="1" cellpadding="3" width="100%">
+            <tr>
+                <td class="label">品牌名称：</td>
+                <td>
+                    <input type="text" name="brand_name" maxlength="60" size="40" value="{$brandList.brand_name}" />
+                    <span class="require-field">*</span>
+                </td>
+            </tr>
+            <tr>
+                <td class="label">品牌网址：</td>
+                <td>
+                    <input type="text" name="brand_site_url" maxlength="60" size="40" value="{$brandList.brand_site_url}" />
+                </td>
+            </tr>
+            <tr>
+                <td class="label">所属分类：</td>
+                <td>
+                <!-- 遍历商品扩展分类中的商品默认扩展分类 -->
+                    <ul id="ext_cat" class="ulstyle">
+                        <if condition="isset($catList)">
+                            <volist name="catList" id="vo" key="k">
+                                <!-- 遍历商品分类 -->
+                                <!-- 首先判断是否是第一个 -->
+                                <li>
+                                <!-- 添加一个点击事件，既可以添加，还可以删除 -->
+                                    <a onclick="addDelete(this);" href="javascript:void(0)" style="color:red;"><if condition="$k eq 1">[+]<else/>[-]</if></a>
+                                    {:buildSelect('Cat','goods_cat[]','cat_id','cat_name',$vo)}
+                                </li>
+                            </volist>
+                        <else/>
+                            <li>
+                                <a onclick="addDelete(this);" href="javascript:void(0)" style="color:red;">[+]</a>
+                                {:buildSelect('Cat','goods_cat[]','cat_id','cat_name',$vo)}
+                            </li>
+                        </if>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td class="label">排序：</td>
+                <td>
+                <input type="text" name="brand_sort" maxlength="40" size="15" value="<if condition='$brandList.brand_sort neq 0'>{$brandList.brand_sort}<else/>50</if>" />
+                </td>
+            </tr>
+            <tr>
+                <td class="label">是否显示：</td>
+                <td>
+                    <input type="radio" name="is_show" value="是" <if condition="($brandList['is_show'] eq '是') OR ($brandList['is_show'] eq '')">checked="checked"</if> /> 是
+                    <input type="radio" name="is_show" value="否" <if condition="$brandList['is_show'] eq '否'">checked="checked"</if> /> 否(当品牌下还没有商品的时候，首页及分类页的品牌区将不会显示该品牌。)
+                </td>
+            </tr>
+            <tr>
+                <td class="label">是否推荐：</td>
+                <td>
+                    <input type="radio" name="is_recommend" value="是" <if condition="$brandList['is_recommend'] eq '是'">checked="checked"</if> /> 是
+                    <input type="radio" name="is_recommend" value="否" <if condition="($brandList['is_recommend'] eq '否') OR ($brandList['is_recommend'] eq '')">checked="checked"</if>/> 否(当加入品牌推荐后，在前台商品推荐会优先显示)
+                </td>
+            </tr>
+            <tr>
+                <td class="label">品牌LOGO：</td>
+                <td>
+                    <input type="file" name="brand_image" id="logo" size="45" ><br/>
+                    <span class="notice-span" style="display:block"  id="warn_brandlogo">请上传图片，做为品牌的LOGO！</span>
+                </td>
+            </tr>
+            <tr>
+                <td class='label'>当前LOGO：</td>
+                <td>
+                    <a href="{$brandList.brand_image}" target="_blank">
+                        <img src="{$brandList.brand_logo}" height="50" width="50" alt="品牌图片" title="品牌图片">
+                    </a>
+                    <span class="notice-span" style="display:block; color:red ;font-weight:bold "  id="warn_brandlogo"><if condition="$brandList.brand_logo neq ''">单击图片，查看高清大图！<else/>商品LOGO不存在，请上传！</if>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="label">品牌描述：</td>
+                <td>
+                    <textarea  name="brand_desc" cols="60" rows="4"  >{$brandList.brand_desc}</textarea>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center"><br />
+                    <input type="hidden" name="brand_id" value="{$brandList.brand_id}" />
+                    <input type="submit" class="button" value=" 确定 " />
+                    <input type="reset" class="button" value=" 重置 " />
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+<div id="footer">
+共执行 1 个查询，用时 0.018952 秒，Gzip 已禁用，内存占用 2.197 MB<br />
+版权所有 &copy; 2005-2012 上海商派网络科技有限公司，并保留所有权利。</div>
+<!-- 页面javascript代码 -->
+<script type="text/javascript">
+    /***************商品分类(单击添加、删除操作)**********************/
+    function addDelete(a){
+        // 先获取所在的li
+        var li = $(a).parent();
+        // 获取上级的ul的id属性值
+        var value = $(a).parent("li").parent("ul").attr("id");
+        if($(a).text() == '[+]')
+        {
+            var newLi = li.clone();
+            // +变-
+            newLi.find("a").text('[-]');
+            newLi.find("input[name='attr_number[]']").val("");
+            newLi.find("option:selected").removeAttr('selected');
+            // 新的放在li后面
+            // li.after(newLi);
+            $("#"+value).children("li").last("li").after(newLi);
+        }else{
+            li.remove();  
+        }
+    }
+
+</script>
+</body>
+</html>

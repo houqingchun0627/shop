@@ -1,0 +1,39 @@
+<!-- 引入布局文件 -->
+<layout name="public/layout"  replace="{__CONTENT__}" />
+
+<!-- 引入页面样式文件 -->
+<link rel="stylesheet" href="__PUBLIC__/Home/Style/success.css" type="text/css">
+		
+<div style="clear:both;"></div>
+
+<!-- 页面头部 start -->
+<div class="header w990 bc mt15">
+	<div class="logo w990">
+		<h2 class="fl"><a href="{:U('Home/Goods/index')}"><img src="__PUBLIC__/Home/Images/logo.png" alt="京东商城"></a></h2>
+		<div class="flow fr flow3">
+			<ul>
+				<li>1.我的购物车</li>
+				<li>2.填写核对订单信息</li>
+				<li class="cur">3.成功提交订单</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<!-- 页面头部 end -->
+
+<div style="clear:both;"></div>
+
+<!-- 主体部分 start -->
+<div class="success w990 bc mt15">
+	<div class="success_hd">
+		<h2>订单提交成功</h2>
+	</div>
+	<div class="success_bd">
+		<p><span></span>{$orderMess}</p>
+		
+		<p class="message">你还可以选择 <a href="{:U('User/pay',array('order_id' => I('get.order_id')))}">立即支付</a>  <a href="{:U('User/orderDetail',array('order_id' => I('get.order_id')))}">查看订单状态</a>  <a href="{:U('Goods/index')}">继续购物</a> 
+		<!-- <a href="">问题反馈</a> -->
+		</p>
+	</div>
+</div>
+<!-- 主体部分 end -->

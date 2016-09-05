@@ -1,0 +1,42 @@
+<!-- ajax动态获取用户购物车中的商品信息 -->
+<!-- 判断当前购物车是否为空 -->
+<if condition="$cartGoodsAmount eq null">
+    购物车中还没有商品，赶紧选购吧！
+<else/>
+    <div class="ri ris" style="display:block;">
+        <div class="commod">
+            <ul>
+                <volist name="cartGoodsInfo" id="vo">
+                    <li class="goods">
+                        <div>
+                            <div class="p-img">
+                                <a href="{:U('Goods/goods',array('id' => $vo['goods_id']),FALSE)}">
+                                    <img src="{$vo.goods_thumb_small}" alt="{$vo.goods_name}">
+                                </a>
+                             </div>
+                             <div class="p-name">
+                                <a href="{:U('Goods/goods',array('id' => $vo['goods_id']),FALSE)}">
+                                    <span class="p-slogan">{$vo.goods_name}</span>
+                                    <span class="p-promotions hide"></span>
+                                </a>
+                             </div>
+                             <div class="p-status">
+                                <div class="p-price">
+                                    <b>¥&nbsp;{$vo.goods_price}</b>
+                                    <em>x</em>
+                                    <span>{$vo.goods_amount}</span>
+                                </div>
+                                <div class="p-tags"></div>
+                             </div>
+                             <a href="javascript:;" class="icon-minicart-del" title="删除" onclick="ajaxDeleteCartGoods({$vo.id});">删除</a> 
+                        </div>
+                    </li>
+                </volist>
+            </ul>
+        </div>
+        <div class="settle">
+            <p>共<em>{$cartGoodsAmount}</em>件商品，金额合计<b>¥&nbsp;{$totalPrice}</b></p>
+            <a class="js-button" href="{:U('Cart/cart')}">去结算</a>
+        </div>
+    </div>
+</if>

@@ -1,0 +1,26 @@
+<?php
+return array(
+	//'配置项'=>'配置值'
+    /*----------------以下是pdo方式的配置(官方建议使用pdo方式)----------------------------*/
+    // 'DB_TYPE'               =>  'pdo',                 // 数据库类型：PDO
+    // 'DB_USER'               =>  'root',                 // 用户名：username
+    // 'DB_PORT'               =>  '3306',             // 端口：port
+    // 'DB_PWD'                =>  'leiyongtao123',                 // 密码：password
+    // 'DB_PREFIX'             =>  'yt_',                 // 数据库表前缀：prefix
+    // 'DB_DSN'                =>  'mysql:host=localhost;dbname=lytshop;charset=UTF-8',
+    /*----------------pdo方式连接数据库配置结束-------------------------------------------*/
+    /*----------------以下是mysql(i)的数据库配置:php5.6以上使用mysql会提示错误------------------*/
+    'DB_TYPE'               =>  'mysqli',           // 数据库类型：PDO mysql(i) mssql oracle sqlite mongo ibase pgsql 
+    'DB_HOST'               =>  '127.0.0.1',        // 服务器地址：IP地址 localhost 127.0.0.1
+    'DB_NAME'               =>  'lytshop',                 // 数据库名：dbname
+    'DB_USER'               =>  'root',             // 用户名：username
+    'DB_PWD'                =>  'xy359862',    // 密码：password
+    'DB_PORT'               =>  '3306',             // 端口：port
+    'DB_CHARSET'            =>  'utf8',             // 数据库编码默认采用utf8：charset
+    'DB_PREFIX'             =>  'yt_',                 // 数据库表前缀：prefix
+/*----------------mysql(i)方式连接数据库配置结束---------------------------------------------------*/
+    //开启页面trace
+    'SHOW_PAGE_TRACE'       =>  true ,
+    //定义I函数的过滤规则
+    'DEFAULT_FILTER'        =>  'trim,htmlspecialchars', // 默认参数过滤方法 用于I函数...
+);

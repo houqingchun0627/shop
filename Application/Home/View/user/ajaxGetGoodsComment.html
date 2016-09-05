@@ -1,0 +1,91 @@
+<!-- ajax获取商品的评论页面 -->
+<div class="wddd-js ov-in">
+    <volist name="UserGoodsCommentList" id="vo">
+        <!-- 用户评论列表start -->
+        <div class="merge-list">
+            <div class="ma-0--1">
+                <!-- 用户评论头文件start -->
+                <div class="o-info o-inff">
+                    <div class="fl">
+                        <input class="o-ch ve-al-mi" type="checkbox">
+                        <span class=" ma-ri-15 co-888 fo-si-14">下单时间：{:date("Y-m-d H:i:s",$vo["order_add_time"])}</span>
+                        <span class="ma-ri-15 co-888 fo-si-14">订单号：<a class="co-36c" href="{:U('User/orderDetail',array('order_id' => $vo['order_id']))}">{$vo.order_sn}</a></span>
+                    </div>
+                </div>
+                <!-- 用户评论头文件end -->
+                <!-- 用户评论详情头文件start -->
+                <div class="list-group-title">
+                    <table class="merge-tab" border="0" cellpadding="0" cellspacing="0">
+                        <tr>
+                            <th class="col-pro">商品详细信息</th>
+                            <th class=" wi240">评论状态</th>
+                            <th class="col-operate">评论操作</th>
+                        </tr>
+                    </table>
+                </div>
+                <!-- 用户评论详情头文件end -->
+                <!-- 用户评论详情start -->
+                <div class="o-pro">
+                    <table border="0" cellpadding="0" cellspacing="0">
+                        <?php foreach($vo["order_goods"] as $fkey => $v): ?>
+                            <tr>
+                                <td class="col-pro-img">
+                                    <p>
+                                        <a title="{$v.goods_name}" href="{:U('Home/Goods/goods',array('id' => $v['goods_id']))}" target="_blank">
+                                            <img alt="{$v.goods_name}" src="{$v.goods_thumb_small}"/>
+                                        </a>
+                                    </p>
+                                </td>
+                                <td class="col-pro-info te-al-le">
+                                    <p class="p-name">
+                                        <a title="{$v.goods_name}" target="_blank" href="{:U('Home/Goods/goods',array('id' => $v['goods_id']))}">
+                                            {$v.goods_name}</a>
+                                    </p>
+                                </td>
+                                <if condition="$vo.order_status eq '已完成'">
+                                    <td class="wi240">
+                                        已评价
+                                    </td>
+                                    <td rowspan="1" class="col-operate">
+                                        <p class="p-link">
+                                            <a href="javascript:;" onclick="ajax_view_comment({$v.id});">查看评价</a>
+                                        </p>
+                                    </td>
+                                </if>
+                                <if condition="$vo.order_status eq '待评价'">
+                                    <td class="wi240">
+                                        未评价
+                                    </td>
+                                    <td rowspan="1" class="col-operate">
+                                        <p class="p-link">
+                                            <a href="javascript:;" onclick="ajax_goods_comment({$v.id});">立即评价</a>
+                                        </p>
+                                    </td>
+                                </if>
+                            </tr>
+                        <?php endforeach; ?>
+                    </table>
+                </div>
+                <!-- 用户评论详情end -->
+            </div>
+        </div>
+        <!-- 用户评论列表end -->
+    </volist>
+</div>
+
+<!-- 商品评论页数据 -->
+<div class="merge pager-paging fr">
+    <div class="dataTables_paginate paging_simple_numbers">
+        <!-- 显示分页数据 -->
+        {$page}
+    </div>
+</div>
+
+<!-- 页面的js代码 -->
+<script>
+    // 点击分页触发的事件
+    $(".pagination  a").click(function(){
+        cur_page = $(this).data('p');
+        ajax_get_goods_comment(cur_page);
+    });
+</script>

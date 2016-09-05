@@ -1,0 +1,856 @@
+[ 2016-07-27T08:40:43+08:00 ] 127.0.0.1 /index.php/Admin/Admin/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [2048] Declaration of Admin\Model\RoleModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) D:\www\shop\Application\Admin\Model\RoleModel.class.php 第 10 行.
+NOTIC: [2048] Declaration of Admin\Model\RoleModel::_after_update() should be compatible with Think\Model::_after_update($data, $options) D:\www\shop\Application\Admin\Model\RoleModel.class.php 第 10 行.
+NOTIC: [2048] Declaration of Admin\Model\RoleModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) D:\www\shop\Application\Admin\Model\RoleModel.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `yt_role` [ RunTime:0.005000s ]
+SQL: SELECT `role_auth_ca` FROM `yt_role` LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of Admin\Model\AdminModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) D:\www\shop\Application\Admin\Model\AdminModel.class.php 第 200 行.
+NOTIC: [2048] Declaration of Admin\Model\AdminModel::_after_update() should be compatible with Think\Model::_after_update($data, $options) D:\www\shop\Application\Admin\Model\AdminModel.class.php 第 200 行.
+NOTIC: [2048] Declaration of Admin\Model\AdminModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) D:\www\shop\Application\Admin\Model\AdminModel.class.php 第 200 行.
+SQL: SHOW COLUMNS FROM `yt_admin` [ RunTime:0.010001s ]
+SQL: SELECT * FROM `yt_admin` WHERE `admin_username` = 'admin' LIMIT 1   [ RunTime:0.001000s ]
+SQL: UPDATE `yt_admin` SET `last_login_time`=1469580043,`last_login_ip`='127.0.0.1' WHERE `admin_id` = '1' [ RunTime:0.003000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-07-27T09:40:57+08:00 ] 127.0.0.1 /index.php/Admin/Admin/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of Admin\Model\RoleModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) D:\www\shop\Application\Admin\Model\RoleModel.class.php 第 10 行.
+NOTIC: [2048] Declaration of Admin\Model\RoleModel::_after_update() should be compatible with Think\Model::_after_update($data, $options) D:\www\shop\Application\Admin\Model\RoleModel.class.php 第 10 行.
+NOTIC: [2048] Declaration of Admin\Model\RoleModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) D:\www\shop\Application\Admin\Model\RoleModel.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `yt_role` [ RunTime:0.004000s ]
+SQL: SELECT `role_auth_ca` FROM `yt_role` LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of Admin\Model\AdminModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) D:\www\shop\Application\Admin\Model\AdminModel.class.php 第 200 行.
+NOTIC: [2048] Declaration of Admin\Model\AdminModel::_after_update() should be compatible with Think\Model::_after_update($data, $options) D:\www\shop\Application\Admin\Model\AdminModel.class.php 第 200 行.
+NOTIC: [2048] Declaration of Admin\Model\AdminModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) D:\www\shop\Application\Admin\Model\AdminModel.class.php 第 200 行.
+SQL: SHOW COLUMNS FROM `yt_admin` [ RunTime:0.004000s ]
+SQL: SELECT * FROM `yt_admin` WHERE `admin_username` = 'admin' LIMIT 1   [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-07-27T09:41:09+08:00 ] 127.0.0.1 /index.php/Admin/Admin/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of Admin\Model\RoleModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) D:\www\shop\Application\Admin\Model\RoleModel.class.php 第 10 行.
+NOTIC: [2048] Declaration of Admin\Model\RoleModel::_after_update() should be compatible with Think\Model::_after_update($data, $options) D:\www\shop\Application\Admin\Model\RoleModel.class.php 第 10 行.
+NOTIC: [2048] Declaration of Admin\Model\RoleModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) D:\www\shop\Application\Admin\Model\RoleModel.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `yt_role` [ RunTime:0.004000s ]
+SQL: SELECT `role_auth_ca` FROM `yt_role` LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of Admin\Model\AdminModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) D:\www\shop\Application\Admin\Model\AdminModel.class.php 第 200 行.
+NOTIC: [2048] Declaration of Admin\Model\AdminModel::_after_update() should be compatible with Think\Model::_after_update($data, $options) D:\www\shop\Application\Admin\Model\AdminModel.class.php 第 200 行.
+NOTIC: [2048] Declaration of Admin\Model\AdminModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) D:\www\shop\Application\Admin\Model\AdminModel.class.php 第 200 行.
+SQL: SHOW COLUMNS FROM `yt_admin` [ RunTime:0.004000s ]
+SQL: SELECT * FROM `yt_admin` WHERE `admin_username` = 'admin' LIMIT 1   [ RunTime:0.000000s ]
+SQL: UPDATE `yt_admin` SET `last_login_time`=1469583669,`last_login_ip`='127.0.0.1' WHERE `admin_id` = '1' [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-07-27T11:23:55+08:00 ] 127.0.0.1 /index.php/Admin/Goods/ajaxGoodsList/p/1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of Admin\Model\RoleModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) D:\www\shop\Application\Admin\Model\RoleModel.class.php 第 10 行.
+NOTIC: [2048] Declaration of Admin\Model\RoleModel::_after_update() should be compatible with Think\Model::_after_update($data, $options) D:\www\shop\Application\Admin\Model\RoleModel.class.php 第 10 行.
+NOTIC: [2048] Declaration of Admin\Model\RoleModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) D:\www\shop\Application\Admin\Model\RoleModel.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `yt_role` [ RunTime:0.004000s ]
+SQL: SELECT `role_auth_ca` FROM `yt_role` WHERE `role_id` = 0 LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of Admin\Model\GoodsModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1244 行.
+NOTIC: [2048] Declaration of Admin\Model\GoodsModel::_after_update() should be compatible with Think\Model::_after_update($data, $options) D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1244 行.
+NOTIC: [2048] Declaration of Admin\Model\GoodsModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1244 行.
+SQL: SHOW COLUMNS FROM `yt_goods` [ RunTime:0.005000s ]
+NOTIC: [8] Undefined index: is_recommend D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 868 行.
+NOTIC: [8] Undefined index: is_best D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 873 行.
+NOTIC: [8] Undefined index: is_new D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 877 行.
+NOTIC: [8] Undefined index: is_hot D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 881 行.
+SQL: SHOW COLUMNS FROM `yt_goods` [ RunTime:0.004000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM yt_goods a LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `yt_goods` [ RunTime:0.005001s ]
+SQL: SELECT a.*,b.brand_name as brand_name,c.cat_name as cat_name,GROUP_CONCAT(e.cat_name SEPARATOR "<br />") as ext_cat_name,f.type_name as type_name FROM yt_goods a LEFT JOIN yt_brand b ON a.goods_brand = b.brand_id LEFT JOIN yt_cat c ON a.goods_cat = c.cat_id LEFT JOIN yt_extend_cat d ON a.goods_id = d.goods_id LEFT JOIN yt_cat e ON e.cat_id = d.ext_cat_id LEFT JOIN yt_type f ON f.type_id = a.goods_type  GROUP BY goods_id ORDER BY goods_id asc LIMIT 0,5   [ RunTime:0.002000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 34 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 35 行.
+NOTIC: [8] Use of undefined constant is_best - assumed 'is_best' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 36 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 36 行.
+NOTIC: [8] Use of undefined constant is_new - assumed 'is_new' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 37 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 37 行.
+NOTIC: [8] Use of undefined constant is_hot - assumed 'is_hot' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 38 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 38 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 34 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 35 行.
+NOTIC: [8] Use of undefined constant is_best - assumed 'is_best' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 36 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 36 行.
+NOTIC: [8] Use of undefined constant is_new - assumed 'is_new' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 37 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 37 行.
+NOTIC: [8] Use of undefined constant is_hot - assumed 'is_hot' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 38 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 38 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 34 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 35 行.
+NOTIC: [8] Use of undefined constant is_best - assumed 'is_best' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 36 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 36 行.
+NOTIC: [8] Use of undefined constant is_new - assumed 'is_new' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 37 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 37 行.
+NOTIC: [8] Use of undefined constant is_hot - assumed 'is_hot' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 38 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 38 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 34 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 35 行.
+NOTIC: [8] Use of undefined constant is_best - assumed 'is_best' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 36 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 36 行.
+NOTIC: [8] Use of undefined constant is_new - assumed 'is_new' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 37 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 37 行.
+NOTIC: [8] Use of undefined constant is_hot - assumed 'is_hot' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 38 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 38 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 34 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 35 行.
+NOTIC: [8] Use of undefined constant is_best - assumed 'is_best' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 36 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 36 行.
+NOTIC: [8] Use of undefined constant is_new - assumed 'is_new' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 37 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 37 行.
+NOTIC: [8] Use of undefined constant is_hot - assumed 'is_hot' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 38 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 38 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014000s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014000s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001001s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-07-27T11:24:00+08:00 ] 127.0.0.1 /index.php/Admin/Goods/ajaxGetSpecAttr/tid/2/gid/1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of Admin\Model\RoleModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) D:\www\shop\Application\Admin\Model\RoleModel.class.php 第 10 行.
+NOTIC: [2048] Declaration of Admin\Model\RoleModel::_after_update() should be compatible with Think\Model::_after_update($data, $options) D:\www\shop\Application\Admin\Model\RoleModel.class.php 第 10 行.
+NOTIC: [2048] Declaration of Admin\Model\RoleModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) D:\www\shop\Application\Admin\Model\RoleModel.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `yt_role` [ RunTime:0.005000s ]
+SQL: SELECT `role_auth_ca` FROM `yt_role` WHERE `role_id` = 0 LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of Admin\Model\GoodsModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1244 行.
+NOTIC: [2048] Declaration of Admin\Model\GoodsModel::_after_update() should be compatible with Think\Model::_after_update($data, $options) D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1244 行.
+NOTIC: [2048] Declaration of Admin\Model\GoodsModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1244 行.
+SQL: SHOW COLUMNS FROM `yt_goods` [ RunTime:0.006000s ]
+NOTIC: [2048] Declaration of Admin\Model\AttrModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) D:\www\shop\Application\Admin\Model\AttrModel.class.php 第 164 行.
+NOTIC: [2048] Declaration of Admin\Model\AttrModel::_after_update() should be compatible with Think\Model::_after_update($data, $options) D:\www\shop\Application\Admin\Model\AttrModel.class.php 第 164 行.
+NOTIC: [2048] Declaration of Admin\Model\AttrModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) D:\www\shop\Application\Admin\Model\AttrModel.class.php 第 164 行.
+SQL: SHOW COLUMNS FROM `yt_attr` [ RunTime:0.006001s ]
+SQL: SELECT `attr_id`,`attr_name`,`optional_list` FROM `yt_attr` WHERE `type_id` = '2' AND `attr_unique` = '可选属性'  [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yt_goods_stock` [ RunTime:0.006000s ]
+SQL: SELECT * FROM `yt_goods_stock` WHERE `goods_id` = '1'  [ RunTime:0.001000s ]
+SQL: SELECT `attr_name`,`attr_id` FROM `yt_attr` WHERE `type_id` = 2 AND `attr_unique` = '可选属性'  [ RunTime:0.001000s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1076 行.
+NOTIC: [8] Undefined variable: str D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1099 行.
+
+[ 2016-07-27T11:24:00+08:00 ] 127.0.0.1 /index.php/Admin/Goods/ajaxGetSimpAttr/tid/2/gid/1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [2048] Declaration of Admin\Model\RoleModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) D:\www\shop\Application\Admin\Model\RoleModel.class.php 第 10 行.
+NOTIC: [2048] Declaration of Admin\Model\RoleModel::_after_update() should be compatible with Think\Model::_after_update($data, $options) D:\www\shop\Application\Admin\Model\RoleModel.class.php 第 10 行.
+NOTIC: [2048] Declaration of Admin\Model\RoleModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) D:\www\shop\Application\Admin\Model\RoleModel.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `yt_role` [ RunTime:0.005001s ]
+SQL: SELECT `role_auth_ca` FROM `yt_role` WHERE `role_id` = 0 LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of Admin\Model\GoodsModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1244 行.
+NOTIC: [2048] Declaration of Admin\Model\GoodsModel::_after_update() should be compatible with Think\Model::_after_update($data, $options) D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1244 行.
+NOTIC: [2048] Declaration of Admin\Model\GoodsModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1244 行.
+SQL: SHOW COLUMNS FROM `yt_goods` [ RunTime:0.007000s ]
+NOTIC: [2048] Declaration of Admin\Model\AttrModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) D:\www\shop\Application\Admin\Model\AttrModel.class.php 第 164 行.
+NOTIC: [2048] Declaration of Admin\Model\AttrModel::_after_update() should be compatible with Think\Model::_after_update($data, $options) D:\www\shop\Application\Admin\Model\AttrModel.class.php 第 164 行.
+NOTIC: [2048] Declaration of Admin\Model\AttrModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) D:\www\shop\Application\Admin\Model\AttrModel.class.php 第 164 行.
+SQL: SHOW COLUMNS FROM `yt_attr` [ RunTime:0.006001s ]
+SQL: SHOW COLUMNS FROM `yt_attr` [ RunTime:0.006000s ]
+SQL: SELECT a.attr_id,a.attr_name,a.type_id,a.attr_unique,a.input_method,a.optional_list,b.attr_value FROM yt_attr a LEFT JOIN yt_goods_attr b ON a.attr_id = b.attr_id AND b.goods_id = 1  WHERE a.type_id = '2' AND a.attr_unique = '唯一属性'  [ RunTime:0.002000s ]
+
+[ 2016-07-27T11:24:10+08:00 ] 127.0.0.1 /index.php/Admin/Goods/ajaxGoodsList/p/1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of Admin\Model\RoleModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) D:\www\shop\Application\Admin\Model\RoleModel.class.php 第 10 行.
+NOTIC: [2048] Declaration of Admin\Model\RoleModel::_after_update() should be compatible with Think\Model::_after_update($data, $options) D:\www\shop\Application\Admin\Model\RoleModel.class.php 第 10 行.
+NOTIC: [2048] Declaration of Admin\Model\RoleModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) D:\www\shop\Application\Admin\Model\RoleModel.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `yt_role` [ RunTime:0.004001s ]
+SQL: SELECT `role_auth_ca` FROM `yt_role` WHERE `role_id` = 0 LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of Admin\Model\GoodsModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1244 行.
+NOTIC: [2048] Declaration of Admin\Model\GoodsModel::_after_update() should be compatible with Think\Model::_after_update($data, $options) D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1244 行.
+NOTIC: [2048] Declaration of Admin\Model\GoodsModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1244 行.
+SQL: SHOW COLUMNS FROM `yt_goods` [ RunTime:0.005000s ]
+NOTIC: [8] Undefined index: is_recommend D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 868 行.
+NOTIC: [8] Undefined index: is_best D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 873 行.
+NOTIC: [8] Undefined index: is_new D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 877 行.
+NOTIC: [8] Undefined index: is_hot D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 881 行.
+SQL: SHOW COLUMNS FROM `yt_goods` [ RunTime:0.005000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM yt_goods a LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `yt_goods` [ RunTime:0.006000s ]
+SQL: SELECT a.*,b.brand_name as brand_name,c.cat_name as cat_name,GROUP_CONCAT(e.cat_name SEPARATOR "<br />") as ext_cat_name,f.type_name as type_name FROM yt_goods a LEFT JOIN yt_brand b ON a.goods_brand = b.brand_id LEFT JOIN yt_cat c ON a.goods_cat = c.cat_id LEFT JOIN yt_extend_cat d ON a.goods_id = d.goods_id LEFT JOIN yt_cat e ON e.cat_id = d.ext_cat_id LEFT JOIN yt_type f ON f.type_id = a.goods_type  GROUP BY goods_id ORDER BY goods_id asc LIMIT 0,5   [ RunTime:0.002000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.001000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 34 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 35 行.
+NOTIC: [8] Use of undefined constant is_best - assumed 'is_best' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 36 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 36 行.
+NOTIC: [8] Use of undefined constant is_new - assumed 'is_new' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 37 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 37 行.
+NOTIC: [8] Use of undefined constant is_hot - assumed 'is_hot' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 38 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 38 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 34 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 35 行.
+NOTIC: [8] Use of undefined constant is_best - assumed 'is_best' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 36 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 36 行.
+NOTIC: [8] Use of undefined constant is_new - assumed 'is_new' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 37 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 37 行.
+NOTIC: [8] Use of undefined constant is_hot - assumed 'is_hot' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 38 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 38 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 34 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 35 行.
+NOTIC: [8] Use of undefined constant is_best - assumed 'is_best' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 36 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 36 行.
+NOTIC: [8] Use of undefined constant is_new - assumed 'is_new' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 37 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 37 行.
+NOTIC: [8] Use of undefined constant is_hot - assumed 'is_hot' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 38 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 38 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 34 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 35 行.
+NOTIC: [8] Use of undefined constant is_best - assumed 'is_best' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 36 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 36 行.
+NOTIC: [8] Use of undefined constant is_new - assumed 'is_new' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 37 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 37 行.
+NOTIC: [8] Use of undefined constant is_hot - assumed 'is_hot' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 38 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 38 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 34 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 35 行.
+NOTIC: [8] Use of undefined constant is_best - assumed 'is_best' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 36 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 36 行.
+NOTIC: [8] Use of undefined constant is_new - assumed 'is_new' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 37 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 37 行.
+NOTIC: [8] Use of undefined constant is_hot - assumed 'is_hot' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 38 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 38 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.015001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.015001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-07-27T11:24:35+08:00 ] 127.0.0.1 /index.php/Admin/Goods/ajaxGetSpecAttr/tid/4/gid/5
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of Admin\Model\RoleModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) D:\www\shop\Application\Admin\Model\RoleModel.class.php 第 10 行.
+NOTIC: [2048] Declaration of Admin\Model\RoleModel::_after_update() should be compatible with Think\Model::_after_update($data, $options) D:\www\shop\Application\Admin\Model\RoleModel.class.php 第 10 行.
+NOTIC: [2048] Declaration of Admin\Model\RoleModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) D:\www\shop\Application\Admin\Model\RoleModel.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `yt_role` [ RunTime:0.006000s ]
+SQL: SELECT `role_auth_ca` FROM `yt_role` WHERE `role_id` = 0 LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of Admin\Model\GoodsModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1244 行.
+NOTIC: [2048] Declaration of Admin\Model\GoodsModel::_after_update() should be compatible with Think\Model::_after_update($data, $options) D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1244 行.
+NOTIC: [2048] Declaration of Admin\Model\GoodsModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1244 行.
+SQL: SHOW COLUMNS FROM `yt_goods` [ RunTime:0.005001s ]
+NOTIC: [2048] Declaration of Admin\Model\AttrModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) D:\www\shop\Application\Admin\Model\AttrModel.class.php 第 164 行.
+NOTIC: [2048] Declaration of Admin\Model\AttrModel::_after_update() should be compatible with Think\Model::_after_update($data, $options) D:\www\shop\Application\Admin\Model\AttrModel.class.php 第 164 行.
+NOTIC: [2048] Declaration of Admin\Model\AttrModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) D:\www\shop\Application\Admin\Model\AttrModel.class.php 第 164 行.
+SQL: SHOW COLUMNS FROM `yt_attr` [ RunTime:0.005000s ]
+SQL: SELECT `attr_id`,`attr_name`,`optional_list` FROM `yt_attr` WHERE `type_id` = '4' AND `attr_unique` = '可选属性'  [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yt_goods_stock` [ RunTime:0.005000s ]
+SQL: SELECT * FROM `yt_goods_stock` WHERE `goods_id` = '5'  [ RunTime:0.000000s ]
+SQL: SELECT `attr_name`,`attr_id` FROM `yt_attr` WHERE `type_id` = 4 AND `attr_unique` = '可选属性'  [ RunTime:0.001001s ]
+NOTIC: [8] Undefined variable: str D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1069 行.
+
+[ 2016-07-27T11:24:35+08:00 ] 127.0.0.1 /index.php/Admin/Goods/ajaxGetSimpAttr/tid/4/gid/5
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of Admin\Model\RoleModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) D:\www\shop\Application\Admin\Model\RoleModel.class.php 第 10 行.
+NOTIC: [2048] Declaration of Admin\Model\RoleModel::_after_update() should be compatible with Think\Model::_after_update($data, $options) D:\www\shop\Application\Admin\Model\RoleModel.class.php 第 10 行.
+NOTIC: [2048] Declaration of Admin\Model\RoleModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) D:\www\shop\Application\Admin\Model\RoleModel.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `yt_role` [ RunTime:0.005001s ]
+SQL: SELECT `role_auth_ca` FROM `yt_role` WHERE `role_id` = 0 LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of Admin\Model\GoodsModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1244 行.
+NOTIC: [2048] Declaration of Admin\Model\GoodsModel::_after_update() should be compatible with Think\Model::_after_update($data, $options) D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1244 行.
+NOTIC: [2048] Declaration of Admin\Model\GoodsModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1244 行.
+SQL: SHOW COLUMNS FROM `yt_goods` [ RunTime:0.005000s ]
+NOTIC: [2048] Declaration of Admin\Model\AttrModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) D:\www\shop\Application\Admin\Model\AttrModel.class.php 第 164 行.
+NOTIC: [2048] Declaration of Admin\Model\AttrModel::_after_update() should be compatible with Think\Model::_after_update($data, $options) D:\www\shop\Application\Admin\Model\AttrModel.class.php 第 164 行.
+NOTIC: [2048] Declaration of Admin\Model\AttrModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) D:\www\shop\Application\Admin\Model\AttrModel.class.php 第 164 行.
+SQL: SHOW COLUMNS FROM `yt_attr` [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `yt_attr` [ RunTime:0.005001s ]
+SQL: SELECT a.attr_id,a.attr_name,a.type_id,a.attr_unique,a.input_method,a.optional_list,b.attr_value FROM yt_attr a LEFT JOIN yt_goods_attr b ON a.attr_id = b.attr_id AND b.goods_id = 5  WHERE a.type_id = '4' AND a.attr_unique = '唯一属性'  [ RunTime:0.001000s ]
+
+[ 2016-07-27T11:24:43+08:00 ] 127.0.0.1 /index.php/Admin/Goods/ajaxGoodsList/p/1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of Admin\Model\RoleModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) D:\www\shop\Application\Admin\Model\RoleModel.class.php 第 10 行.
+NOTIC: [2048] Declaration of Admin\Model\RoleModel::_after_update() should be compatible with Think\Model::_after_update($data, $options) D:\www\shop\Application\Admin\Model\RoleModel.class.php 第 10 行.
+NOTIC: [2048] Declaration of Admin\Model\RoleModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) D:\www\shop\Application\Admin\Model\RoleModel.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `yt_role` [ RunTime:0.004000s ]
+SQL: SELECT `role_auth_ca` FROM `yt_role` WHERE `role_id` = 0 LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of Admin\Model\GoodsModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1244 行.
+NOTIC: [2048] Declaration of Admin\Model\GoodsModel::_after_update() should be compatible with Think\Model::_after_update($data, $options) D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1244 行.
+NOTIC: [2048] Declaration of Admin\Model\GoodsModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1244 行.
+SQL: SHOW COLUMNS FROM `yt_goods` [ RunTime:0.006000s ]
+NOTIC: [8] Undefined index: is_recommend D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 868 行.
+NOTIC: [8] Undefined index: is_best D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 873 行.
+NOTIC: [8] Undefined index: is_new D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 877 行.
+NOTIC: [8] Undefined index: is_hot D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 881 行.
+SQL: SHOW COLUMNS FROM `yt_goods` [ RunTime:0.006000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM yt_goods a LIMIT 1   [ RunTime:0.001001s ]
+SQL: SHOW COLUMNS FROM `yt_goods` [ RunTime:0.007000s ]
+SQL: SELECT a.*,b.brand_name as brand_name,c.cat_name as cat_name,GROUP_CONCAT(e.cat_name SEPARATOR "<br />") as ext_cat_name,f.type_name as type_name FROM yt_goods a LEFT JOIN yt_brand b ON a.goods_brand = b.brand_id LEFT JOIN yt_cat c ON a.goods_cat = c.cat_id LEFT JOIN yt_extend_cat d ON a.goods_id = d.goods_id LEFT JOIN yt_cat e ON e.cat_id = d.ext_cat_id LEFT JOIN yt_type f ON f.type_id = a.goods_type  GROUP BY goods_id ORDER BY goods_id asc LIMIT 0,5   [ RunTime:0.002000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 34 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 35 行.
+NOTIC: [8] Use of undefined constant is_best - assumed 'is_best' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 36 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 36 行.
+NOTIC: [8] Use of undefined constant is_new - assumed 'is_new' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 37 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 37 行.
+NOTIC: [8] Use of undefined constant is_hot - assumed 'is_hot' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 38 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 38 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 34 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 35 行.
+NOTIC: [8] Use of undefined constant is_best - assumed 'is_best' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 36 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 36 行.
+NOTIC: [8] Use of undefined constant is_new - assumed 'is_new' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 37 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 37 行.
+NOTIC: [8] Use of undefined constant is_hot - assumed 'is_hot' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 38 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 38 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 34 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 35 行.
+NOTIC: [8] Use of undefined constant is_best - assumed 'is_best' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 36 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 36 行.
+NOTIC: [8] Use of undefined constant is_new - assumed 'is_new' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 37 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 37 行.
+NOTIC: [8] Use of undefined constant is_hot - assumed 'is_hot' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 38 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 38 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 34 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 35 行.
+NOTIC: [8] Use of undefined constant is_best - assumed 'is_best' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 36 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 36 行.
+NOTIC: [8] Use of undefined constant is_new - assumed 'is_new' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 37 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 37 行.
+NOTIC: [8] Use of undefined constant is_hot - assumed 'is_hot' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 38 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 38 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 34 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 35 行.
+NOTIC: [8] Use of undefined constant is_best - assumed 'is_best' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 36 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 36 行.
+NOTIC: [8] Use of undefined constant is_new - assumed 'is_new' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 37 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 37 行.
+NOTIC: [8] Use of undefined constant is_hot - assumed 'is_hot' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 38 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 38 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-07-27T11:30:51+08:00 ] 127.0.0.1 /index.php/Admin/Goods/ajaxGetSimpAttr/tid/4/gid/5
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of Admin\Model\RoleModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) D:\www\shop\Application\Admin\Model\RoleModel.class.php 第 10 行.
+NOTIC: [2048] Declaration of Admin\Model\RoleModel::_after_update() should be compatible with Think\Model::_after_update($data, $options) D:\www\shop\Application\Admin\Model\RoleModel.class.php 第 10 行.
+NOTIC: [2048] Declaration of Admin\Model\RoleModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) D:\www\shop\Application\Admin\Model\RoleModel.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `yt_role` [ RunTime:0.005000s ]
+SQL: SELECT `role_auth_ca` FROM `yt_role` WHERE `role_id` = 0 LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of Admin\Model\GoodsModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1244 行.
+NOTIC: [2048] Declaration of Admin\Model\GoodsModel::_after_update() should be compatible with Think\Model::_after_update($data, $options) D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1244 行.
+NOTIC: [2048] Declaration of Admin\Model\GoodsModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1244 行.
+SQL: SHOW COLUMNS FROM `yt_goods` [ RunTime:0.005001s ]
+NOTIC: [2048] Declaration of Admin\Model\AttrModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) D:\www\shop\Application\Admin\Model\AttrModel.class.php 第 164 行.
+NOTIC: [2048] Declaration of Admin\Model\AttrModel::_after_update() should be compatible with Think\Model::_after_update($data, $options) D:\www\shop\Application\Admin\Model\AttrModel.class.php 第 164 行.
+NOTIC: [2048] Declaration of Admin\Model\AttrModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) D:\www\shop\Application\Admin\Model\AttrModel.class.php 第 164 行.
+SQL: SHOW COLUMNS FROM `yt_attr` [ RunTime:0.004000s ]
+SQL: SHOW COLUMNS FROM `yt_attr` [ RunTime:0.005000s ]
+SQL: SELECT a.attr_id,a.attr_name,a.type_id,a.attr_unique,a.input_method,a.optional_list,b.attr_value FROM yt_attr a LEFT JOIN yt_goods_attr b ON a.attr_id = b.attr_id AND b.goods_id = 5  WHERE a.type_id = '4' AND a.attr_unique = '唯一属性'  [ RunTime:0.001000s ]
+
+[ 2016-07-27T11:30:52+08:00 ] 127.0.0.1 /index.php/Admin/Goods/ajaxGetSpecAttr/tid/4/gid/5
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [2048] Declaration of Admin\Model\RoleModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) D:\www\shop\Application\Admin\Model\RoleModel.class.php 第 10 行.
+NOTIC: [2048] Declaration of Admin\Model\RoleModel::_after_update() should be compatible with Think\Model::_after_update($data, $options) D:\www\shop\Application\Admin\Model\RoleModel.class.php 第 10 行.
+NOTIC: [2048] Declaration of Admin\Model\RoleModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) D:\www\shop\Application\Admin\Model\RoleModel.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `yt_role` [ RunTime:0.004001s ]
+SQL: SELECT `role_auth_ca` FROM `yt_role` WHERE `role_id` = 0 LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of Admin\Model\GoodsModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1244 行.
+NOTIC: [2048] Declaration of Admin\Model\GoodsModel::_after_update() should be compatible with Think\Model::_after_update($data, $options) D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1244 行.
+NOTIC: [2048] Declaration of Admin\Model\GoodsModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1244 行.
+SQL: SHOW COLUMNS FROM `yt_goods` [ RunTime:0.006000s ]
+NOTIC: [2048] Declaration of Admin\Model\AttrModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) D:\www\shop\Application\Admin\Model\AttrModel.class.php 第 164 行.
+NOTIC: [2048] Declaration of Admin\Model\AttrModel::_after_update() should be compatible with Think\Model::_after_update($data, $options) D:\www\shop\Application\Admin\Model\AttrModel.class.php 第 164 行.
+NOTIC: [2048] Declaration of Admin\Model\AttrModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) D:\www\shop\Application\Admin\Model\AttrModel.class.php 第 164 行.
+SQL: SHOW COLUMNS FROM `yt_attr` [ RunTime:0.005001s ]
+SQL: SELECT `attr_id`,`attr_name`,`optional_list` FROM `yt_attr` WHERE `type_id` = '4' AND `attr_unique` = '可选属性'  [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yt_goods_stock` [ RunTime:0.004000s ]
+SQL: SELECT * FROM `yt_goods_stock` WHERE `goods_id` = '5'  [ RunTime:0.001000s ]
+SQL: SELECT `attr_name`,`attr_id` FROM `yt_attr` WHERE `type_id` = 4 AND `attr_unique` = '可选属性'  [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: str D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1069 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1090 行.
+
+[ 2016-07-27T11:31:01+08:00 ] 127.0.0.1 /index.php/Admin/Goods/ajaxGoodsList/p/1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of Admin\Model\RoleModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) D:\www\shop\Application\Admin\Model\RoleModel.class.php 第 10 行.
+NOTIC: [2048] Declaration of Admin\Model\RoleModel::_after_update() should be compatible with Think\Model::_after_update($data, $options) D:\www\shop\Application\Admin\Model\RoleModel.class.php 第 10 行.
+NOTIC: [2048] Declaration of Admin\Model\RoleModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) D:\www\shop\Application\Admin\Model\RoleModel.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `yt_role` [ RunTime:0.005000s ]
+SQL: SELECT `role_auth_ca` FROM `yt_role` WHERE `role_id` = 0 LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of Admin\Model\GoodsModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1244 行.
+NOTIC: [2048] Declaration of Admin\Model\GoodsModel::_after_update() should be compatible with Think\Model::_after_update($data, $options) D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1244 行.
+NOTIC: [2048] Declaration of Admin\Model\GoodsModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1244 行.
+SQL: SHOW COLUMNS FROM `yt_goods` [ RunTime:0.006000s ]
+NOTIC: [8] Undefined index: is_recommend D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 868 行.
+NOTIC: [8] Undefined index: is_best D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 873 行.
+NOTIC: [8] Undefined index: is_new D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 877 行.
+NOTIC: [8] Undefined index: is_hot D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 881 行.
+SQL: SHOW COLUMNS FROM `yt_goods` [ RunTime:0.005000s ]
+SQL: SELECT COUNT(*) AS tp_count FROM yt_goods a LIMIT 1   [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `yt_goods` [ RunTime:0.006001s ]
+SQL: SELECT a.*,b.brand_name as brand_name,c.cat_name as cat_name,GROUP_CONCAT(e.cat_name SEPARATOR "<br />") as ext_cat_name,f.type_name as type_name FROM yt_goods a LEFT JOIN yt_brand b ON a.goods_brand = b.brand_id LEFT JOIN yt_cat c ON a.goods_cat = c.cat_id LEFT JOIN yt_extend_cat d ON a.goods_id = d.goods_id LEFT JOIN yt_cat e ON e.cat_id = d.ext_cat_id LEFT JOIN yt_type f ON f.type_id = a.goods_type  GROUP BY goods_id ORDER BY goods_id asc LIMIT 0,5   [ RunTime:0.001000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 34 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 35 行.
+NOTIC: [8] Use of undefined constant is_best - assumed 'is_best' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 36 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 36 行.
+NOTIC: [8] Use of undefined constant is_new - assumed 'is_new' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 37 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 37 行.
+NOTIC: [8] Use of undefined constant is_hot - assumed 'is_hot' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 38 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 38 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 34 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 35 行.
+NOTIC: [8] Use of undefined constant is_best - assumed 'is_best' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 36 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 36 行.
+NOTIC: [8] Use of undefined constant is_new - assumed 'is_new' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 37 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 37 行.
+NOTIC: [8] Use of undefined constant is_hot - assumed 'is_hot' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 38 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 38 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 34 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 35 行.
+NOTIC: [8] Use of undefined constant is_best - assumed 'is_best' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 36 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 36 行.
+NOTIC: [8] Use of undefined constant is_new - assumed 'is_new' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 37 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 37 行.
+NOTIC: [8] Use of undefined constant is_hot - assumed 'is_hot' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 38 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 38 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 34 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 35 行.
+NOTIC: [8] Use of undefined constant is_best - assumed 'is_best' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 36 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 36 行.
+NOTIC: [8] Use of undefined constant is_new - assumed 'is_new' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 37 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 37 行.
+NOTIC: [8] Use of undefined constant is_hot - assumed 'is_hot' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 38 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 38 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 34 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 35 行.
+NOTIC: [8] Use of undefined constant is_best - assumed 'is_best' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 36 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 36 行.
+NOTIC: [8] Use of undefined constant is_new - assumed 'is_new' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 37 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 37 行.
+NOTIC: [8] Use of undefined constant is_hot - assumed 'is_hot' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 38 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 38 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.014001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.014001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-07-27T11:31:08+08:00 ] 127.0.0.1 /index.php/Admin/Goods/ajaxGetSimpAttr/tid/2/gid/1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001001s ]
+NOTIC: [2048] Declaration of Admin\Model\RoleModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) D:\www\shop\Application\Admin\Model\RoleModel.class.php 第 10 行.
+NOTIC: [2048] Declaration of Admin\Model\RoleModel::_after_update() should be compatible with Think\Model::_after_update($data, $options) D:\www\shop\Application\Admin\Model\RoleModel.class.php 第 10 行.
+NOTIC: [2048] Declaration of Admin\Model\RoleModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) D:\www\shop\Application\Admin\Model\RoleModel.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `yt_role` [ RunTime:0.005001s ]
+SQL: SELECT `role_auth_ca` FROM `yt_role` WHERE `role_id` = 0 LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of Admin\Model\GoodsModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1244 行.
+NOTIC: [2048] Declaration of Admin\Model\GoodsModel::_after_update() should be compatible with Think\Model::_after_update($data, $options) D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1244 行.
+NOTIC: [2048] Declaration of Admin\Model\GoodsModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1244 行.
+SQL: SHOW COLUMNS FROM `yt_goods` [ RunTime:0.005000s ]
+NOTIC: [2048] Declaration of Admin\Model\AttrModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) D:\www\shop\Application\Admin\Model\AttrModel.class.php 第 164 行.
+NOTIC: [2048] Declaration of Admin\Model\AttrModel::_after_update() should be compatible with Think\Model::_after_update($data, $options) D:\www\shop\Application\Admin\Model\AttrModel.class.php 第 164 行.
+NOTIC: [2048] Declaration of Admin\Model\AttrModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) D:\www\shop\Application\Admin\Model\AttrModel.class.php 第 164 行.
+SQL: SHOW COLUMNS FROM `yt_attr` [ RunTime:0.005001s ]
+SQL: SHOW COLUMNS FROM `yt_attr` [ RunTime:0.005000s ]
+SQL: SELECT a.attr_id,a.attr_name,a.type_id,a.attr_unique,a.input_method,a.optional_list,b.attr_value FROM yt_attr a LEFT JOIN yt_goods_attr b ON a.attr_id = b.attr_id AND b.goods_id = 1  WHERE a.type_id = '2' AND a.attr_unique = '唯一属性'  [ RunTime:0.001000s ]
+
+[ 2016-07-27T11:31:08+08:00 ] 127.0.0.1 /index.php/Admin/Goods/ajaxGetSpecAttr/tid/2/gid/1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.004001s ]
+NOTIC: [2048] Declaration of Admin\Model\RoleModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) D:\www\shop\Application\Admin\Model\RoleModel.class.php 第 10 行.
+NOTIC: [2048] Declaration of Admin\Model\RoleModel::_after_update() should be compatible with Think\Model::_after_update($data, $options) D:\www\shop\Application\Admin\Model\RoleModel.class.php 第 10 行.
+NOTIC: [2048] Declaration of Admin\Model\RoleModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) D:\www\shop\Application\Admin\Model\RoleModel.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `yt_role` [ RunTime:0.005000s ]
+SQL: SELECT `role_auth_ca` FROM `yt_role` WHERE `role_id` = 0 LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of Admin\Model\GoodsModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1244 行.
+NOTIC: [2048] Declaration of Admin\Model\GoodsModel::_after_update() should be compatible with Think\Model::_after_update($data, $options) D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1244 行.
+NOTIC: [2048] Declaration of Admin\Model\GoodsModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1244 行.
+SQL: SHOW COLUMNS FROM `yt_goods` [ RunTime:0.005000s ]
+NOTIC: [2048] Declaration of Admin\Model\AttrModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) D:\www\shop\Application\Admin\Model\AttrModel.class.php 第 164 行.
+NOTIC: [2048] Declaration of Admin\Model\AttrModel::_after_update() should be compatible with Think\Model::_after_update($data, $options) D:\www\shop\Application\Admin\Model\AttrModel.class.php 第 164 行.
+NOTIC: [2048] Declaration of Admin\Model\AttrModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) D:\www\shop\Application\Admin\Model\AttrModel.class.php 第 164 行.
+SQL: SHOW COLUMNS FROM `yt_attr` [ RunTime:0.004000s ]
+SQL: SELECT `attr_id`,`attr_name`,`optional_list` FROM `yt_attr` WHERE `type_id` = '2' AND `attr_unique` = '可选属性'  [ RunTime:0.000000s ]
+SQL: SHOW COLUMNS FROM `yt_goods_stock` [ RunTime:0.004000s ]
+SQL: SELECT * FROM `yt_goods_stock` WHERE `goods_id` = '1'  [ RunTime:0.001001s ]
+SQL: SELECT `attr_name`,`attr_id` FROM `yt_attr` WHERE `type_id` = 2 AND `attr_unique` = '可选属性'  [ RunTime:0.000000s ]
+NOTIC: [2] Invalid argument supplied for foreach() D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1076 行.
+NOTIC: [8] Undefined variable: str D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1099 行.
+
+[ 2016-07-27T11:31:25+08:00 ] 127.0.0.1 /index.php/Admin/Goods/ajaxGoodsList/p/1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of Admin\Model\RoleModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) D:\www\shop\Application\Admin\Model\RoleModel.class.php 第 10 行.
+NOTIC: [2048] Declaration of Admin\Model\RoleModel::_after_update() should be compatible with Think\Model::_after_update($data, $options) D:\www\shop\Application\Admin\Model\RoleModel.class.php 第 10 行.
+NOTIC: [2048] Declaration of Admin\Model\RoleModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) D:\www\shop\Application\Admin\Model\RoleModel.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `yt_role` [ RunTime:0.006001s ]
+SQL: SELECT `role_auth_ca` FROM `yt_role` WHERE `role_id` = 0 LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of Admin\Model\GoodsModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1244 行.
+NOTIC: [2048] Declaration of Admin\Model\GoodsModel::_after_update() should be compatible with Think\Model::_after_update($data, $options) D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1244 行.
+NOTIC: [2048] Declaration of Admin\Model\GoodsModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1244 行.
+SQL: SHOW COLUMNS FROM `yt_goods` [ RunTime:0.007000s ]
+NOTIC: [8] Undefined index: is_recommend D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 868 行.
+NOTIC: [8] Undefined index: is_best D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 873 行.
+NOTIC: [8] Undefined index: is_new D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 877 行.
+NOTIC: [8] Undefined index: is_hot D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 881 行.
+SQL: SHOW COLUMNS FROM `yt_goods` [ RunTime:0.005001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM yt_goods a LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yt_goods` [ RunTime:0.006000s ]
+SQL: SELECT a.*,b.brand_name as brand_name,c.cat_name as cat_name,GROUP_CONCAT(e.cat_name SEPARATOR "<br />") as ext_cat_name,f.type_name as type_name FROM yt_goods a LEFT JOIN yt_brand b ON a.goods_brand = b.brand_id LEFT JOIN yt_cat c ON a.goods_cat = c.cat_id LEFT JOIN yt_extend_cat d ON a.goods_id = d.goods_id LEFT JOIN yt_cat e ON e.cat_id = d.ext_cat_id LEFT JOIN yt_type f ON f.type_id = a.goods_type  GROUP BY goods_id ORDER BY goods_id asc LIMIT 0,5   [ RunTime:0.002000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.000000s ]
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 34 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 35 行.
+NOTIC: [8] Use of undefined constant is_best - assumed 'is_best' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 36 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 36 行.
+NOTIC: [8] Use of undefined constant is_new - assumed 'is_new' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 37 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 37 行.
+NOTIC: [8] Use of undefined constant is_hot - assumed 'is_hot' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 38 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 38 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 34 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 35 行.
+NOTIC: [8] Use of undefined constant is_best - assumed 'is_best' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 36 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 36 行.
+NOTIC: [8] Use of undefined constant is_new - assumed 'is_new' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 37 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 37 行.
+NOTIC: [8] Use of undefined constant is_hot - assumed 'is_hot' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 38 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 38 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 34 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 35 行.
+NOTIC: [8] Use of undefined constant is_best - assumed 'is_best' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 36 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 36 行.
+NOTIC: [8] Use of undefined constant is_new - assumed 'is_new' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 37 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 37 行.
+NOTIC: [8] Use of undefined constant is_hot - assumed 'is_hot' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 38 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 38 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 34 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 35 行.
+NOTIC: [8] Use of undefined constant is_best - assumed 'is_best' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 36 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 36 行.
+NOTIC: [8] Use of undefined constant is_new - assumed 'is_new' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 37 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 37 行.
+NOTIC: [8] Use of undefined constant is_hot - assumed 'is_hot' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 38 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 38 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 34 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 35 行.
+NOTIC: [8] Use of undefined constant is_best - assumed 'is_best' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 36 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 36 行.
+NOTIC: [8] Use of undefined constant is_new - assumed 'is_new' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 37 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 37 行.
+NOTIC: [8] Use of undefined constant is_hot - assumed 'is_hot' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 38 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 38 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-07-27T20:18:18+08:00 ] 127.0.0.1 /index.php/Admin/Admin/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [2048] Declaration of Admin\Model\RoleModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) D:\www\shop\Application\Admin\Model\RoleModel.class.php 第 10 行.
+NOTIC: [2048] Declaration of Admin\Model\RoleModel::_after_update() should be compatible with Think\Model::_after_update($data, $options) D:\www\shop\Application\Admin\Model\RoleModel.class.php 第 10 行.
+NOTIC: [2048] Declaration of Admin\Model\RoleModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) D:\www\shop\Application\Admin\Model\RoleModel.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `yt_role` [ RunTime:0.004000s ]
+SQL: SELECT `role_auth_ca` FROM `yt_role` LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of Admin\Model\AdminModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) D:\www\shop\Application\Admin\Model\AdminModel.class.php 第 200 行.
+NOTIC: [2048] Declaration of Admin\Model\AdminModel::_after_update() should be compatible with Think\Model::_after_update($data, $options) D:\www\shop\Application\Admin\Model\AdminModel.class.php 第 200 行.
+NOTIC: [2048] Declaration of Admin\Model\AdminModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) D:\www\shop\Application\Admin\Model\AdminModel.class.php 第 200 行.
+SQL: SHOW COLUMNS FROM `yt_admin` [ RunTime:0.004001s ]
+SQL: SELECT * FROM `yt_admin` WHERE `admin_username` = 'admin' LIMIT 1   [ RunTime:0.001000s ]
+SQL: UPDATE `yt_admin` SET `last_login_time`=1469621898,`last_login_ip`='127.0.0.1' WHERE `admin_id` = '1' [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-07-27T20:18:23+08:00 ] 127.0.0.1 /index.php/Admin/Goods/ajaxGoodsList/p/1
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of Admin\Model\RoleModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) D:\www\shop\Application\Admin\Model\RoleModel.class.php 第 10 行.
+NOTIC: [2048] Declaration of Admin\Model\RoleModel::_after_update() should be compatible with Think\Model::_after_update($data, $options) D:\www\shop\Application\Admin\Model\RoleModel.class.php 第 10 行.
+NOTIC: [2048] Declaration of Admin\Model\RoleModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) D:\www\shop\Application\Admin\Model\RoleModel.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `yt_role` [ RunTime:0.006000s ]
+SQL: SELECT `role_auth_ca` FROM `yt_role` WHERE `role_id` = 0 LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of Admin\Model\GoodsModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1244 行.
+NOTIC: [2048] Declaration of Admin\Model\GoodsModel::_after_update() should be compatible with Think\Model::_after_update($data, $options) D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1244 行.
+NOTIC: [2048] Declaration of Admin\Model\GoodsModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1244 行.
+SQL: SHOW COLUMNS FROM `yt_goods` [ RunTime:0.007000s ]
+NOTIC: [8] Undefined index: is_recommend D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 868 行.
+NOTIC: [8] Undefined index: is_best D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 873 行.
+NOTIC: [8] Undefined index: is_new D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 877 行.
+NOTIC: [8] Undefined index: is_hot D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 881 行.
+SQL: SHOW COLUMNS FROM `yt_goods` [ RunTime:0.008001s ]
+SQL: SELECT COUNT(*) AS tp_count FROM yt_goods a LIMIT 1   [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yt_goods` [ RunTime:0.008000s ]
+SQL: SELECT a.*,b.brand_name as brand_name,c.cat_name as cat_name,GROUP_CONCAT(e.cat_name SEPARATOR "<br />") as ext_cat_name,f.type_name as type_name FROM yt_goods a LEFT JOIN yt_brand b ON a.goods_brand = b.brand_id LEFT JOIN yt_cat c ON a.goods_cat = c.cat_id LEFT JOIN yt_extend_cat d ON a.goods_id = d.goods_id LEFT JOIN yt_cat e ON e.cat_id = d.ext_cat_id LEFT JOIN yt_type f ON f.type_id = a.goods_type  GROUP BY goods_id ORDER BY goods_id asc LIMIT 0,5   [ RunTime:0.003000s ]
+INFO: [ view_parse ] --START--
+INFO: [ template_filter ] --START--
+INFO: Run Behavior\ContentReplaceBehavior [ RunTime:0.000000s ]
+INFO: [ template_filter ] --END-- [ RunTime:0.001000s ]
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 34 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 35 行.
+NOTIC: [8] Use of undefined constant is_best - assumed 'is_best' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 36 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 36 行.
+NOTIC: [8] Use of undefined constant is_new - assumed 'is_new' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 37 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 37 行.
+NOTIC: [8] Use of undefined constant is_hot - assumed 'is_hot' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 38 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 38 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 34 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 35 行.
+NOTIC: [8] Use of undefined constant is_best - assumed 'is_best' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 36 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 36 行.
+NOTIC: [8] Use of undefined constant is_new - assumed 'is_new' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 37 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 37 行.
+NOTIC: [8] Use of undefined constant is_hot - assumed 'is_hot' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 38 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 38 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 34 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 35 行.
+NOTIC: [8] Use of undefined constant is_best - assumed 'is_best' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 36 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 36 行.
+NOTIC: [8] Use of undefined constant is_new - assumed 'is_new' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 37 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 37 行.
+NOTIC: [8] Use of undefined constant is_hot - assumed 'is_hot' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 38 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 38 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 34 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 35 行.
+NOTIC: [8] Use of undefined constant is_best - assumed 'is_best' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 36 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 36 行.
+NOTIC: [8] Use of undefined constant is_new - assumed 'is_new' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 37 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 37 行.
+NOTIC: [8] Use of undefined constant is_hot - assumed 'is_hot' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 38 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 38 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 34 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 35 行.
+NOTIC: [8] Use of undefined constant is_best - assumed 'is_best' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 36 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 36 行.
+NOTIC: [8] Use of undefined constant is_new - assumed 'is_new' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 37 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 37 行.
+NOTIC: [8] Use of undefined constant is_hot - assumed 'is_hot' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 38 行.
+NOTIC: [8] Use of undefined constant 是 - assumed '是' D:\www\shop\Runtime\Cache\Admin\904a25b5eb876e612ef13e8d5a7b0bef.php 第 38 行.
+INFO: Run Behavior\ParseTemplateBehavior [ RunTime:0.020001s ]
+INFO: [ view_parse ] --END-- [ RunTime:0.020001s ]
+INFO: [ view_filter ] --START--
+INFO: Run Behavior\WriteHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ view_filter ] --END-- [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+
+[ 2016-07-27T20:18:28+08:00 ] 127.0.0.1 /index.php/Admin/Goods/ajaxGetSimpAttr/tid/4/gid/3
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of Admin\Model\RoleModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) D:\www\shop\Application\Admin\Model\RoleModel.class.php 第 10 行.
+NOTIC: [2048] Declaration of Admin\Model\RoleModel::_after_update() should be compatible with Think\Model::_after_update($data, $options) D:\www\shop\Application\Admin\Model\RoleModel.class.php 第 10 行.
+NOTIC: [2048] Declaration of Admin\Model\RoleModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) D:\www\shop\Application\Admin\Model\RoleModel.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `yt_role` [ RunTime:0.005000s ]
+SQL: SELECT `role_auth_ca` FROM `yt_role` WHERE `role_id` = 0 LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of Admin\Model\GoodsModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1244 行.
+NOTIC: [2048] Declaration of Admin\Model\GoodsModel::_after_update() should be compatible with Think\Model::_after_update($data, $options) D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1244 行.
+NOTIC: [2048] Declaration of Admin\Model\GoodsModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1244 行.
+SQL: SHOW COLUMNS FROM `yt_goods` [ RunTime:0.007000s ]
+NOTIC: [2048] Declaration of Admin\Model\AttrModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) D:\www\shop\Application\Admin\Model\AttrModel.class.php 第 164 行.
+NOTIC: [2048] Declaration of Admin\Model\AttrModel::_after_update() should be compatible with Think\Model::_after_update($data, $options) D:\www\shop\Application\Admin\Model\AttrModel.class.php 第 164 行.
+NOTIC: [2048] Declaration of Admin\Model\AttrModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) D:\www\shop\Application\Admin\Model\AttrModel.class.php 第 164 行.
+SQL: SHOW COLUMNS FROM `yt_attr` [ RunTime:0.007000s ]
+SQL: SHOW COLUMNS FROM `yt_attr` [ RunTime:0.006001s ]
+SQL: SELECT a.attr_id,a.attr_name,a.type_id,a.attr_unique,a.input_method,a.optional_list,b.attr_value FROM yt_attr a LEFT JOIN yt_goods_attr b ON a.attr_id = b.attr_id AND b.goods_id = 3  WHERE a.type_id = '4' AND a.attr_unique = '唯一属性'  [ RunTime:0.002000s ]
+
+[ 2016-07-27T20:18:28+08:00 ] 127.0.0.1 /index.php/Admin/Goods/ajaxGetSpecAttr/tid/4/gid/3
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002000s ]
+NOTIC: [2048] Declaration of Admin\Model\RoleModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) D:\www\shop\Application\Admin\Model\RoleModel.class.php 第 10 行.
+NOTIC: [2048] Declaration of Admin\Model\RoleModel::_after_update() should be compatible with Think\Model::_after_update($data, $options) D:\www\shop\Application\Admin\Model\RoleModel.class.php 第 10 行.
+NOTIC: [2048] Declaration of Admin\Model\RoleModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) D:\www\shop\Application\Admin\Model\RoleModel.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `yt_role` [ RunTime:0.006001s ]
+SQL: SELECT `role_auth_ca` FROM `yt_role` WHERE `role_id` = 0 LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of Admin\Model\GoodsModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1244 行.
+NOTIC: [2048] Declaration of Admin\Model\GoodsModel::_after_update() should be compatible with Think\Model::_after_update($data, $options) D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1244 行.
+NOTIC: [2048] Declaration of Admin\Model\GoodsModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1244 行.
+SQL: SHOW COLUMNS FROM `yt_goods` [ RunTime:0.006000s ]
+NOTIC: [2048] Declaration of Admin\Model\AttrModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) D:\www\shop\Application\Admin\Model\AttrModel.class.php 第 164 行.
+NOTIC: [2048] Declaration of Admin\Model\AttrModel::_after_update() should be compatible with Think\Model::_after_update($data, $options) D:\www\shop\Application\Admin\Model\AttrModel.class.php 第 164 行.
+NOTIC: [2048] Declaration of Admin\Model\AttrModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) D:\www\shop\Application\Admin\Model\AttrModel.class.php 第 164 行.
+SQL: SHOW COLUMNS FROM `yt_attr` [ RunTime:0.006001s ]
+SQL: SELECT `attr_id`,`attr_name`,`optional_list` FROM `yt_attr` WHERE `type_id` = '4' AND `attr_unique` = '可选属性'  [ RunTime:0.001000s ]
+SQL: SHOW COLUMNS FROM `yt_goods_stock` [ RunTime:0.006000s ]
+SQL: SELECT * FROM `yt_goods_stock` WHERE `goods_id` = '3'  [ RunTime:0.001000s ]
+SQL: SELECT `attr_name`,`attr_id` FROM `yt_attr` WHERE `type_id` = 4 AND `attr_unique` = '可选属性'  [ RunTime:0.000000s ]
+NOTIC: [8] Undefined variable: str D:\www\shop\Application\Admin\Model\GoodsModel.class.php 第 1069 行.
+

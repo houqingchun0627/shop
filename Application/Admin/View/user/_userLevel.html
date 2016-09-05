@@ -1,0 +1,70 @@
+<!-- $Id: brand_info.htm 14216 2008-03-10 02:27:21Z testyang $ -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>ECSHOP 管理中心 - 会员等级管理 </title>
+<meta name="robots" content="noindex, nofollow">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="__PUBLIC__/Admin/Style/general.css" rel="stylesheet" type="text/css" />
+<link href="__PUBLIC__/Admin/Style/main.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<h1>
+    <span class="action-span"><a href="{:U('User/userLevel')}">会员等级</a></span>
+    <span class="action-span1"><a href="{:U('Admin/index')}" target="_top">ECSHOP 管理中心</a></span>
+    <span id="search_id" class="action-span1"> - 会员等级管理 </span>
+    <div style="clear:both"></div>
+</h1>
+<div class="main-div">
+    <form enctype="multipart/form-data" action="__SELF__" method="post">
+        <table cellspacing="1" cellpadding="3" width="100%">
+            <tr>
+                <td class="label">等级名称</td>
+                <td>
+                    <input type="text" name="level_name" maxlength="60" size="40" value="{$levelList.level_name}" />
+                    <span class="require-field">*</span>
+                </td>
+            </tr>
+            <tr>
+                <td class="label">积分下限</td>
+                <td>
+                    <input type="text" name="jifen_bottom" maxlength="60" size="40" value="{$levelList.jifen_bottom}" />
+                    <span class="require-field">*</span>
+                </td>
+            </tr>
+            <tr>
+                <td class="label">积分上限</td>
+                <td>
+                    <input type="text" name="jifen_top" maxlength="60" size="40" value="{$levelList.jifen_top}" />
+                    <span class="require-field">*</span>
+                </td>
+            </tr>
+            <tr>
+                <td class="label">会员折扣率</td>
+                <td>
+                    <input type="text" name="level_discount" maxlength="60" size="40" value="<if condition="$levelList['level_discount'] gt '0'">{$levelList['level_discount']}<else/>100</if>" />
+                    <span class="notice-span" style="display:block; color:red ;font-weight:bold "  id="warn_brandlogo">折扣率采用百分制，区间范围：1-100</span>
+                </td>
+            </tr>
+            <tr>
+                <td class="label">附加描述</td>
+                <td>
+                    <textarea  name="level_comment" cols="60" rows="4"  >{$levelList.level_comment}</textarea>
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center"><br />
+                    <input type="hidden" name="level_id" value="{$levelList.level_id}" />
+                    <input type="submit" class="button" value=" 确定 " />
+                    <input type="reset" class="button" value=" 重置 " />
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+<div id="footer">
+共执行 1 个查询，用时 0.018952 秒，Gzip 已禁用，内存占用 2.197 MB<br />
+版权所有 &copy; 2005-2012 上海商派网络科技有限公司，并保留所有权利。</div>
+</body>
+</html>

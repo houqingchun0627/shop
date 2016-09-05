@@ -1,0 +1,96 @@
+<!-- $Id: brand_info.htm 14216 2008-03-10 02:27:21Z testyang $ -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>ECSHOP 管理中心 - 添加角色 </title>
+<meta name="robots" content="noindex, nofollow">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="__PUBLIC__/Admin/Style/general.css" rel="stylesheet" type="text/css" />
+<link href="__PUBLIC__/Admin/Style/main.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" language="javascript" src="__PUBLIC__/Plugins/datepicker/jquery-1.7.2.min.js"></script>
+</head>
+<body>
+<h1>
+    <span class="action-span"><a href="{:U('roleMessage')}">角色列表</a></span>
+    <span class="action-span1"><a href="{:U('Admin/index')}" target="_top">ECSHOP 管理中心</a></span>
+    <span id="search_id" class="action-span1"> - 添加角色 </span>
+    <div style="clear:both"></div>
+</h1>
+<div class="main-div">
+    <form enctype="multipart/form-data" action="__SELF__" method="post">
+        <table width="100%">
+            <tr>
+                <td class="label">角色名</td>
+                <td>
+                    <input type="text" name="role_name" maxlength="20" value="{$roleList.role_name}" size="34"/>
+                    <span class="require-field">*</span>
+                </td>
+            </tr>
+            <tr>
+                <td class="label">角色描述</td>
+                <td>
+                    <textarea name="role_desc" cols="31" rows="6">{$roleList.role_desc}</textarea>
+                    <span class="require-field">*</span>
+                </td>
+            </tr>
+        </table>
+        <table cellspacing='1' id="list-table">
+            <!-- <tr>
+                <th>顶级权限</th>
+                <th>次级权限</th>
+            </tr> -->
+            <volist name="topAuth" id="vo">
+                <tr>
+                    <td width="18%" valign="top" class="first-cell">
+                        <input type="checkbox" id="role_auth_{$vo.auth_id}" name="role_auth_list[{$vo.auth_name}][]" onclick="checkTop(this.checked,this.id);" value="{$vo.auth_id}" 
+                        <if condition="in_array($vo['auth_id'],$authList)">checked="checked"</if>/>
+                        {$vo.auth_name}
+                    </td>
+                    <td>
+                        <volist name="secondAuth" id="v">
+                            <div style="width:200px;float:left;">
+                                <if condition="$v['auth_pid'] eq $vo['auth_id']">
+                                    <input type="checkbox" class="role_auth_{$vo.auth_id}" name="role_auth_list[{$vo.auth_name}][{$v.auth_controller}-{$v.auth_action}]" onclick="checkSecond(this);" value="{$v.auth_id}" 
+                                    <if condition="in_array($v['auth_id'],$authList)">checked="checked"</if>/>{$v.auth_name}
+                                </if>
+                            </div>
+                        </volist>
+                    </td>
+                </tr>
+            </volist>
+        </table>
+        <table cellspacing="1" cellpadding="3" width="100%">
+            <tr>
+                <td colspan="2" align="center"><br />
+                    <input type="hidden" name="role_id" value="{$roleList.role_id}" />
+                    <input type="submit" class="button" value=" 确定 " />
+                    <input type="reset" class="button" value=" 重置 " />
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+<div id="footer">
+共执行 1 个查询，用时 0.018952 秒，Gzip 已禁用，内存占用 2.197 MB<br />
+版权所有 &copy; 2005-2012 上海商派网络科技有限公司，并保留所有权利。</div>
+<script language="javascript">
+/******************设置角色的顶级权限，控制次级权限的全选和全不选操作*****************/
+function checkTop(checked,id){
+    //如果是顶级权限被触发,将二级权限全部被触发
+    $("."+id).attr("checked",checked);
+}
+/******************通过次级权限控制顶级权限的操作************************************/
+function checkSecond(a){
+    var className = $(a).attr("class");
+    var count = 0;
+    for(var i=0;i<$("."+className).length;i++){
+        if($("."+className).eq(i).attr("checked") === "checked"){
+            count++;
+        }
+    }
+    var flag = count > 0 ? true : false ;
+    $("#"+className).attr("checked",flag);
+}
+</script>
+</body>
+</html>

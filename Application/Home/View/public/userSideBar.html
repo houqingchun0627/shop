@@ -1,0 +1,33 @@
+<!-- 引入页面样式文件 -->
+<link rel="stylesheet" href="__PUBLIC__/Home/Style/home.css" type="text/css">
+<script type="text/javascript" src="__PUBLIC__/Home/Js/home.js"></script>
+
+<!-- 左侧导航菜单 start -->
+<div class="menu fl">
+    <h3>我的账户</h3>
+    <div class="menu_wrap">
+        <dl>
+            <dt>账户中心 <b></b></dt>
+            <dd <if condition="$pageConfig.sideBarTheme eq 'index'">class="cur"</if>><b>.</b><a href="{:U('User/index')}">基本信息</a></dd>
+            <!-- <dd><b>.</b><a href="{:U('User/extra')}">账户余额</a></dd>
+            <dd><b>.</b><a href="{:U('User/expense')}">消费记录</a></dd> -->
+            <dd <if condition="$pageConfig.sideBarTheme eq 'jifen'">class="cur"</if>><b>.</b><a href="{:U('User/jifen')}">我的积分</a></dd>
+            <dd <if condition="$pageConfig.sideBarTheme eq 'address'">class="cur"</if>><b>.</b><a href="{:U('User/address')}">收货地址</a></dd>
+        </dl>
+        <dl>
+            <dt>订单中心 <b></b></dt>
+            <dd <if condition="$pageConfig.sideBarTheme eq 'order'">class="cur"</if>><b>.</b><a href="{:U('User/order')}">我的订单</a></dd>
+            <dd <if condition="$pageConfig.sideBarTheme eq 'comment'">class="cur"</if>><b>.</b><a href="{:U('User/comment')}">我的评价</a></dd>
+            <!-- <dd><b>.</b><a href="{:U('User/cancelOrder')}">取消订单记录</a></dd> -->
+            <dd <if condition="$pageConfig.sideBarTheme eq 'backOrder'">class="cur"</if>><b>.</b><a href="{:U('User/backOrder')}">返修/退换货</a></dd>
+            <!-- <dd><b>.</b><a href="{:U('User/complaint')}">我的投诉</a></dd> -->
+            <!-- <dd><b>.</b><a href="{:U('User/group')}">我的团购</a></dd> -->
+        </dl>
+        <dl>
+            <dt>收藏中心 <b></b></dt>
+            <dd <if condition="$pageConfig.sideBarTheme eq 'history'">class="cur"</if>><b>.</b><a href="{:U('User/history')}">浏览历史记录</a></dd>
+            <dd <if condition="$pageConfig.sideBarTheme eq 'collection'">class="cur"</if>><b>.</b><a href="{:U('User/collection')}">我的收藏</a></dd>
+        </dl>
+    </div>
+</div>
+<!-- 左侧导航菜单 end -->

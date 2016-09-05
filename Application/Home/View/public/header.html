@@ -1,0 +1,208 @@
+<!-- 引入页面样式文件 -->
+<link rel="stylesheet" href="__PUBLIC__/Home/Style/cart2.css" type="text/css">
+
+<div style="clear:both;"></div>
+<!-- 头部 start -->
+<div class="header w1210 bc mt15">
+	<!-- 头部上半部分 start 包括 logo、搜索、用户中心和购物车结算 -->
+	<div class="logo w1210">
+		<h1 class="fl"><a href="{:U('Goods/index')}"><img src="__PUBLIC__/Home/Images/logo.png" alt="京东商城"></a></h1>
+		<!-- 头部搜索 start -->
+		<div class="search fl">
+			<div class="search_form">
+				<div class="form_left fl"></div>
+				<form action="" name="serarch" method="" class="fl" onsubmit="return false">
+					<input type="text" id="keyword_search" class="txt" name="qkey" placeholder="请输入搜索关键字" value="" /><input type="submit" class="btn" value="搜索" onClick="if($('#keyword_search').val() !='') goods_keywords_search();"/>
+				</form>
+				<div class="form_right fl"></div>
+			</div>
+			
+			<div style="clear:both;"></div>
+
+			<div class="hot_search">
+				<strong>热门搜索:</strong>
+				<a href="">D-Link无线路由</a>
+				<a href="">休闲男鞋</a>
+				<a href="">TCL空调</a>
+				<a href="">耐克篮球鞋</a>
+			</div>
+		</div>
+		<!-- 头部搜索 end -->
+
+		<!-- 用户中心 start-->
+		<div class="user fl">
+			<dl>
+				<dt>
+					<em></em>
+					<a href="{:U('User/index')}" target="_blank">用户中心</a>
+					<b></b>
+				</dt>
+				<dd>
+					<div class="prompt" id="is_login">
+						
+					</div>
+					<div class="uclist mt10" id="user_info">
+						
+					</div>
+					<div style="clear:both;"></div>
+					<div class="viewlist mt10">
+						<h3>最近浏览的商品：<a href="{:U('Home/User/history')}" title="" style="color: #005ea7;margin-left: 128px;text-decoration: none;">查看更多>></a></h3>
+						<ul id="nav_goods_history">
+							
+						</ul>
+					</div>
+				</dd>
+			</dl>
+		</div>
+		<!-- 用户中心 end-->
+
+		<!-- 购物车 start -->
+		<div class="header_cart cart fl">
+			<dl>
+				<dt>
+					<a href="{:U('Cart/cart')}">去购物车结算</a>
+					<span class="shopping-num">
+						<em id="cart_quantity">0</em>
+					</span>
+					<b></b>
+				</dt>
+				<dd>
+					<div class="prompt user_cart_goods">
+						<!-- ajax动态获取购物车中商品的详细信息 -->
+					</div>
+				</dd>
+			</dl>
+		</div>
+		<!-- 购物车 end -->
+	</div>
+	<!-- 头部上半部分 end -->
+	
+	<div style="clear:both;"></div>
+
+	<!-- 导航条部分 start -->
+	<div class="nav w1210 bc mt10">
+		<!--  商品分类部分 start-->
+		<!-- 非首页，需要添加cat1类 -->
+		<div class="category fl <?php if($pageConfig['catConfig'] === '1') echo 'cat1'; ?>"> 
+			<!-- 注意，首页在此div上只需要添加cat_hd类，非首页，默认收缩分类时添加上off类，鼠标滑过时展开菜单则将off类换成on类 -->
+			<div class="cat_hd <?php if($pageConfig['catConfig'] === '1') echo 'off'; ?>">  
+				<h2>全部商品分类</h2>
+				<em></em>
+			</div>
+			
+			<div class="cat_bd <?php if($pageConfig['catConfig'] === '1') echo 'none'; ?>">
+				<!-- 遍历商品分类，循环输出 -->
+				<volist name="catList" id="v" key="k">
+				    <!-- 第一个一级分类class加item1 -->
+				    <div class="cat <if condition='$k eq 1'>item1</if>">
+					<h3><a href="{:U('Goods/goodsList',array('cat_id' => $v['cat_id']),FALSE)}" target="_blank">{$v.cat_name}</a> <b></b></h3>
+					    <div class="cat_detail">
+					    	<!-- 第一个二级分类class加dl_1st -->
+					    	<volist name="v['children']" id="v1" key="k1">
+								<dl <if condition='$k1 eq 1'>class="dl_1st"</if>>
+									<dt><a href="{:U('Goods/goodsList',array('cat_id' => $v1['cat_id']),FALSE)}" target="_blank">{$v1.cat_name}</a></dt>
+									<dd>
+										<volist name="v1['children']" id="v2" key="k2">
+										    <a href="{:U('Goods/goodsList',array('cat_id' => $v2['cat_id']),FALSE)}" target="_blank">{$v2.cat_name}</a>
+										</volist>
+									</dd>
+								</dl>
+							</volist>
+						</div>
+					</div>
+				</volist>
+			</div>
+
+		</div>
+		<!--  商品分类部分 end--> 
+
+		<div class="navitems fl">
+			<ul class="fl">
+				<li class="current"><a href="{:U('Goods/index')}">首页</a></li>
+				<li><a href="">电脑频道</a></li>
+				<li><a href="">家用电器</a></li>
+				<li><a href="">品牌大全</a></li>
+				<li><a href="">团购</a></li>
+				<li><a href="">积分商城</a></li>
+				<li><a href="">夺宝奇兵</a></li>
+			</ul>
+			<div class="right_corner fl"></div>
+		</div>
+	</div>
+	<!-- 导航条部分 end -->
+</div>
+<!-- 头部 end-->
+<div style="clear:both;"></div>
+
+<!-- 页面的javascript代码 -->
+<script type="text/javascript">
+/************处理用户通过关键字搜索商品*********************/
+	function goods_keywords_search(){
+		var keywords = $("#keyword_search").val();
+		var url = "{:U('Home/Goods/goodsList','',FALSE)}/qkey/"+keywords;
+		//利用js代码，进行get请求跳转
+ 		location.href = url ;
+	}
+/***************处理用户浏览商品历史记录********************************/
+	function ajaxGetNavGoodsHistory(){
+        //ajax动态判断用户是否登录，如果已经登录，获取用户的user_id和user_name
+        $.ajax({
+            type : "GET",
+            url : "<?php echo U('Home/Goods/ajaxGetNavHistory', '', FALSE); ?>",
+            success : function(data){
+                $("#nav_goods_history").append(data);
+            }
+        });
+	}
+/***************处理用户购物车中的商品详细信息********************************/
+	function ajaxGetUserCart(){
+        //ajax动态判断用户是否登录，如果已经登录，获取用户的user_id和user_name
+        $.ajax({
+            type : "GET",
+            url : "<?php echo U('Home/Cart/ajaxGetUserCartInfo', '', FALSE); ?>",
+            success : function(data){
+            	$(".user_cart_goods").html("");
+                $(".user_cart_goods").append(data);
+            }
+        });        
+	}
+/***************处理用户购物车中的商品详细信息********************************/
+	function ajaxGetUserCartGoodsNumber(){
+        //ajax动态判断用户是否登录，如果已经登录，获取用户的user_id和user_name
+        $.ajax({
+            type : "GET",
+            url : "<?php echo U('Home/Cart/ajaxGetUserCartGoodsNumber', '', FALSE); ?>",
+            success : function(data){
+            	$("#cart_quantity").html("");
+                $("#cart_quantity").html(data);
+            }
+        });
+	}
+/***************处理ajax删除购物车中的信息********************************/
+	function ajaxDeleteCartGoods(id){
+        //ajax动态判断用户是否登录，如果已经登录，获取用户的user_id和user_name
+        if(confirm("确定删除该商品？")){
+	        $.ajax({
+	            type : "GET",
+	            url : "<?php echo U('Home/Cart/ajaxDeleteCartGoods', '', FALSE); ?>/id/"+id,
+	            success : function(data){
+	            	//给客户端返回添加结果
+	            	alert(data);
+	            	if(data === "删除成功"){
+		            	//触发页面顶部购物车信息，更新添加的数据
+		            	ajaxGetUserCart();
+		    			ajaxGetUserCartGoodsNumber();
+	            	}
+	            }
+	        });
+        }
+	}
+/**********************处理用户浏览商品记录***************************/
+    $(document).ready(function() {
+    	//触发动态获取用户商品浏览历史记录
+    	ajaxGetNavGoodsHistory();
+    	//触发动态获取用户购物车中的信息
+    	ajaxGetUserCart();
+    	ajaxGetUserCartGoodsNumber();
+    });
+</script>

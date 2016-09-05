@@ -1,0 +1,110 @@
+<!-- 引入布局文件 -->
+<layout name="public/layout"  replace="{__CONTENT__}" />
+<!-- 引入顶部导航栏 -->
+<include file="Public/header" />
+
+<!-- 引入页面样式文件 -->
+<link rel="stylesheet" href="__PUBLIC__/Home/Style/user.css" type="text/css">
+
+<div style="clear:both;"></div>
+
+<!-- 页面主体 start -->
+<div class="main w1210 bc mt10">
+	<!-- 面包屑导航 start -->
+	<div class="breadcrumb crumb w1210">
+		<h2>当前位置：<a href="{:U('Goods/index')}">首页</a> >
+			<a href="{:U('User/index')}">用户中心</a> >
+			{$pageConfig.pageName}
+		</h2>
+	</div>
+
+	<!-- 引入左侧导航栏 -->
+	<include file="Public/userSideBar" />
+
+	<!-- 右侧内容区域 start -->
+	<div class="content fl ml10">
+		<div class="user_hd">
+			<h3>基本信息</h3>
+		</div>
+		<div class="user_bd mt10">
+			<form action="" method="post">
+				<ul>
+					<li>
+						<label for="">用户名：</label>
+						<strong>{$userInfo.user_name}</strong>
+					</li>
+					<li>
+						<label for="">会员等级：</label>
+						<strong>{$userInfo.level_name}</strong>
+					</li>
+					<li>
+						<label for="">会员积分：</label>
+						<strong>{$userInfo.user_jifen}</strong>
+					</li>
+					<li>
+						<label for="">抵扣金币：</label>
+						<strong>{$userInfo.user_coin}</strong>
+					</li>
+					<li>
+						<label for="">电子邮箱：</label>
+						<strong>{$userInfo.user_mail}</strong>
+						<!-- 判断用户是否已经验证手机号码 -->
+						<if condition="$userInfo['user_mail_validate'] eq '否'">
+							<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 未验证&nbsp;&nbsp;
+								<a href="javascript:;" title="验证邮箱" onclick="validate_mail();">( 立即验证 )</a>
+							</span>
+						<else/>
+							<!-- 已完成邮箱验证 -->
+							<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 已验证&nbsp;&nbsp;
+								<a href="{:U('User/modifyMail')}" target="_blank" title="更换邮箱">( 更换邮箱 )</a>
+							</span>
+						</if>
+					</li>
+					<li>
+						<label for="">手机号码：</label>
+						<strong>{$userInfo.user_tel}</strong>
+						<!-- 判断用户是否已经验证手机号码 -->
+						<if condition="$userInfo['user_tel_validate'] eq '否'">
+							 <!-- 未完成手机号码验证 -->
+							<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 未验证&nbsp;&nbsp;
+								<a href="javascript:;" title="验证手机号码">( 立即验证 )</a>
+							</span>							 
+						<else/>
+							<!-- 已完成手机号码验证 -->
+							<span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 已验证&nbsp;&nbsp;
+								<a href="javascript:;" title="更换手机号码">( 更换手机号码 )</a>
+							</span>							
+						</if>
+					</li>
+					<li>
+						<label for="">用户密码：</label>
+						<!-- 修改用户密码 -->
+						<strong><a href="{:U('Home/User/modifyPass')}" title=""> 修改密码 </a></strong>
+					</li>
+				</ul>
+			</form>
+		</div>
+	</div>
+	<!-- 右侧内容区域 end -->
+</div>
+<!-- 页面主体 end-->
+
+<div style="clear:both;"></div>
+
+<!-- 引入底部导航栏  -->
+<include file="Public/bottomnav" />
+
+<!-- 页面的js代码 -->
+<script type="text/javascript">
+/****************ajax动态验证邮箱，发送邮箱验证链接********************/
+	function validate_mail(){
+		$.ajax({
+            type : "GET",
+            url : "<?php echo U('Home/User/validMail', '', FALSE); ?>/id/1",
+            success : function(data){
+                //返回邮件发送状态，提示用户下一步操作
+                alert(data);
+            }
+        });
+	}
+</script>

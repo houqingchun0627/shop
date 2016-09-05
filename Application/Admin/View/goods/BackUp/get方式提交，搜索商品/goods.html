@@ -1,0 +1,267 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>ECSHOP 管理中心 - 商品列表 </title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="__PUBLIC__/Admin/Style/general.css" rel="stylesheet" type="text/css" />
+<link href="__PUBLIC__/Admin/Style/main.css" rel="stylesheet" type="text/css" />
+<!-- 引入时间插件 -->
+<link href="__PUBLIC__/Plugins/datepicker/jquery-ui-1.9.2.custom.min.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" language="javascript" src="__PUBLIC__/Plugins/datepicker/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="__PUBLIC__/Plugins/datepicker/jquery-ui-1.9.2.custom.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="__PUBLIC__/Plugins/datepicker/datepicker_zh-cn.js"></script>
+<!-- 引入行高亮显示 -->
+<script type="text/javascript" src="__PUBLIC__/Admin/Js/tron.js"></script>
+</head>
+<body>
+<h1>
+    <span class="action-span"><a href="{:U('Goods/goodsMessage',array('id' => 1))}">添加商品</a></span>
+    <span class="action-span1"><a href="{:U('Admin/Admin/index')}" target="_top">ECSHOP 管理中心</a></span>
+    <span id="search_id" class="action-span1"> - 商品列表 </span>
+    <div style="clear:both"></div>
+</h1>
+<div id="goods_search" class="form-div">
+    <form action="__SELF__" id="goodsSearchForm" method="GET" onsubmit="">
+        <img src="__PUBLIC__/Admin/Images/icon_search.gif" width="26" height="22" border="0" alt="search" />
+        <!-- 分类 -->
+        <span  style="margin-left:0px">分类：</span>
+            {:buildSelect('Cat','goods_cat','cat_id','cat_name',I('get.goods_cat'),'全部','','goods_search_select')}
+        <!-- 品牌 -->
+        <span  style="margin-left:15px">品牌：</span>
+            <!-- 调用buildSelect()方法 -->
+            {:buildSelect('Brand','goods_brand','brand_id','brand_name',I('get.goods_brand'),"全部",'','goods_search_select')}
+        <!-- 类型 -->
+        <span  style="margin-left:15px;">类型：</span>
+            {:buildSelect('Type','goods_type','type_id','type_name',I('get.goods_type'),'全部','','goods_search_select')}
+        <!-- 上架 -->
+        <span  style="margin-left:15px">上架：</span>
+            <select name="is_onsale" class="goods_search_select">
+                <option value=''>全部</option>
+                <option value="是" <if condition="I('get.is_onsale') eq '是'">selected="selected"</if>>上架</option>
+                <option value="否" <if condition="I('get.is_onsale') eq '否'">selected="selected"</if>>下架</option>
+            </select>
+        <!-- 回收站 -->
+        <span  style="margin-left:15px">回收站：</span>
+            <select name="is_delete" class="goods_search_select">
+                <option value=''>全部</option>
+                <option value="是" <if condition="I('get.is_delete') eq '是'">selected="selected"</if>>是</option>
+                <option value="否" <if condition="I('get.is_delete') eq '否'">selected="selected"</if>>否</option>
+            </select>
+        <!-- 推荐 -->
+        <span  style="margin-left:15px">推荐：</span>
+            <select name="is_promote" class="goods_search_select">
+                <option value="">全部</option>
+                <option value="精品" <if condition="I('get.is_promote') eq '精品'">selected="selected"</if>>精品</option>
+                <option value="新品" <if condition="I('get.is_promote') eq '新品'">selected="selected"</if>>新品</option>
+                <option value="热销" <if condition="I('get.is_promote') eq '热销'">selected="selected"</if>>热销</option>
+            </select><br /><br />
+        <!-- 商品名 -->
+        <span  style="margin-left:30px">商品名：</span>
+            <input type="text" class="goods_search_text" name="goods_name" size="16" value="{:I('get.goods_name')}" />
+        <!-- 关键字 -->
+        <span  style="margin-left:15px">关键字：</span>
+            <input type="text" class="goods_search_text" name="goods_keywords" value="{:I('get.goods_keywords')}" size="16" />
+        <!-- 价格区间 -->
+        <span  style="margin-left:15px">价格区间：</span>
+        <input type="text" id="goods_start_price" class="goods_search_text goods_search_condition" name="goods_start_price" onpaste="this.value=this.value.replace(/[^\d.]/g,'')" onkeyup="this.value=this.value.replace(/[^\d.]/g,'')" value="{:I('get.goods_start_price')}" size="12"/>~~
+        <input type="text" id="goods_end_price" class="goods_search_text goods_search_condition" name="goods_end_price" onpaste="this.value=this.value.replace(/[^\d.]/g,'')" onkeyup="this.value=this.value.replace(/[^\d.]/g,'')" value="{:I('get.goods_end_price')}" size="12" />
+        <!-- 添加时间 -->
+        <span  style="margin-left:15px">添加时间：</span>
+        <input type="text" id="fa" class="goods_search_text goods_search_condition" name="start_addtime" value="{:I('get.start_addtime')}" size="20" />~~
+        <input type="text" id="ta" class="goods_search_text goods_search_condition" name="end_addtime" value="{:I('get.end_addtime')}" size="20" /><br /><br />
+        <!-- 排序方式 -->
+        <span  style="margin-left:30px">排序方式：</span>
+        <input type="radio" name="order" value="goodsId_asc" <if condition="(I('get.order') eq 'goodsId_asc') OR (I('get.order') eq '')">checked="checked"</if> />按添加时间升序
+        <input type="radio" name="order" value="goodsId_desc" <if condition="I('get.order') eq 'goodsId_desc'">checked="checked"</if> />按添加时间降序
+        <input type="radio" name="order" value="price_asc" <if condition="I('get.order') eq 'price_asc'">checked="checked"</if> />按商品价格升序
+        <input type="radio" name="order" value="price_desc" <if condition="I('get.order') eq 'price_desc'">checked="checked"</if> />按商品价格降序<br /><br />
+        <!-- 搜索按钮 -->
+        <input type="submit" value=" 开始搜索 " class="button" />
+        <input type="submit" onclick="clearSearch();" value=" 重置条件 " class="button" />
+    </form>
+</div>
+<!-- 商品列表 -->
+<form method="GET" action="__SELF__" name="listForm" onsubmit="">
+<!-- <form action="" id="GoodsListForm" method="post" onsubmit="return false"> -->
+    <div class="list-div" id="listDiv">
+        <table cellpadding="3" cellspacing="1">
+            <tr>
+                <th>编号</th>
+                <th>名称</th>
+                <th>货号</th>
+                <th>主分类</th>
+                <th>扩展分类</th>
+                <th>品牌</th>
+                <th>类型</th>
+                <th>价格</th>
+                <th>上架</th>
+                <th>回收站</th>
+                <th>精品</th>
+                <th>新品</th>
+                <th>热销</th>
+                <th>推荐排序</th>
+                <th>库存</th>
+                <th>添加时间</th>
+                <th>商品图片</th>
+                <th>操作</th>
+            </tr>
+            <volist name="goodsList" id="vo">
+                <tr>
+                    <td align="center"><input type="hidden" value="{$vo.goods_id}" />{$vo.goods_id}</td>
+                    <td align="center">{$vo.goods_name}</td>
+                    <td align="center">{$vo.goods_sn}</td>
+                    <td align="center">{$vo.cat_name}</td>
+                    <td align="center">{$vo.ext_cat_name}</td>
+                    <td align="center">{$vo.brand_name}</td>
+                    <td align="center">{$vo.goods_type}</td>
+                    <td align="center">{$vo.goods_shop_price}</td>
+                    <td align="center"><img src="__PUBLIC__/Admin/Images/<if condition='($vo.is_onsale eq  是)'>yes.gif<else/>no.gif</if>"/></td>
+                    <td align="center"><img src="__PUBLIC__/Admin/Images/<if condition='($vo.is_delete eq  是)'>yes.gif<else/>no.gif</if>"/></td>
+                    <td align="center"><img src="__PUBLIC__/Admin/Images/<if condition='strpos($vo[is_recommend],精品) nheq false'>yes.gif<else/>no.gif</if>"/></td>
+                    <td align="center"><img src="__PUBLIC__/Admin/Images/<if condition='strpos($vo[is_recommend],新品) nheq false'>yes.gif<else/>no.gif </if>"/></td>
+                    <td align="center"><img src="__PUBLIC__/Admin/Images/<if condition='strpos($vo[is_recommend],热销) nheq false'>yes.gif<else/>no.gif</if>"/></td>
+                    <td align="center">{$vo.goods_sort_order}</td>
+                    <td align="center">{$vo.goods_total_stock}</td>
+                    <td align="center">{:date('Y-m-d H:i:s',$vo['addtime'])}</td>
+                    <td class="first-cell" align="center">
+                        <span><a href="{$vo.goods_image}" target="_brank"><img src="{$vo.goods_thumb_smallest}" width="30" height="30" border="0" alt="商品图片" /></a></span>
+                    </td>
+                    <td align="center">
+                        <a href="" target="_blank" title="查看商品详情"><img src="__PUBLIC__/Admin/Images/icon_view.gif" width="16" height="16" border="0" /></a>
+                        <a href="{:U('Goods/goodsMessage',array('id' => 2,'goods_id' => $vo['goods_id']))}" title="编辑修改商品"><img src="__PUBLIC__/Admin/Images/icon_edit.gif" width="16" height="16" border="0" /></a>
+                        <a href="javascript:void(0);" title="删除商品" onclick="ajaxDeleteGoods(this);"><img src="__PUBLIC__/Admin/Images/icon_drop.gif" width="16" height="16" border="0" /></a>
+                        <a href="{:U('Goods/goodsMessage',array('id' => 4,'goods_id' => $vo['goods_id']))}" onclick="" title="加入回收站"><img src="__PUBLIC__/Admin/Images/icon_trash.gif" width="16" height="16" border="0" /></a>
+                    </td>
+                </tr>
+            </volist>
+        </table>
+    <!-- 分页开始 -->
+        <table id="page-table" cellspacing="0">
+            <tr>
+                <td width="80%">&nbsp;</td>
+                <td align="center" nowrap="true">
+                    {$page}
+                </td>
+            </tr>
+        </table> 
+    <!-- 分页结束 -->
+    </div>
+</form>
+<div id="footer">
+共执行 7 个查询，用时 0.028849 秒，Gzip 已禁用，内存占用 3.219 MB<br />
+版权所有 &copy; 2005-2012 上海商派网络科技有限公司，并保留所有权利。</div>
+<script>
+/****************ajax获取商品的列表页面goodsList展示***********************/
+//当页面加载完成后，自动触发提交ajax_get_table()方法，获取默认的商品列表展示
+    //默认展示第一页
+    $(document).ready(function(){
+        // ajax 加载商品列表
+        ajax_get_goodsList('goodsSearchForm',1);
+
+    });
+// ajax 抓取页面form为表单id  page为当前第几页
+    function ajax_get_goodsList(formId,page){
+        cur_page = page; //当前页面 保存为全局变量
+            $.ajax({
+                type : "POST",
+                url : "<?php echo U('Goods/ajaxGoodsList','',FALSE) ?>/p/"+page,//+tab,
+                data : $('#'+formId).serialize(),// 将提交的表单id的内容进行序列化操作
+                success: function(data){
+                    //先清除原始的数据
+                    // $("#ajax_goods_list").html('');
+                     $("#ajax_goods_list").html('');
+                    //将ajax返回的数据，拼接在ajax_goods_list后面
+                    // $("#ajax_goods_list").append(data);
+                    $("#ajax_goods_list").append(data);
+                }
+            });
+        }
+
+// 处理点击排序的方法
+    function sort(field){
+        //将排序字段传递到搜索表单中的隐藏字段中
+       $("input[name='search_sort_field']").val(field);
+       //对当前的排序方式字段进行取反操作
+       var v = ($("input[name='search_sort_order']").val() == 'desc')? 'asc' : 'desc'; 
+       //将取反后的字段值重新赋值给自身            
+       $("input[name='search_sort_order']").val(v);
+       //重新调用ajax_get_table方法，获取新的表单展示数据
+       //传递参数：表单的id值、当前页面的值
+       ajax_get_goodsList('goodsSearchForm',cur_page);
+    }
+/****************导入datepicker时间插件***********************/
+    // 日期获取器
+    $("#fa").datepicker({ dateFormat: "yy-mm-dd" });
+    $("#ta").datepicker({ dateFormat: "yy-mm-dd" });
+
+/****************展开收缩功能*********************************/
+    // 展开收缩
+    
+
+/******************重置商品搜索的条件*******************************/
+    function clearSearch(){
+        $(".goods_search_select option").prop("selected",false);
+        $(".goods_search_text").val("");
+        $("input[name='search_sort_field']").val("goods_id");
+        $("input[name='search_sort_order']").val("asc");
+    }
+
+/*****************验证商品搜索的价格区间、添加时间区间的正确性*******************************/
+    //验证商品搜索的价格区间
+    $(".goods_search_condition").change(function() {
+        //判断商品的促销价格的正确性 
+        var pid = $(this).attr("id");
+        var startPrice = parseFloat($("#goods_start_price").val());
+        var endPrice = parseFloat($("#goods_end_price").val());
+        if(startPrice > endPrice){
+            //提示错误信息，并清空内容
+            alert("开始价格不能大于结束价格！");
+            $("#"+pid).val("");
+            $("#"+pid).focus()[0];
+        }
+        //判断商品搜索的添加开始时间-结束时间
+        //获取当前操作的id
+        var aid = $(this).attr("id");
+        var startTime = parseInt($("#fa").val().replace(/-/g, ""));
+        var endTime = parseInt($("#ta").val().replace(/-/g, ""));
+        if(startTime > endTime){
+            //提示错误信息，并清空内容
+            alert("搜索结束时间不能在开始时间之前！");
+            $("#"+aid).val("");
+        }
+    });
+
+/******************ajax删除商品*******************************/
+    // ajax删除商品
+    function ajaxDeleteGoods(a){
+        if(confirm("是否确定删除？")){
+            //如果用户确定删除
+            var goodsId = $(a).parent('td').siblings('td').children('input:hidden').val();
+            var tr = $(a).parent('td').parent('tr');
+            //ajax删除操作
+            $.ajax({
+                type : "GET" ,
+                url : "<?php echo U("ajaxDeleteGoods","",FALSE); ?>/goods_id/"+goodsId ,
+                dataType : "json" ,
+                success : function(data){
+                    if(data === "0"){
+                        alert("超级管理员无法删除！");
+                        return false;
+                    }
+                    if(data === "1"){
+                        tr.remove();
+                        alert("删除成功！");
+                        //移除该管理员显示
+                        return false;
+                    }
+                    if(data === "2"){
+                        alert("删除失败！");
+                        return false;
+                    }
+                }
+            });
+        }
+    }
+</script>
+</body>
+</html>

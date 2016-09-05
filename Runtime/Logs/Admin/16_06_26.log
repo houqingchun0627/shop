@@ -1,0 +1,36 @@
+[ 2016-06-26T09:50:34+08:00 ] 127.0.0.1 /index.php/Admin/User/brandList.html
+ERR: 非法操作:brandList
+
+[ 2016-06-26T09:50:57+08:00 ] 127.0.0.1 /index.php/Admin/User/brandList.html
+ERR: 非法操作:brandList
+
+[ 2016-06-26T17:11:16+08:00 ] 127.0.0.1 /index.php/Admin/Goods/categoryList
+ERR: 非法操作:categoryList
+
+[ 2016-06-26T17:15:12+08:00 ] 127.0.0.1 /index.php/Admin/Admin/goodsList.html
+ERR: 非法操作:goodsList
+
+[ 2016-06-26T17:15:27+08:00 ] 127.0.0.1 /index.php/Admin/Admin/goodsList.html
+ERR: 非法操作:goodsList
+
+[ 2016-06-26T17:15:28+08:00 ] 127.0.0.1 /index.php/Admin/Admin/goodsList.html
+ERR: 非法操作:goodsList
+
+[ 2016-06-26T17:16:55+08:00 ] 127.0.0.1 /index.php/Admin/Goods/typeList.html
+ERR: 模板不存在:./Application/Admin/View/Goods/goodsType.html
+
+[ 2016-06-26T17:17:07+08:00 ] 127.0.0.1 /index.php/Admin/Goods/attrList.html
+ERR: 非法操作:attrList
+
+[ 2016-06-26T17:18:00+08:00 ] 127.0.0.1 /index.php/Admin/Goods/typeList.html
+ERR: 模板不存在:./Application/Admin/View/Goods/goodsType.html
+
+[ 2016-06-26T17:20:06+08:00 ] 127.0.0.1 /index.php/Admin/Goods/attrList.html
+ERR: 模板不存在:./Application/Admin/View/Goods/goodsAttribute.html
+
+[ 2016-06-26T17:44:59+08:00 ] 127.0.0.1 /index.php/Admin/Goods/categoryHandler
+ERR: 非法操作:categoryHandler
+
+[ 2016-06-26T17:47:04+08:00 ] 127.0.0.1 /index.php/Admin/Goods/categoryHandler
+ERR: 非法操作:categoryHandler
+

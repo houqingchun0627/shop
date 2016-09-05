@@ -1,0 +1,242 @@
+* {
+    border: medium none;
+    list-style: outside none none;
+    margin: 0;
+    padding: 0;
+}
+a {
+    text-decoration: none;
+    color: #333;
+}
+ul, ol {
+    list-style: none;
+}
+.wi940 {
+    width: 940px;
+}
+.fr {
+    float: right;
+}
+.wddd {
+    border-bottom: 1px solid #dedede;
+    margin-bottom: 20px;
+}
+.he50 {
+    height: 50px;
+}
+.fl {
+    float: left;
+}
+.ddd-h2 h2 {
+    font-size: 24px;
+    line-height: 1.2;
+    padding: 8px 0 0 2px;
+    font-weight: 400;
+}
+.po-re {
+    position: relative;
+}
+.zjs ul::before, .zjs ul::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.cullent a {
+    color: #333;
+}
+.zjs a {
+    line-height: 50px;
+    display: block;
+    font-size: 14px;
+    padding: 0 13px;
+    color: #888;
+    cursor: pointer;
+}
+.zjs ul::before, .zjs ul::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.wi82 {
+    width: 82px;
+}
+.ec-ta-x {
+    width: 124px;
+    position: absolute;
+    background-color: #333;
+    height: 1px;
+    overflow: hidden;
+    bottom: -1px;
+    moz-transition-property: left;
+    -moz-transition-duration: 1s;
+    -webkit-transition-property: left;
+    -webkit-transition-duration: 1s;
+    transition-property: left;
+    transition-duration: 1s;
+}
+.ov-in {
+    overflow: inherit;
+}
+.list-group-title {
+    padding: 13px 0;
+    margin: 0 -1px;
+    background-color: #fafafa;
+}
+.merge-tab {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+.merge-tab tr th:first-child {
+    border: 0;
+}
+.merge-tab th.col-pro {
+    border-left: #f5f5f5;
+}
+.merge-tab th {
+    font-size: 14px;
+    color: #888;
+    height: 14px;
+    line-height: 14px;
+    border-right: 1px solid #dedede;
+    text-align: center;
+    border-left: 1px solid #dedede;
+    font-weight: 400;
+    font-style: normal;
+}
+.wi240 {
+    width: 240px;
+}
+.merge-tab tr th:last-child {
+    border: 0;
+}
+.merge-tab th.col-operate {
+    border-right: 1px solid #fff;
+}
+.merge-tab th {
+    font-size: 14px;
+    color: #888;
+    height: 14px;
+    line-height: 14px;
+    border-right: 1px solid #dedede;
+    text-align: center;
+    border-left: 1px solid #dedede;
+    font-weight: 400;
+    font-style: normal;
+}
+.col-operate {
+    width: 138px;
+}
+.ma-0--1 {
+    margin: 0 -1px;
+}
+.o-inff {
+    border-bottom: 1px solid #dedede;
+    font-size: 14px;
+    padding: 23px 0 10px;
+    height: 17px;
+}
+.o-info {
+    font-family: arial,"微软雅黑";
+    line-height: 1.2;
+}
+.o-inff {
+    border-bottom: 1px solid #dedede;
+    font-size: 14px;
+    padding: 23px 0 10px;
+    height: 17px;
+}
+.o-ch {
+    margin: -2px 6px 0 8px;
+}
+.ve-al-mi {
+    vertical-align: middle;
+}
+.ma-ri-15 {
+    margin-right: 15px;
+}
+.co-888 {
+    color: #888;
+}
+.fo-si-14 {
+    font-size: 14px;
+}
+.co-36c {
+    color: #36c;
+}
+.o-pro {
+    font-family: arial,"微软雅黑";
+    line-height: 1.2;
+}
+.o-pro table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+}
+.o-pro tbody td.col-pro-img {
+    position: relative;
+    width: 120px;
+    border-right: 1px solid #fff;
+}
+.o-pro tbody td {
+    border-left: 1px solid #FFF;
+    border-right: 1px solid #f2f2f2;
+    border-bottom: 1px solid #f2f2f2;
+    text-align: center;
+    padding: 10px 0;
+}
+.o-pro img {
+    height: 70px;
+    width: 70px;
+}
+.o-pro tbody td.te-al-le {
+    text-align: left;
+}
+.o-pro tbody td {
+    border-left: 1px solid #FFF;
+    border-right: 1px solid #f2f2f2;
+    border-bottom: 1px solid #f2f2f2;
+    text-align: center;
+    padding: 10px 0;
+}
+.te-al-le {
+    text-align: left;
+}
+.p-name {
+    float: left;
+    width: 283px;
+    padding: 4px 0 0 15px;
+    margin-bottom: 18px;
+}
+.p-name a {
+    display: block;
+    height: 36px;
+    line-height: 18px;
+    overflow: hidden;
+}
+.wi240 {
+    width: 240px;
+}
+.col-operate {
+    width: 138px;
+}
+.o-pro tbody td.col-operate {
+    border-right: #FFF;
+}
+.p-link {
+    padding: 4px 0;
+}
+.p-link a {
+    color: #36c;
+}
+.pa-to-10 {
+    padding-top: 10px;
+}
+.fo-fa-ar {
+    font-family: arial,"微软雅黑";
+}
+.layout {
+    width: 1200px;
+    margin: 0 auto;
+}
+

@@ -1,0 +1,83 @@
+<!-- ajax获取商品的浏览历史记录 -->
+<div class="layout pa-to-10 fo-fa-ar">
+    <div class="fr wi940">
+        <div class="he50 wddd">
+            <div class="fl ddd-h2">
+                <h2><span>浏览历史记录</span></h2>
+            </div>
+            <div class="fr">
+                <div class="po-re zjs">
+                    <ul>
+                        <li id="q-s" class="fl cullent">
+                            <a href="javascript:;" style="text-decoration: none;">
+                                <span>只保留最近一个月的浏览历史记录&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="ec-ta-x wi82" style="left: 0px; width: 82px;"></div>
+                </div>
+            </div>
+        </div>
+        <div class="wddd-js ov-in">     
+            <div class="list-group-title">
+                <table class="merge-tab" border="0" cellpadding="0" cellspacing="0">
+                    <thead>
+                    <tr>
+                        <th class="col-pro">商品详细信息</th>
+                        <th class=" wi240">浏览时间</th>
+                        <th class="col-operate">操作</th>
+                    </tr>
+                    </thead>
+                </table>
+            </div>
+                  
+            <div class="merge-list">
+                <div class="ma-0--1">
+                    <div class="o-pro">
+                        <table border="0" cellpadding="0" cellspacing="0">
+                            <volist name="goodsHistoryList" id="vo">
+                                <tr id="goods_history_{$vo.goods_id}">
+                                    <td class="col-pro-img">
+                                        <p>
+                                            <a title="{$vo.goods_name}" href="{:U('Home/Goods/goods',array('id' => $vo['goods_id']))}" target="_blank">
+                                                <img alt="{$vo.goods_name}" src="{$vo.goods_thumb_small}">
+                                            </a>
+                                        </p>
+                                    </td>
+                                    <td class="col-pro-info te-al-le">
+                                        <p class="p-name">
+                                            <a title="{$vo.goods_name}" href="{:U('Home/Goods/goods',array('id' => $vo['goods_id']))}" target="_blank">
+                                                {$vo.goods_name}
+                                            </a>
+                                        </p>
+                                    </td>
+                                    <td class="wi240">{:date("Y-m-d H:i:s",$vo["goods_view_time"])}</td>
+                                    <td rowspan="1" class="col-operate">
+                                        <p class="p-link">
+                                            <a id="{$vo.goods_id}" href="javascript:;" onclick="ajaxDeleteHistory(this);">删除记录</a>
+                                        </p>
+                                    </td>
+                                </tr>
+                            </volist>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 商品浏览历史记录分页信息 -->
+        <div class="merge pager-paging fr">
+            <div class="dataTables_paginate paging_simple_numbers">
+                {$page}
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- 页面的js代码 -->
+<script>
+    // 点击分页触发的事件
+    $(".pagination  a").click(function(){
+        cur_page = $(this).data('p');
+        ajax_get_goodsList(cur_page);
+    });
+</script>

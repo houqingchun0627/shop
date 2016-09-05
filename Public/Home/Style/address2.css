@@ -1,0 +1,233 @@
+/*会员地址管理头文件、展示文件css样式*/
+*{margin:0;padding:0;list-style:none;border:none;}
+*{margin:0; padding:0;}
+img{ border:0;}
+html{color:#333;}
+body{font-size:12px/1.5 Arial,Helvetica,sans-serif,"微软雅黑";}
+table{font-size:12px; color:#333; border-collapse:collapse;}
+.fo-fa{font-family: 'Tahoma',\5FAE\8F6F\96C5\9ED1;}
+ul,ol{ list-style:none;}
+div{font-size:12px;}
+a{text-decoration:none; color:#333;}
+.ddd-h2 a{text-decoration:none;}
+.ddd-h2 a:hover{text-decoration:none;cursor:pointer;}
+.merge-tab th{text-align: center;font-style: normal;font-weight: bold;}
+.pa-to-10{padding-top:10px;}
+.fl{float:left;}
+.fr{float:right;}
+.co-red{color:#ca141d;}
+.wi940{width:940px;}
+.fo-fa-ar{ font-family:arial,"微软雅黑";}
+.he50{ height:50px;}
+.wddd{ border-bottom:1px solid #dedede; margin-bottom:20px;}
+.ddd-h2 h2{ font-size:24px; line-height:1.2; padding:8px 0 0 2px; font-weight:400;}
+.ov-in{ overflow:inherit;}
+.list-group-title{ padding:13px 0; margin:0 -1px; background-color:#fafafa;}
+.merge-tab{ width:100%; border-collapse:collapse; font-size:14px;}
+.merge-tab th.col-pro{ border-left:#f5f5f5;}
+.col-operate{ width:138px;}
+.ma-0--1{ margin:0 -1px;}
+.o-pro{font-family: arial,"微软雅黑";line-height: 1.2;}
+.o-pro table{ width:100%; border-collapse:collapse; font-size:14px;}
+.o-pro tbody td{ border-left:1px solid #FFF; border-right:1px solid #f2f2f2; border-bottom:1px solid #f2f2f2; text-align:center; padding:10px 0;}
+.p-link{ padding:4px 0;}
+.p-link a{ color:#36c;}
+.wi137{width:137px;}
+.wi118{width:118px;}
+.wi172{width:172px;}
+.merge-tab tr th:first-child{ border:0;}
+.layout{width:1200px;  margin:0 auto;}
+.fo-fa-ar{ font-family:arial,"微软雅黑";}
+
+/*添加会员地址收货人信息css样式*/
+ .layui-anim {
+    -webkit-animation-name: bounceIn;
+    animation-name: bounceIn;
+}
+.layui-layer {
+    top: 150px;
+    left: 50%;
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    -webkit-background-clip: content;
+    box-shadow: 1px 1px 50px rgba(0,0,0,.3);
+    border-radius: 2px;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-duration: .3s;
+    animation-duration: .3s;
+}
+.layui-layer, .layui-layer-shade {
+    position: fixed;
+    _position: absolute;
+    pointer-events: auto;
+}
+.layui-layer-title {
+    padding: 0 80px 0 20px;
+    height: 42px;
+    line-height: 42px;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+    color: #333;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    background-color: #F8F8F8;
+}
+.layui-layer-iframe .layui-layer-content {
+    overflow: hidden;
+}
+.layui-layer-content {
+    position: relative;
+}
+.layui-layer-iframe iframe {
+    display: block;
+    width: 100%;
+}
+.adderss-add {
+    width: 100%;
+    height: 100%;
+}
+.ol_box_4 {
+    width: 428px;
+    border: 1px solid #d2d2d2;
+    background-color: #f2f2f2;
+    box-shadow: 0 2px 3px 0 rgba(0,0,0,.05);
+    font-family: 'Tahoma',微软雅黑;
+}
+.box-header {
+    position: relative;
+    padding: 26px 0 14px;
+}
+.box-title {
+    display: block;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 700;
+}
+.box-ct table {
+    margin: 0 auto;
+}
+table {
+    font-size: 12px;
+    color: #333;
+    border-collapse: collapse;
+}
+.box-ct table tr td {
+    padding: 5px 0;
+}
+.xh {
+    margin-right: 2px;
+    color: #ca141c;
+    font-family: 宋体;
+}
+.box-ct table tr td input, .box-ct table tr td textarea {
+    border: 1px solid #dedede;
+    padding: 7px 10px;
+    font-family: 'Tahoma',微软雅黑;
+    outline: none;
+}
+.wi80-BFB {
+    width: 80%;
+}
+.di-bl {
+    display: inherit;
+}
+.seauii {
+    padding: 7px 10px;
+    margin-right: 10px;
+}
+.di-bl {
+    display: block;
+}
+.fl {
+    float: left;
+}
+.box-ct table tr td input, .box-ct table tr td textarea {
+    border: 1px solid #dedede;
+    padding: 7px 10px;
+    font-family: 'Tahoma',微软雅黑;
+    outline: none;
+}
+.he110 {
+    height: 110px;
+}
+.wi80-BFB {
+    width: 80%;
+}
+.re-no {
+    resize: none;
+}
+.wi40-BFB {
+    width: 40%;
+}
+.box-ct table tr td.pa-50-0 {
+    padding: 50px 0;
+}
+.box-ok {
+    display: inline-block;
+    text-align: center;
+    min-width: 78px;
+    height: 35px;
+    line-height: 35px;
+    line-height: 33px\9;
+    border: 1px solid #d1d1d1;
+    background-color: #f7f7f7;
+    background-color: rgba(0,0,0,.03);
+    font-size: 14px;
+    margin: 0 7.5px;
+    padding: 0 20px;
+    white-space: nowrap;
+}
+.box-ok {
+    text-align: center;
+    line-height: 35px;
+    line-height: 33px\9;
+    font-size: 14px;
+    white-space: nowrap;
+}
+.layui-layer-setwin {
+    position: absolute;
+    right: 15px;
+    *right: 0;
+    top: 15px;
+    font-size: 0;
+    line-height: initial;
+}
+.layui-layer-setwin .layui-layer-close1 {
+    background-position: 0 -40px;
+    cursor: pointer;
+}
+.layui-layer-setwin a {
+    position: relative;
+    width: 16px;
+    height: 16px;
+    margin-left: 10px;
+    font-size: 12px;
+    _overflow: hidden;
+}
+
+.adderss-add {
+    height: 100%;
+    width: 100%;
+}
+element.style {
+    height: 100%;
+    position: fixed;
+    visibility: visible;
+    width: 100%;
+    z-index: 500;
+}
+.ol_box_4 {
+    background-color: #f2f2f2;
+    border: 1px solid #d2d2d2;
+    box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.05);
+    font-family: "Tahoma",微软雅黑;
+    width: 428px;
+}
+
+.box-header {
+    padding: 26px 0 14px;
+    position: relative;
+}

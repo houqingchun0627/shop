@@ -1,0 +1,32 @@
+[ 2016-09-05T09:23:04+08:00 ] ::1 /shop/index.php/Admin/Admin/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.002000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+NOTIC: [2048] Declaration of Admin\Model\RoleModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) D:\AppServ\www\shop\Application\Admin\Model\RoleModel.class.php 第 10 行.
+NOTIC: [2048] Declaration of Admin\Model\RoleModel::_after_update() should be compatible with Think\Model::_after_update($data, $options) D:\AppServ\www\shop\Application\Admin\Model\RoleModel.class.php 第 10 行.
+NOTIC: [2048] Declaration of Admin\Model\RoleModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) D:\AppServ\www\shop\Application\Admin\Model\RoleModel.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `yt_role` [ RunTime:0.000000s ]
+SQL: SELECT `role_auth_ca` FROM `yt_role` LIMIT 1   [ RunTime:0.000000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.000000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000000s ]
+
+[ 2016-09-05T09:23:14+08:00 ] ::1 /shop/index.php/Admin/Admin/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.000000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of Admin\Model\RoleModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) D:\AppServ\www\shop\Application\Admin\Model\RoleModel.class.php 第 10 行.
+NOTIC: [2048] Declaration of Admin\Model\RoleModel::_after_update() should be compatible with Think\Model::_after_update($data, $options) D:\AppServ\www\shop\Application\Admin\Model\RoleModel.class.php 第 10 行.
+NOTIC: [2048] Declaration of Admin\Model\RoleModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) D:\AppServ\www\shop\Application\Admin\Model\RoleModel.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `yt_role` [ RunTime:0.000000s ]
+SQL: SELECT `role_auth_ca` FROM `yt_role` LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of Admin\Model\AdminModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) D:\AppServ\www\shop\Application\Admin\Model\AdminModel.class.php 第 200 行.
+NOTIC: [2048] Declaration of Admin\Model\AdminModel::_after_update() should be compatible with Think\Model::_after_update($data, $options) D:\AppServ\www\shop\Application\Admin\Model\AdminModel.class.php 第 200 行.
+NOTIC: [2048] Declaration of Admin\Model\AdminModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) D:\AppServ\www\shop\Application\Admin\Model\AdminModel.class.php 第 200 行.
+SQL: SHOW COLUMNS FROM `yt_admin` [ RunTime:0.046800s ]
+SQL: SELECT * FROM `yt_admin` WHERE `admin_username` = 'admin' LIMIT 1   [ RunTime:0.000000s ]
+SQL: UPDATE `yt_admin` SET `last_login_time`=1473038593,`last_login_ip`='0.0.0.0' WHERE `admin_id` = '1' [ RunTime:0.062400s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.015600s ]
+INFO: [ app_end ] --END-- [ RunTime:0.015600s ]
+

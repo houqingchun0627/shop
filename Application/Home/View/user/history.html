@@ -1,0 +1,78 @@
+<!-- 引入布局文件 -->
+<layout name="public/layout"  replace="{__CONTENT__}" />
+<!-- 引入顶部导航栏 -->
+<include file="Public/header" />
+
+<!-- 引入页面样式文件 -->
+<link rel="stylesheet" href="__PUBLIC__/Home/Style/user_comment.css" type="text/css">
+<link rel="stylesheet" href="__PUBLIC__/Home/Style/ajax_page.css" type="text/css">
+
+<div style="clear:both;"></div>
+
+<!-- 页面主体 start -->
+<div class="main w1210 bc mt10">
+    <!-- 面包屑导航 start -->
+    <div class="breadcrumb crumb w1210">
+        <h2>当前位置：<a href="{:U('Goods/index')}">首页</a> >
+            <a href="{:U('User/index')}">用户中心</a> >
+            {$pageConfig.pageName}
+        </h2>
+    </div>
+
+	<!-- 引入左侧导航栏 -->
+	<include file="Public/userSideBar" />
+
+	<!-- 右侧内容区域 start -->
+	<div id="right_sideBar">
+		<!-- ajax动态获取商品的历史记录 -->
+	</div>
+	<!-- 右侧内容区域 end -->
+</div>
+<!-- 页面主体 end-->
+
+<div style="clear:both;"></div>
+
+<!-- 引入底部导航栏  -->
+<include file="Public/bottomnav" />
+
+<!-- 页面的js代码 -->
+<script type="text/javascript">
+/****************ajax动态获取商品的浏览历史记录********************/
+    //默认展示第一页
+    $(document).ready(function(){
+        // ajax 加载商品列表
+        ajax_get_goodsList(1);
+
+    });
+    // ajax 抓取页面form为表单id  page为当前第几页
+    function ajax_get_goodsList(page){
+        cur_page = page; //当前页面 保存为全局变量
+        $.ajax({
+            type : "POST",
+            url : "<?php echo U('Home/User/ajaxGetGoodsHistory','',FALSE) ?>/p/"+page,
+            // data : $('#'+formId).serialize(),// 将提交的表单id的内容进行序列化操作
+            success: function(data){
+                //先清除原始的数据
+                 $("#right_sideBar").html('');
+                //将ajax返回的数据，拼接在ajax_goods_list后面
+                $("#right_sideBar").append(data);
+            }
+        });
+    }
+    // ajax删除商品的浏览历史记录
+    function ajaxDeleteHistory(a){
+        //获取当前点击商品的goods_id
+        var goodsId = $(a).attr("id");
+        $.ajax({
+            type : "GET",
+            url : "<?php echo U('Home/User/ajaxDeleteGoodsHistory','',FALSE) ?>/gid/"+goodsId,
+            // data : $('#'+formId).serialize(),// 将提交的表单id的内容进行序列化操作
+            success: function(data){
+                alert(data);
+                if(data === "删除成功"){
+                    $("#goods_history_"+goodsId).remove();
+                }
+            }
+        });
+    }
+</script>

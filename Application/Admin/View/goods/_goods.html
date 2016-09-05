@@ -1,0 +1,899 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>ECSHOP 管理中心 - 添加新商品 </title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="__PUBLIC__/Admin/Style/general.css" rel="stylesheet" type="text/css" />
+<link href="__PUBLIC__/Admin/Style/main.css" rel="stylesheet" type="text/css" />
+<!-- 导入EmEditor在线编辑器 -->
+<link href="__PUBLIC__/Plugins/UmEditor/themes/default/css/umeditor.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="__PUBLIC__/Plugins/UmEditor/umeditor.config.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Plugins/UmEditor/third-party/jquery.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Plugins/UmEditor/umeditor.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Plugins/UmEditor/lang/zh-cn/zh-cn.js"></script>
+<!-- 引入时间插件 -->
+<link href="__PUBLIC__/Plugins/datetimepicker/jquery-ui-1.9.2.custom.min.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" language="javascript" src="__PUBLIC__/Plugins/datetimepicker/jquery-1.7.2.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="__PUBLIC__/Plugins/datetimepicker/jquery-ui-1.9.2.custom.min.js"></script>
+<script type="text/javascript" charset="utf-8" src="__PUBLIC__/Plugins/datetimepicker/datepicker-zh_cn.js"></script>
+<link rel="stylesheet" media="all" type="text/css" href="__PUBLIC__/Plugins/datetimepicker/time/jquery-ui-timepicker-addon.min.css" />
+<script type="text/javascript" src="__PUBLIC__/Plugins/datetimepicker/time/jquery-ui-timepicker-addon.min.js"></script>
+<script type="text/javascript" src="__PUBLIC__/Plugins/datetimepicker/time/i18n/jquery-ui-timepicker-addon-i18n.min.js"></script>
+</head>
+<body>
+<style>
+    ul li {list-style:none;}
+    .ulstyle{margin:0px;}
+    .ulstyle li{margin:5px 0px 5px -40px;}
+    td.attr{
+        /*font-weight: bold;*/
+        padding: 5px 1em;
+        text-align: right;
+        vertical-align: top;
+        width: 30%;
+    }
+</style>
+<h1>
+    <span class="action-span"><a href="{:U('goodsMessage')}">商品列表</a>
+    </span>
+    <span class="action-span1"><a href="{:U('Admin/index')}" target="_top">ECSHOP 管理中心</a></span>
+    <span id="search_id" class="action-span1"> - 添加新商品 </span>
+    <div style="clear:both"></div>
+</h1>
+<div class="tab-div">
+    <div id="tabbar-div">
+        <p>
+            <span class="tab-front">通用信息</span>
+            <span class="tab-back" >详细描述</span>
+            <span class="tab-back" >附加信息</span>
+            <span class="tab-back" >商品属性</span>
+            <!-- <span class="tab-back" >可选属性</span> -->
+            <span class="tab-back" >商品规格</span>
+            <!-- <span class="tab-back" >商品相册</span> -->
+            <span class="tab-back" >商品画廊</span>
+        </p>
+    </div>
+    <div id="tabbody-div">
+        <form enctype="multipart/form-data" action="__SELF__" method="post">
+            <table width="90%" class="tab_table" id="general-table" align="center" >
+                <tr>
+                    <td class="label">商品名称：</td>
+                    <td><input type="text" name="goods_name" value="{$goodsList.goods_name}"size="30" />
+                    <span class="require-field">*</span></td>
+                </tr>
+                <tr>
+                    <td class="label">商品编号： </td>
+                    <td>
+                        <input type="text" onpaste="this.value=this.value.replace(/[^\w.\d.]/g,'')" onkeyup="this.value=this.value.replace(/[^\w.\d.]/g,'')" name="goods_sn" value="{$goodsList.goods_sn}" size="30"/>
+                        <br /><span class="notice-span"id="noticeGoodsSN">如果您不输入商品编号，系统将自动生成一个唯一的编号。</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label">商品主分类：</td>
+                    <td>
+                        {:buildSelect('Cat','goods_cat','cat_id','cat_name',$goodsList['goods_cat'])}
+                        <span class="require-field">*</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label">商品扩展分类：</td>
+                    <td>
+                    <!-- 遍历商品扩展分类中的商品默认扩展分类 -->
+                        <ul id="ext_cat" class="ulstyle">
+                            <if condition="isset($extCatList)">
+                                <volist name="extCatList" id="vo">
+                                    <!-- 遍历商品分类 -->
+                                    <!-- 首先判断是否是第一个 -->
+                                    <li>
+                                    <!-- 添加一个点击事件，既可以添加，还可以删除 -->
+                                        <a onclick="addDelete(this);" href="javascript:void(0)" style="color:red;"><if condition="$i eq 1">[+]<else/>[-]</if></a>
+                                        {:buildSelect('Cat','goods_ext_cat[]','cat_id','cat_name',$vo['ext_cat_id'])}
+                                    </li>
+                                </volist>
+                            <else/>
+                                <li>
+                                    <a onclick="addDelete(this);" href="javascript:void(0)" style="color:red;">[+]</a>
+                                    {:buildSelect('Cat','goods_ext_cat[]','cat_id','cat_name',$vo['ext_cat_id'])}
+                                </li>
+                            </if>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label">商品品牌：</td>
+                    <td>
+                    <!-- 使用buildSelect()方法输出 -->
+                        {:buildSelect('Brand','goods_brand','brand_id','brand_name',$goodsList['goods_brand'])}
+                        <span class="require-field">*</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label">商品类型：</td>
+                    <td>
+                    {:buildSelect('Type','goods_type','type_id','type_name',$goodsList['goods_type'],'--请选择--','goods_type')}
+                    <span class="require-field">*</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label">是否上架：</td>
+                    <td>
+                    <input type="radio" name="is_onsale" <if condition="($goodsList['is_onsale'] eq '是') OR ($goodList['is_onsale'] eq null)">checked="checked"</if> value="是"/> 是
+                        <input type="radio" name="is_onsale" <if condition="$goodsList['is_onsale'] eq '否'">checked="checked"</if> value="否"/> 否
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label">加入回收站：</td>
+                    <td>
+                        <input type="radio" name="is_delete" <if condition="$goodsList[is_delete] eq '是' ">checked="checked"</if> value="是"/> 是
+                        <input type="radio" name="is_delete" <if condition="($goodsList[is_delete] eq '否') OR ($goodsList['is_delete'] eq null)">checked="checked"</if> value="否"/> 否
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label">加入推荐：</td>
+                    <!-- 以下是采用set字段类型，同时存储三种商品属性 -->
+                    <!-- <td>
+                        <input type="checkbox" name="is_recommend[]" <if condition='strpos($goodsList[is_recommend],精品) nheq false'>checked="checked"</if> value="精品" /> 精品 
+                        <input type="checkbox" name="is_recommend[]" <if condition='strpos($goodsList[is_recommend],新品) nheq false'>checked="checked"</if> value="新品" /> 新品 
+                        <input type="checkbox" name="is_recommend[]" <if condition='strpos($goodsList[is_recommend],热销) nheq false'>checked="checked"</if> value="热销" /> 热销
+                    </td> -->
+                    <!-- 以下是采用三个字段，分别存储三种商品属性 -->
+                    <td>
+                        <input type="checkbox" name="is_best" <if condition='$goodsList[is_best] eq 是'>checked="checked"</if> value="是" /> 精品 
+                        <input type="checkbox" name="is_new" <if condition='$goodsList[is_new] eq 是'>checked="checked"</if> value="是" /> 新品 
+                        <input type="checkbox" name="is_hot" <if condition='$goodsList[is_hot] eq 是'>checked="checked"</if> value="是" /> 热销
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label">推荐到楼层：</td>
+                    <td>
+                        <input type="radio" name="floor_recommend" value="是" <if condition="$goodsList['floor_recommend'] eq '是'">checked="checked"</if>/> 是
+                        <input type="radio" name="floor_recommend" value="否" <if condition="($goodsList['floor_recommend'] eq '否') OR ($goodsList['floor_recommend'] eq '')">checked="checked"</if>/> 否
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label">推荐排序：</td>
+                    <td>
+                        <input type="text" onpaste="this.value=this.value.replace(/[^\d.]/g,'')" onkeyup="this.value=this.value.replace(/[^\d.]/g,'')" name="goods_sort_order" size="5" value="{$goodsList['goods_sort_order'] !== null ? $goodsList['goods_sort_order'] : 50}"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label">市场价格：</td>
+                    <td>
+                        <input type="text" onpaste="this.value=this.value.replace(/[^\d.]/g,'')" onkeyup="this.value=this.value.replace(/[^\d.]/g,'')" name="goods_market_price" value="{$goodsList['goods_market_price'] ? $goodsList['goods_market_price'] : ''}" size="20" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label">成本价格：</td>
+                    <td>
+                        <input type="text" onpaste="this.value=this.value.replace(/[^\d.]/g,'')" onkeyup="this.value=this.value.replace(/[^\d.]/g,'')" name="goods_cost_price" value="{$goodsList['goods_cost_price'] ? $goodsList['goods_cost_price'] : ''}" size="20"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label">本店价格：</td>
+                    <td>
+                        <input type="text" id="goods_shop_price" onpaste="this.value=this.value.replace(/[^\d.]/g,'')" onkeyup="this.value=this.value.replace(/[^\d.]/g,'')" onblur="priceSetted()" name="goods_shop_price" value="{$goodsList['goods_shop_price'] ? $goodsList['goods_shop_price'] : ''}" size="20"/>
+                        <span class="require-field">*</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label">会员价格：</td>
+                    <td>
+                        <input type="checkbox" id="user_price" onpaste="this.value=this.value.replace(/[^\d.]/g,'')" onkeyup="this.value=this.value.replace(/[^\d.]/g,'')" onclick="checkHandler(this.checked,this.id);" name="is_set_price" value="是"/>
+                        <span class="notice-span" style="color:red;" id="warn_brandlogo">如果要单独设置会员价格，请先勾选此选项！</span>
+                        <p><span class="notice-span" style="display:block;" id="warn_brandlogo">默认是按会员级别进行价格折扣，勾选单独设置后，可以进行会员价格设置！</span></p>
+                        <volist name="userPrice" id="vo">
+                            <p><span style="font-weight:bold">{$vo.level_name}</span>
+                            <span id="user_level_{$vo.level_id}" style="color:red;"></span>
+                            <span style="font-weight:bold;">：</span>
+                            <input type="text" id="level_{$vo.level_id}" class="user_price" onpaste="this.value=this.value.replace(/[^\d.]/g,'')" onkeyup="this.value=this.value.replace(/[^\d.]/g,'')" name="user_price[{$vo.id}-{$vo.level_id}]" value="{$vo.goods_price}" readonly="readonly" size="20"/>
+                            </p>
+                        </volist>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label">促销价格：</td>
+                    <td>
+                    <!-- onclick="checkHandler(this.checked,this.id);"  -->
+                    <input type="text" class="goods_promote" id="goods_promote_price" onpaste="this.value=this.value.replace(/[^\d.]/g,'')" onkeyup="this.value=this.value.replace(/[^\d.]/g,'')" name="goods_promote_price" disabled="disabled" <if condition="$goodsList['is_promote'] eq '是'">value="{$goodsList["goods_promote_price"]}"<else/>value=""</if> size="20"/>
+                    <input type="checkbox" name="is_promote[]" id="goods_promote" value="是" <if condition="$goodsList['is_promote'] eq '是'">checked="checked"</if>/>
+                    <span class="notice-span" style="color:red;" id="warn_brandlogo">如果加入商品促销，请勾选此选项！</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label">会员促销价打折：</td>
+                    <td>
+                        <input type="radio" name="user_is_discount" class="goods_promote" disabled="disabled" value="是" <if condition="$goodsList['user_is_discount'] eq '是'">checked="checked"</if>/> 是
+                        <input type="radio" name="user_is_discount" class="goods_promote" disabled="disabled" value="否" <if condition="($goodsList['user_is_discount'] eq '否') OR ($goodsList['user_is_discount'] eq '')">checked="checked"</if>/> 否
+                        <span class="notice-span" style="display:block;color:red;" id="warn_brandlogo">会员是否在促销价格的基础上进行折上折，默认是否！</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label">促销时间：</td>
+                    <td>
+                        <input type="text" class="goods_promote" id="fa" name="promote_start_time" disabled="disabled" <if condition="$goodsList['is_promote'] eq '是'">value="{:date('Y-m-d H:i',$goodsList["promote_start_time"])}"<else/>value=""</if> size="20" />~~
+                        <input type="text" class="goods_promote" id="ta" name="promote_end_time" disabled="disabled" <if condition="$goodsList['is_promote'] eq '是'">value="{:date('Y-m-d H:i',$goodsList["promote_end_time"])}"<else/>value=""</if> size="20" />
+                        <span class="notice-span" style="display:block;" id="warn_brandlogo">设置商品的促销时间，促销价格在该时间区间内有效！</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label">赠送积分
+                        <span id="goods_earn_jifen" style="color:red;font-weight: normal;"></span>
+                        <span style="font-weight:bold;">：</span>
+                    </td>
+                    <td>
+                        <input id="hidden_earn_jifen" type="hidden" name="goods_earn_jifen" value="{$goodsList['goods_earn_jifen']}"/>
+                        <input type="text" id="earn_jifen" class="goods_earn" onpaste="this.value=this.value.replace(/[^\-?\d.]/g,'')" onkeyup="this.value=this.value.replace(/[^\-?\d.]/g,'')" name="earn_jifen" value="{$goodsList['goods_earn_jifen'] ? $goodsList['goods_earn_jifen'] : '-1'}" size="20" />
+                        <span class="notice-span" style="display:block;" id="warn_brandlogo">积分可以用来升级会员等级，-1表示按商品价格赠送！</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label">赠送金币
+                        <span id="goods_earn_coin" style="color:red;font-weight: normal;"></span>
+                        <span style="font-weight:bold;">：</span>
+                    </td>
+                    <td>
+                        <input id="hidden_earn_coin" type="hidden" name="goods_earn_coin" value="{$goodsList['goods_earn_coin']}"/>
+                        <input type="text" id="earn_coin" class="goods_earn" onpaste="this.value=this.value.replace(/[^\-?\d.]/g,'')" onkeyup="this.value=this.value.replace(/[^\-?\d.]/g,'')" name="earn_coin" value="{$goodsList['goods_earn_coin'] ? $goodsList['goods_earn_coin'] : '-1'}" size="20" />
+                        <span class="notice-span" style="display:block;" id="warn_brandlogo">金币可以用来抵扣商品价格，-1表示按商品价格赠送！</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label">抵扣金币
+                        <span id="goods_expense_coin" style="color:red;font-weight: normal;"></span>
+                        <span style="font-weight:bold;">：</span>
+                    </td>
+                    <td>
+                        <input id="hidden_expense_coin" type="hidden" name="goods_expense_coin" value="{$goodsList['goods_expense_coin']}"/>
+                        <input type="text" id="expense_coin" class="goods_earn" onpaste="this.value=this.value.replace(/[^\-?\d.]/g,'')" onkeyup="if(parseInt(this.value)<-1){this.value='-1';};set_price_note(1);this.value=this.value.replace(/[^\-?\d.]/g,'')" name="expense_coin" value="{$goodsList['goods_expense_coin'] ? $goodsList['goods_expense_coin'] : '-1'}" size="20" />
+                        <span class="notice-span" style="display:block;" id="warn_brandlogo">购买商品时最多可以使用的抵扣金币的金额，-1表示按商品售价1%比例抵扣！</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label">商品图片：</td>
+                    <td>
+                        <input type="file" name="goods_image" size="35" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class='label'>当前图片：</td>
+                    <td>
+                        <a href="{$goodsList.goods_image}" target="_blank">
+                            <img src="{$goodsList.goods_thumb_smallest}" height="50" width="50" alt="商品图片" title="商品图片">
+                        </a>
+                        <span class="notice-span" style="display:block; color:red ;font-weight:bold "  id="warn_brandlogo"><if condition="$goodsList.goods_thumb_smallest neq ''">单击图片，查看高清大图！<else/>商品LOGO不存在，请上传！</if>
+                    </span>
+                    </td>
+                </tr>
+            </table>
+            <!-- 商品详情描述表单 -->
+            <table width="90%" class="tab_table" id="detail-table" align="center" style="display:none;">
+                <tr>
+                    <td>
+                        <textarea id="goods_desc" name="goods_desc">{$goodsList.goods_desc}</textarea>
+                    </td>
+                </tr>
+            </table>
+            <!-- 商品附加信息 -->
+            <table width="90%" class="tab_table" id="addtion-table" align="center" style="display:none;">
+                <tr>
+                    <td class="label">商品单位：</td>
+                    <td>
+                        <input type="text" name="goods_unit" value="{$goodsList.goods_unit}" size="20" />
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label">商品重量：</td>
+                    <td>
+                        <input type="text" onpaste="this.value=this.value.replace(/[^\d.]/g,'')" onkeyup="this.value=this.value.replace(/[^\d.]/g,'')" name="goods_weight" value="{$goodsList.goods_weight}" size="20" /><span> 克 (以克为单位) </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label">是否实物：</td>
+                    <td>
+                        <input type="radio" name="is_real" value="是" <if condition="($goodsList['is_real'] eq '是') OR ($goodsList['is_free_shipping'] eq '')">checked="checked"</if>/> 是
+                        <input type="radio" name="is_real" value="否" <if condition="$goodsList['is_real'] eq '否'">checked="checked"</if>/> 否
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label">是否包邮：</td>
+                    <td>
+                        <input type="radio" name="is_free_shipping" value="是" <if condition="$goodsList['is_free_shipping'] eq '是'">checked="checked"</if>/> 是
+                        <input type="radio" name="is_free_shipping" value="否" <if condition="($goodsList['is_free_shipping'] eq '否') OR ($goodsList['is_free_shipping'] eq '')">checked="checked"</if>/> 否
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label">商品邮费：</td>
+                    <td>
+                        <input type="text" onpaste="this.value=this.value.replace(/[^\d.]/g,'')" onkeyup="this.value=this.value.replace(/[^\d.]/g,'')" id="goods_shipping_expense" disabled="disabled" name="goods_shipping_expense" value="{$goodsList.goods_shipping_expense}" size="20" />
+                        <span class="notice-span" style="display:block;" id="warn_brandlogo">仅当商品不包邮时，商品邮费才有效！</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label">商品库存数量：</td>
+                    <td>
+                        <input type="text" onpaste="this.value=this.value.replace(/[^\d.]/g,'')" onkeyup="this.value=this.value.replace(/[^\d.]/g,'')" name="goods_total_stock" size="10" value="{$goodsList.goods_total_stock}"/>
+                        <span class="notice-span" style="display:block;" id="warn_brandlogo">此处是商品总的库存量，可在商品规格中设置不同商品规则对应的库存量！</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label">库存警告数量：</td>
+                    <td>
+                        <input type="text" onpaste="this.value=this.value.replace(/[^\d.]/g,'')" onkeyup="this.value=this.value.replace(/[^\d.]/g,'')" name="goods_stock_warning" size="10" value="{$goodsList.goods_stock_warning}"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label">商品关键词：</td>
+                    <td>
+                        <input type="text" name="goods_keywords" value="{$goodsList.goods_keywords}" size="40" />
+                        <br /><span class="notice-span"id="noticeGoodsSN">相邻两个关键字之间用逗号隔开</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label">商家备注：</td>
+                    <td>
+                        <textarea rows="3" cols="40" name="seller_note">{$goodsList.seller_note}</textarea>
+                        <br><span class="notice-span" style="display:block;" id="warn_brandlogo">仅供商家自己看的信息！</span>
+                    </td>
+                </tr>
+            </table>
+            <!-- 商品唯一属性 -->
+            <table width="90%" class="tab_table" id="single-table" align="center" style="display:none;">
+                <tr>
+                    <td class="label">商品类型：</td>
+                    <td>
+                        {:buildSelect('Type','goods_type1','type_id','type_name',$goodsList['goods_type'],'--请选择--','radio_attr','goods_type')}
+                        <span class="require-field">*</span>
+                        <span class="notice-span" style="display:block;" id="warn_brandlogo">请先选择商品的所属类型，然后完善此商品的属性！</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label">商品属性列表：</td>
+                    <td style="color:red;">此处为商品的唯一属性</td>
+                </tr>
+            </table>
+            <!-- 商品可选属性：需要手动选择、添加需要的属性，并且可选属性与商品库存表直接相联系 -->
+            <!-- <table width="90%" class="tab_table" id="multi-table" align="center" style="display:none;"> -->
+                <!-- <tr>
+                    <td class="label">商品类型：</td>
+                    <td>
+                        {:buildSelect('Type','goods_type3','type_id','type_name',$goodsList['goods_type'],'--请选择--','multi_attr','goods_type')}
+                        <span class="require-field">*</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label">商品属性列表：</td>
+                    <td style="color:red;">此处为商品的可选属性</td>
+                </tr>
+            </table>  --> 
+            <!-- 商品规格，与商品可选属性、商品价格、库存对应 -->          
+            <table width="90%" class="tab_table" id="spec-table" align="center" style="display:none">
+                <tr>
+                    <td class="label">商品类型：</td>
+                    <td>{:buildSelect('Type','goods_type2','type_id','type_name',$goodsList['goods_type'],'--请选择--','spec_attr','goods_type2')}
+                        <span class="require-field">*</span>
+                        <span class="notice-span" style="display:block;" id="warn_brandlogo">请先选择商品的所属类型，然后完善此商品的属性！</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="label">商品属性列表：</td>
+                    <td style="color:red;">此处为商品的可选属性，与商品库存、商品价格对应</td>
+                </tr>
+            </table>
+            <!-- 商品相册 -->
+            <!-- <table width="90%" class="tab_table" id="img-table" align="center" style="display:none;">
+                <tr>
+                    <td> -->
+                        <!-- 循环遍历商品相册照片中的图片，并展示出来 -->
+                        <!-- <foreach name="goodsImages" item="vo" key="k" >
+                            <div style="width:100px; text-align:center; margin: 5px; display:inline-block;" class="goods_xc">
+                                <input type="hidden" value="{$vo['image_url']}" name="goods_images[]">
+                                <a onclick="" href="{$vo['image_url']}" target="_blank"><img width="100" height="100" src="{$vo['image_url']}"></a>
+                                <br>
+                                <a href="javascript:void(0)" onclick="ClearPicArr2(this,'{$vo['imgage_url']}')">删除</a>
+                            </div>
+                        </foreach>
+                        <div class="goods_xc" style="width:100px; text-align:center; margin: 5px; display:inline-block;">
+                            <input type="hidden" value="/Public/Uploads/Images/Goods/2016-07-13/1468377619.jpg" name="goods_images[]">
+                            <a onclick="" href="/Public/Uploads/Images/Goods/2016-07-13/1468377619.jpg" target="_blank">
+                            <img width="100" height="100" src="/Public/Uploads/Images/Goods/2016-07-13/1468377619.jpg"></a><br>
+                            <a href="javascript:void(0)" onclick="ajaxDeleteImg(this,1);"> 删 除 </a>
+                        </div>
+                        <div class="goods_xc" style="width:100px; text-align:center; margin: 5px; display:inline-block;">
+                            <input type="hidden" value="" name="goods_images[]">
+                            <a onclick="ajaxDeleteImg(this,2);" href="javascript:void(0);">
+                                <img width="100" height="100" src="__PUBLIC__/Admin/Images/add-button.jpg">
+                            </a>
+                            <br/>
+                            <a href="javascript:void(0)">&nbsp;&nbsp;</a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <a onclick="addImg(this)" href="javascript:;">[+]</a>
+                        图片描述
+                        <input type="text" size="20" name="img_desc[]">上传文件
+                        <input type="file" name="img_url[]">
+                        <input type="text" name="img_file[]" onfocus="if (this.value == '或者输入外部图片链接地址'){this.value='http://';this.style.color='#000';}" style="color:#aaa;" value="或者输入外部图片链接地址" size="40">
+                    </td>
+                </tr>
+            </table> -->
+            <!-- 商品图片画廊 -->
+            <table width="90%" class="tab_table" id="gallery-table" align="center" style="display:none;">   <tr>
+                    <!-- 循环遍历商品相册照片中的图片，并展示出来 -->
+                    <foreach name="goodsGallery" item="vo" key="k" >
+                        <td style="width:100px; text-align:center; margin: 5px; display:inline-block;" class="goods_gallery">
+                            <a href="{$vo['goods_img_ori']}" target="_blank"><img width="100" height="100" src="{$vo['goods_img_small']}" alt="{$vo.goods_img_desc}" title="{$goodsList.goods_name}相册-{$vo.goods_img_id}"></a>
+                            <br>
+                            <a href="javascript:void(0)" onclick="ajaxDeleteImg(this,'{$vo['goods_img_id']}')"> 删 除 </a>
+                        </td>
+                    </foreach>
+                </tr>
+                <tr><td>&nbsp;&nbsp;</td></tr>
+                <tr><td>&nbsp;&nbsp;</td></tr>
+                <tr>
+                    <td>
+                        <a onclick="addDeleteImg(this)" href="javascript:void(0);">[+]</a>
+                        上传文件：<input type="file" name="goods_gallery[]">
+                        图片描述：<input type="text" size="30" name="goods_image_desc[]" value="">
+                        <span>&nbsp;&nbsp;&nbsp;商品相册图片的alt的属性值</span>
+                    </td>
+                    <!-- <td>&nbsp;&nbsp;</td> -->
+                </tr>
+            </table>
+            <div class="button-div">
+                <input type="hidden" name="goods_id" value="{$goodsList['goods_id']}" />
+                <input type="submit" value=" 保存 " class="button"/>
+                <input type="reset" value=" 重置 " class="button" />
+            </div>
+        </form>
+    </div>
+</div>
+<div id="footer">
+共执行 9 个查询，用时 0.025161 秒，Gzip 已禁用，内存占用 3.258 MB<br />
+版权所有 &copy; 2005-2012 上海商派网络科技有限公司，并保留所有权利。</div>
+<script>
+/****************导入datepicker时间插件***********************/
+// 添加时间插件
+$.timepicker.setDefaults($.timepicker.regional['zh-CN']);  // 设置使用中文 
+$("#fa").datetimepicker();
+$("#ta").datetimepicker();
+/****************导入datepicker时间插件***********************/
+    // 日期获取器
+    // $("#fa").datepicker({ dateFormat: "yy-mm-dd" });
+    // $("#ta").datepicker({ dateFormat: "yy-mm-dd" });
+
+/****************导入EmEditor在线编辑器**********************/
+    UM.getEditor('goods_desc', {
+        initialFrameWidth : "100%",
+        initialFrameHeight : 350
+    });
+/****************标签栏的切换操作***************************/
+    $("#tabbar-div p span").click(function(){
+        // 点击的第几个按钮
+        var i = $(this).index();
+        // 先隐藏所有的table
+        $(".tab_table").hide();
+        // 显示第i个table
+        $(".tab_table").eq(i).show();
+        // 先取消原按钮的选中状态
+        $(".tab-front").removeClass("tab-front").addClass("tab-back");
+        // 设置当前按钮选中
+        $(this).removeClass("tab-back").addClass("tab-front");
+    });
+/****************自定义图片上传函数，实现商品相册图片上传操作***************************/ 
+    //处理单击[+]、[-]时，实现添加、删除操作
+    function addDeleteImg(a){
+        var tr = $(a).parent().parent();
+        var tableId = $(a).parent().parent().parent().parent().attr("id");
+        if($(a).text() == '[+]'){
+            var newTr = tr.clone();
+            // +变-
+            newTr.find("a").text('[-]');
+            newTr.find("input[name='goods_gallery[]']").val("");
+            newTr.find("input[name='goods_image_desc[]']").val("");
+            // 将克隆的tr放到最后面
+            $("#"+tableId).append(newTr);
+            return true;
+        }
+        //如果是[-]，直接进行移除操作
+        tr.remove();
+    }
+    //实现ajax动态删除商品相册goods_gallery数据表中的数据
+    function ajaxDeleteImg(a,gid){
+        //获取当前图片的goods_img_id
+        var id = $(a).parent().index();
+        if(confirm("确定要删除该图片吗？")){
+            //如果用户确定删除图片，执行ajax删除图片
+            $.ajax({
+                type : "GET",
+                url : "<?php echo U('ajaxDeleteImg', '', FALSE); ?>/imgId/"+gid,
+                dataType : "json",
+                success : function(data){
+                    if(data){
+                        //如果删除成功，返回1，移除该商品，并提示删除成功
+                        $(".goods_gallery").eq(id).remove();
+                        alert("图片删除成功！");
+                        return true;
+                    }
+                    alert("图片删除失败！");
+                    return false;
+                }
+            });
+        }
+    }
+
+/****************采用uploadfy插件，实现商品相册图片上传操作***************************/ 
+    // 上传商品图片成功回调函数
+    function call_back(fileurl_tmp){
+        $("#original_img").val(fileurl_tmp);
+        $("#original_img2").attr('href', fileurl_tmp);
+    }
+ 
+    // 上传商品相册回调函数
+    function call_back(paths){
+        var  last_div = $(".goods_xc:last").prop("outerHTML");  
+        for (i=0;i<paths.length ;i++ ){                    
+            $(".goods_xc:eq(0)").before(last_div);  // 插入一个 新图片
+                $(".goods_xc:eq(0)").find('a:eq(0)').attr('href',paths[i]).attr('onclick','').attr('target', "_blank");// 修改他的链接地址
+            $(".goods_xc:eq(0)").find('img').attr('src',paths[i]);// 修改他的图片路径
+                $(".goods_xc:eq(0)").find('a:eq(1)').attr('onclick',"ClearPicArr(this,'"+paths[i]+"')").text('删除');
+            $(".goods_xc:eq(0)").find('input').val(paths[i]); // 设置隐藏域 要提交的值
+        }              
+    }
+    /*
+     * 上传之后删除组图input     
+     * @access   public
+     * @val      string  删除的图片input
+     */
+    function ClearPicArr(obj,path){
+        $.ajax({
+            type:'GET',
+            url:"{:U('Admin/Uploadify/delupload')}",
+            data:{action:"del", filename:path},
+            success:function(){
+                $(obj).parent().remove(); // 删除完服务器的, 再删除html上的图片                 
+            }
+        });
+    }
+/***************ajax获取商品general-table通用信息中的type_id***************/
+    //加载ready()事件
+    $(document).ready(function(){
+        //通用信息栏中goods_type的change()事件
+        $("select[id=goods_type]").change(function(){
+            // 获取当前选中的select类型的value值
+            var typeId = $(this).val();
+            var typeId1 = $("#radio_attr").val();
+            var typeId2 = $("#spec_attr").val();
+            //设置可选属性的可为typeId
+            if(typeId !== typeId1){
+                $("#radio_attr option").prop("selected",false);
+                $("#radio_attr option[value='"+typeId+"']").prop("selected", true);
+                $("select[class=goods_type]").trigger('change');
+            }
+            if(typeId !== typeId2){
+                $("#spec_attr option").prop("selected",false);
+                $("#spec_attr option[value='"+typeId+"']").prop("selected", true);
+                $("select[id=spec_attr]").trigger('change');
+            }
+        });
+        $("select[id=goods_type]").trigger('change');
+    });
+
+/***************ajax获取商品的唯一属性************************************/
+    /*********针对商品属性值change事件**************/
+    // 选择类型获取属性的AJAX
+    // $("select[name=goods_type]").change(function(){
+    $(document).ready(function(){
+        $("select[class=goods_type]").change(function(){
+            //获取当前type_id的table_id的值
+            var tableId = $(this).parent().parent().parent().parent().attr("id");
+            //获取当前select的id值
+            var id = $(this).attr("id");
+            var gid = ("<?php echo I('get.goods_id') ?>" == "") ? "0" : "<?php echo I('get.goods_id') ?>";
+            // 获取当前选中的类型的id值
+            var typeId = $(this).val();
+            var typeId1 = $("#goods_type").val();
+            var typeId2 = $("#spec_attr").val();
+            //设置其他的商品类型type_id的值为当前typeId
+            if(typeId !== typeId1){
+                $("#goods_type option").prop("selected",false);
+                $("#goods_type option[value='"+typeId+"']").prop("selected", true);
+                $("select[id=goods_type]").trigger('change');
+            }
+            if(typeId !== typeId2){
+                $("#spec_attr option").prop("selected",false);
+                $("#spec_attr option[value='"+typeId+"']").prop("selected", true);
+                $("#select[id=spec_attr]").trigger('change');
+            }
+            //如果type_id大于0，执行ajax操作
+            if(typeId > 0){
+                // 根据类型ID执行AJAX取出这个类型下的属性，并获取返回的JSON数据
+                $.ajax({
+                    type : "GET",
+                    url : "<?php echo U('ajaxGetSimpAttr', '', FALSE); ?>/tid/"+typeId+"/gid/"+gid,
+                    // dataType : "json",
+                    success : function(data){
+                        $("#"+tableId+" tr:gt(1)").remove();
+                        $("#"+tableId).append(data);
+                    }
+                });
+            }else{  //如果一致，将数据库中的原始的属性信息显示出来，并显示数据库中的属性值
+                $("#"+tableId+" tr:gt(1)").remove();
+            }
+        });
+        //当页面加载完成ready()事件后，触发change()事件，获取商品属性的展示
+        $("select[class=goods_type]").trigger('change');
+    });
+
+/*******************商品的可选属性，与商品价格、库存对应*******************/
+    //当商品的类型的值发生改变时，触发change时间，并且调用出商品库存与价格表单
+    $(document).ready(function(){
+        $("select[id=spec_attr]").change(function(){
+            // 获取当前选中的类型的id值
+            var typeId = $(this).val();
+            var gid = ("<?php echo I('get.goods_id') ?>" == "") ? "0" : "<?php echo I('get.goods_id') ?>";
+            // 获取当前选中的类型的id值
+            var typeId = $(this).val();
+            var typeId1 = $("#goods_type").val();
+            var typeId2 = $("#radio_attr").val();
+            //设置可选属性的可为typeId
+            if(typeId !== typeId1){
+                $("#goods_type option").prop("selected",false);
+                $("#goods_type option[value='"+typeId+"']").prop("selected", true);
+                $("select[id=goods_type]").trigger('change');
+            }
+            if(typeId !== typeId2){
+                $("#radio_type option").prop("selected",false);
+                $("#radio_type option[value='"+typeId+"']").prop("selected", true);
+                $("select[class=goods_type]").trigger('change');
+            }
+            //如果type_id大于0，执行ajax操作
+            if(typeId > 0){
+                // 根据类型ID执行AJAX取出这个类型下的属性，并获取返回的JSON数据
+                $.ajax({
+                    type : "GET",
+                    url : "<?php echo U('ajaxGetSpecAttr', '', FALSE); ?>/tid/"+typeId+"/gid/"+gid,
+                    // dataType : "json",
+                    success : function(data){
+                        /** 把服务器返回的属性循环拼成一个LI字符串，并显示在页面中 **/
+                        //将ajax返回的数据进行拼接，并且进行输出
+                        $("#spec-table tr:gt(1)").remove();
+                        //将拼接好的内容输出到页面中
+                        $("#spec-table").append(data);
+                    }
+                });
+            }else{
+                $("#spec-table tr:gt(1)").remove();
+            }
+        });
+        //当页面加载完成ready()事件后，触发change()事件，获取商品属性的展示
+        $("select[id=spec_attr]").trigger('change');
+    });
+
+/***************商品扩展分类(单击添加、删除操作)**********************/
+    function addDelete(a){
+        // 先获取所在的li
+        var li = $(a).parent();
+        // 获取上级的ul的id属性值
+        var value = $(a).parent("li").parent("ul").attr("id");
+        if($(a).text() == '[+]')
+        {
+            var newLi = li.clone();
+            // +变-
+            newLi.find("a").text('[-]');
+            newLi.find("input[name='attr_number[]']").val("");
+            newLi.find("option:selected").removeAttr('selected');
+            // 新的放在li后面
+            // li.after(newLi);
+            $("#"+value).children("li").last("li").after(newLi);
+        }else{
+            //如果是点击了[-]，先判断是否有attr_number[]，如果有，ajax删除，否则，直接删除
+            var hval = $(a).siblings("select").val();
+            //需要获取当前属性的id值
+            if(hval != "" && value !== "ext_cat"){
+                //采用ajax进行删除商品的属性
+                if(confirm("确定删除吗？")){
+                    $.ajax({
+                        type : "GET",
+                        url : "<?php echo U('ajaxDeleteSpec', '', FALSE); ?>/hval/"+hval,
+                        dataType : "json",
+                        success : function(data){
+                            if(data == "删除成功！"){
+                                li.remove();
+                            }else{
+                                alert("删除失败！");
+                            }
+                        }
+                    });
+                }     
+            }else{
+                li.remove();
+            }   
+        }
+    }
+
+/********************************ajax动态删除、添加商品可选属性对应的商品库存***********************/
+    function ajaxAddDelete(a,id){
+        // $(a)  --> 把a转换成jquery中的对象，然后才能调用jquery中的方法
+        // 先获取所在的li
+        var tr = $(a).parent("td").parent("tr");
+        var id = id;
+        var text = $(a).text();
+        //判断是添加操作，还是删除操作
+        if(text === "[-]"){
+        //如果是[-],则执行删除操作
+            if(id === 0){
+                //如果商品库存和价格都为空，则可以直接删除
+                tr.remove();
+            }else{
+                //否则，要采用ajax从数据库中进行删除
+                //采用ajax进行删除商品的属性
+                if(confirm("如果删除，商品库存量、价格也会同时被删除，确定删除吗？")){
+                    $.ajax({
+                        type : "GET",
+                        url : "<?php echo U('ajaxDeleteStock', '', FALSE); ?>/attrid/"+id,
+                        dataType : "json",
+                        success : function(data){            
+                            if(data === "1"){
+                                tr.remove();
+                                alert("删除成功！");
+                                return true;
+                            }
+                            if(data === "0"){
+                                alert("删除失败！");
+                                return true;
+                            }
+                        }
+                    });
+                }
+            }
+        }
+        if(text === "[+]"){
+            //如果是添加操作 
+        }
+    }
+
+/***************以下是处理商品促销价格的change()方法********************************/
+    $(document).ready(function() {
+        $("#goods_promote").change(function() {
+            var id = $(this).attr("id");
+            var checked = $(this).attr("checked");
+            //设置促销信息文本框是否可用
+            $("."+id).prop("disabled",!checked);
+            //如果取消勾选后，设置促销信息不可用，同时清空文本框中的内容、将会员折上折设置为否
+            if(checked === undefined && id === "goods_promote"){
+                $("."+id).prop("value","");
+                // $("input[name='user_is_discount']").val('否');
+                $("input[name='user_is_discount']").prop("checked",false);
+                $("input[name='user_is_discount']").val('否').prop("checked", true);
+            }
+        });
+        $("#goods_promote").trigger('change');
+    });
+
+    //验证商品的促销信息
+    $(".goods_promote").change(function() {
+        //判断商品的促销价格的正确性
+        var promotePrice = parseFloat($("#goods_promote_price").val());
+        var shopPrice = parseFloat($("#goods_shop_price").val());
+        if(promotePrice > shopPrice){
+            //提示错误信息，并清空内容
+            alert("促销价格不能大于商品价格！");
+            $("#goods_promote_price").val("");
+            $("#goods_promote_price").focus()[0];
+        }
+        //判断商品促销时间的开始时间-结束时间
+        //获取当前操作的id
+        var id = $(this).attr("id");
+        var formatDate = function (date) {  
+            var y = date.getFullYear();  
+            var m = date.getMonth() + 1;  
+            m = m < 10 ? '0' + m : m;  
+            var d = date.getDate();  
+            d = d < 10 ? ('0' + d) : d;
+            var h = date.getHours();
+            h = h < 10 ? ('0' + h) : h;
+            var i = date.getMinutes();
+            i = i < 10 ? ('0' + i) : i;
+            return y + m + d + h + i;
+        };
+        var date = formatDate(new Date());
+        var startTime = $("#fa").val().replace(/-/g, "");
+        var startTime = startTime.replace(/:/g,"");
+        var startTime = parseInt(startTime.replace(/ /g,""));
+        var endTime = $("#ta").val().replace(/-/g, "");
+        var endTime = endTime.replace(/:/g,"");
+        var endTime = parseInt(endTime.replace(/ /g,""));
+        if(startTime < date || endTime < date){
+            alert("促销时间不能在当前时间之前！");
+            $("#"+id).val("");
+        }
+        if(startTime > endTime){
+            //提示错误信息，并清空内容
+            alert("促销结束时间不能在开始时间之前！");
+            $("#"+id).val("");
+        }
+    });
+/**********************以下是处理checkHandler()方法*************************/
+    function checkHandler(checked,id){
+        //修改属性中的disabled属性
+        $("."+id).prop("readonly",!checked);
+        //如果取消勾选后，同时清空文本框中的内容
+    }
+/***************计算商品的价格priceSett************************************/
+    function priceSetted(){
+        //设置其他相关的信息：商品的市场价格、优惠价格等
+        //获取当前商品的本店价格
+        var shopPrice = parseFloat($("#goods_shop_price").val());
+        var promotePrice = parseFloat($("#goods_promote_price").val());
+        if(promotePrice > shopPrice){
+            $("#goods_promote_price").trigger('change');
+        }
+        $("#goods_earn_jifen").html("("+shopPrice+")");
+        $("#goods_earn_coin").html("("+shopPrice+")");
+        $("#goods_expense_coin").html("("+shopPrice*1/100+")");
+        $("#earn_jifen").val("-1");
+        $("#earn_coin").val("-1");
+        $("#expense_coin").val("-1");
+        $("#hidden_earn_jifen").val(shopPrice);
+        $("#hidden_earn_coin").val(shopPrice);
+        $("#hidden_expense_coin").val(shopPrice*1/100);
+        //循环所有的会员等级，调用会员等级价格设置的方法
+        <volist name="userPrice" id="vo">
+             setUserPrice({$vo.level_id});
+        </volist>
+    }
+/**************设置会员对应的商品价格*************************************/
+    function setUserPrice(levelId){
+        //获取当前商品的本店价格
+        var shopPrice = $("#goods_shop_price").val();
+        var userDiscount = new Array();
+        <volist name="userPrice" id="vo">
+             userDiscount[{$vo.level_id}] = parseInt({$vo.level_discount}) ;
+        </volist>
+        //设置各等级会员的价格，并在页面中显示出来
+        var discount = userDiscount[levelId];
+        var userPrice = parseInt(shopPrice*discount/100);
+        $("#user_level_"+levelId).html("("+discount+"%)");
+        $("#level_"+levelId).prop("value",userPrice);   
+    }
+/******************************设置会员价格的change()事件*************************/
+    //适用在手动设置商品的会员价格的情况下
+    $(".user_price").change(function() {
+        //获取当前操作的id值
+        var id = $(this).attr("id");
+        if($("#user_price").attr("checked")){
+            //如果是选择单独设置会员价格
+            $("#user_"+id).html("");
+        }
+    });
+/******************************设置会员积分、金币的change()事件*************************/
+    $(".goods_earn").change(function() {
+        //获取当前操作的id值
+        var id = $(this).attr("id");
+        var val = $(this).val();
+        // alert(val);
+        if($(id).val() !== -1){
+            //如果是选择单独设置会员价格
+            $("#goods_"+id).html("");
+            $("#hidden_"+id).attr("value",val);
+        }
+    });
+/******************************设置商品的包邮邮费的change()事件*************************/
+    $(document).ready(function() {
+        $("input[name=is_free_shipping]").change(function() {
+            //如果包邮
+            if($(this).val() === "是"){
+                $("#goods_shipping_expense").prop("disabled",true);
+                $("#goods_shipping_expense").prop("value","");  
+            }else{
+                $("#goods_shipping_expense").prop("disabled",false);
+            }
+        });
+        $("input[name=is_free_shipping]:checked").trigger('change');
+    });
+
+</script>
+</body>
+</html>

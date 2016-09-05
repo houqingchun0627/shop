@@ -1,0 +1,117 @@
+<!-- 引入布局文件 -->
+<layout name="public/layout"  replace="{__CONTENT__}" />
+<!-- 引入顶部导航栏 -->
+<include file="Public/header" />
+
+<!-- 引入页面样式文件 -->
+<link rel="stylesheet" href="__PUBLIC__/Home/Style/order2.css" type="text/css">
+<link rel="stylesheet" href="__PUBLIC__/Home/Style/ajax_page.css" type="text/css">
+
+<div style="clear:both;"></div>
+
+<!-- 页面主体 start -->
+<div class="main w1210 bc mt10">
+  <!-- 面包屑导航 start -->
+  <div class="breadcrumb crumb w1210">
+    <h2>当前位置：<a href="{:U('Goods/index')}">首页</a> >
+      <a href="{:U('User/index')}">用户中心</a> >
+      {$pageConfig.pageName}
+    </h2>
+  </div>
+
+	<!-- 引入左侧导航栏 -->
+	<include file="Public/userSideBar" />
+
+	<!-- 右侧内容区域 start -->
+    <div class="layout pa-to-10 fo-fa-ar">
+        <div class="fr wi940">
+            <div class="he50 wddd">
+                <div class="fl ddd-h2">
+                    <h2><span>我的订单</span></h2>
+                </div>
+            </div>
+            <div class="wddd-li">
+                <ul>
+                    <li class="wddd-red" id="ALL"><a href="javascript:check_field('ALL');">全部 <span id="ALL_ORDER" class="check_order">↓</span></a></li>
+                    <li id="FINISHED"><a href="javascript:check_field('FINISHED');">已完成 <span id="FINISHED_ORDER" class="check_order"></span></a></li>
+                    <li id="WAITPAY"><a href="javascript:check_field('WAITPAY');">待付款 <span id="WAITPAY_ORDER" class="check_order"></span></a></li>
+                    <li id="WAITSEND"><a href="javascript:check_field('WAITSEND');">待发货 <span id="WAITSEND_ORDER" class="check_order"></span></a></li>
+                    <li id="WAITRECEIVE"><a href="javascript:check_field('WAITRECEIVE');">待收货 <span id="WAITRECEIVE_ORDER" class="check_order"></span></a></li>
+                    <li id="WAITCCOMMENT"><a href="javascript:check_field('WAITCCOMMENT');">待评价 <span id="WAITCCOMMENT_ORDER" class="check_order"></span></a></li>
+                    <!-- 查看字段 -->
+                    <input type="hidden" id="checked_order_field" name="checked_order_field" size="16" value="ALL" />
+                    <!-- 排序方式 -->
+                    <input type="hidden" id="checked_order_order" name="checked_order_field" size="16" value="DESC" />
+                </ul>
+            </div>
+            <div id="right_sideBar" class="wddd-js ov-in">
+                <!-- ajax动态获取用户的商品订单 -->
+            </div>
+        </div>
+    </div>
+	<!-- 右侧内容区域 end -->
+</div>
+<!-- 页面主体 end-->
+
+<div style="clear:both;"></div>
+
+<!-- 引入底部导航栏  -->
+<include file="Public/bottomnav" />
+
+<!-- 页面的js代码 -->
+<script type="text/javascript">
+/****************ajax动态获取用户的商品订单********************/
+    //默认展示第一页
+    $(document).ready(function(){
+        // ajax 加载商品的用户评论
+        ajax_get_user_order(1);
+
+    });
+    // ajax 抓取页面form为表单id  page为当前第几页
+    function ajax_get_user_order(page){
+        cur_page = page; //当前页面 保存为全局变量
+        //获取当前要搜索的字段
+        var field = $("#checked_order_field").val();
+        var order = $("#checked_order_order").val();
+        $.ajax({
+            type : "POST",
+            data : {field: field , order: order},
+            url : "<?php echo U('Home/User/ajaxGetUserOrder','',FALSE) ?>/p/"+page,
+            // data : $('#'+formId).serialize(),// 将提交的表单id的内容进行序列化操作
+            success: function(data){
+                //先清除原始的数据
+                 $("#right_sideBar").html('');
+                //将ajax返回的数据，拼接在ajax_get_user_order后面
+                $("#right_sideBar").append(data);
+            }
+        });
+    }
+    // 处理点击获取要查看的字段、排序方式的方法
+    function check_field(field){
+        //将排序字段传递到搜索表单中的隐藏字段中
+       $("#checked_order_field").val(field);
+       //获取当前被选中的字段
+       var curField = $("li[class='wddd-red']").attr("id");
+       //判断当前选中的字段是否与点击字段是否一致
+       if(curField === field){
+        //如果当前点击字段与选中字段一致   
+            //对当前的排序方式字段进行取反操作
+            var v = ($("#checked_order_order").val() === 'DESC') ? 'ASC' : 'DESC';        
+       }else{
+        //如果当前点击字段与选中字段不一致
+            //不对当前的排序方式字段进行取反操作
+            var v = ($("#checked_order_order").val() === 'ASC') ? 'ASC' : 'DESC';        
+       }
+       var order = v === "DESC" ? "↓" : "↑" ;
+       //将取反后的字段值重新赋值给自身
+       $("#checked_order_order").val(v);
+       //为当前选中的字段添加class：wddd-red
+       $("li[class='wddd-red']").removeClass("wddd-red");
+       $("#"+field).addClass("wddd-red");
+       //给当前选中的字段添加箭头标记
+       $(".check_order").html("");
+       $("#"+field+"_ORDER").html(order);
+       //重新调用ajax_get_user_order方法，获取新的表单展示数据
+       ajax_get_user_order(cur_page);
+    }
+</script>

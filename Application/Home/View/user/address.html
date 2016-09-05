@@ -1,0 +1,328 @@
+<!-- 引入布局文件 -->
+<layout name="public/layout"  replace="{__CONTENT__}" />
+<!-- 引入顶部导航栏 -->
+<include file="Public/header" />
+
+<!-- 引入页面样式文件 -->
+<link rel="stylesheet" href="__PUBLIC__/Home/Style/address2.css" type="text/css">
+
+<div style="clear:both;"></div>
+
+<!-- 页面主体 start -->
+<div class="main w1210 bc mt10">
+    <!-- 面包屑导航 start -->
+    <div class="breadcrumb crumb w1210">
+        <h2>当前位置：<a href="{:U('Goods/index')}">首页</a> >
+            <a href="{:U('User/index')}">用户中心</a> >
+            {$pageConfig.pageName}
+        </h2>
+    </div>
+	
+	<!-- 引入左侧导航栏 -->
+	<include file="Public/userSideBar" />
+
+	<!-- 右侧内容区域 start -->
+    <div class="fr wi940 address_header">
+
+        <!-- 收货人信息展示头文件start -->
+        <div class="he50 wddd">
+            <div class="fl ddd-h2">
+                <h2><span>收货地址管理</span></h2>
+            </div>
+            <div class="fr ddd-h2">
+            	<h2><a class="co-red" onclick="address_handler(this,1);"><span id="user_address_show">+添加地址</span></a></h2>
+            </div>
+        </div>
+        <!-- 收货人信息展示头文件end -->
+        <!-- 显示收货人详细信息列表展示start -->
+        <div id="show_user_address" class="wddd-js ov-in" style="display: block;">
+            <div class="list-group-title">
+                <table class="merge-tab" border="0" cellpadding="0" cellspacing="0">
+                    <tr>
+                        <th class="col-pro wi137">收货人</th>
+                        <th class="">收货地址</th>
+                        <th class="wi118">邮编</th>
+                        <th class="wi172">手机/电话</th>
+                        <th class="col-operate wi199">操作</th>
+                    </tr>
+                </table>
+            </div>
+            <div class="merge-list">
+                <div class="ma-0--1">
+                    <div class="o-pro">
+                        <table border="0" cellpadding="0" cellspacing="0">
+                            <input type="hidden" name="user_address_amount" value="{$userAddressAmount}">
+                            <volist name="userAddressList" id="vo">
+                                <tr>
+                                    <td class="col-pro wi137">{$vo.goods_consignee}</td>
+                                    <td class="">
+                                        <span>
+                                            {:getAddress($vo["consignee_address_province"]);}，
+                                            {:getAddress($vo["consignee_address_city"]);}，
+                                            {:getAddress($vo["consignee_address_country"]);}，
+                                            {:getAddress($vo["consignee_address_town"]);}，
+                                            {$vo["consignee_address_detail"]}
+                                        </span>
+                                    </td>
+                                    <td class="wi118">{$vo.consignee_postcode}</td>
+                                    <td rowspan="1" class="wi172"><span>{$vo.consignee_tel}</span></td>
+                                    <td id="address_{$vo.id}" rowspan="1" class="col-operate wi199">
+                                        <p class="p-link  pfc">
+                                            <a href="javascript:;" onclick="address_handler(this,2);">编辑</a>
+                                        </p>
+                                        <p class="p-link  pfc">
+                                            <a href="javascript:;" onclick="address_handler(this,3);">删除</a>
+                                        </p>
+                                        <p class="p-link  pfc">
+                                            <a class="red" href="javascript:;" onclick="address_handler(this,4);">设为默认地址</a>
+                                        </p>
+                                    </td>
+                                </tr>                                
+                            </volist>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 显示收货人详细信息列表展示end -->
+        <!-- 添加收货人地址信息start -->
+        <div id="add_user_address" class="adderss-add" style="display:none;">    
+            <!-- <div style="visibility: visible; position: fixed; z-index: 500; width: 100%; height:100%" class="ner-reac ol_box_4"> -->
+            <div style="width: 940px;margin-top: -28px;" class="ner-reac ol_box_4">
+                <div class="box-ct">
+                    <div class="box-header">
+                        <span class="box-title" style="color: #333;font-size: 24px;font-weight: 400;
+                        line-height: 1.2;">添加收货人</span>
+                    </div>
+                    <form onsubmit="return checkForm()" method="post" action="">
+                        <table width="90%" cellspacing="0" cellpadding="0" border="0">
+                            <tr>
+                                <td align="right" style="width:120px;">
+                                    <span class="xh">*</span>收货人：&nbsp;
+                                </td>
+                                <td>
+                                    <input type="text" id="goods_consignee" maxlength="12" value="" name="goods_consignee" class="wi80-BFB address_reset_text">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="right"><span class="xh">*</span>收货地址：&nbsp;</td>
+                                <td id="user_address_info">
+                                    <!-- 获取省级城市信息 -->
+                                    <div class="consignee_address_info">
+                                        {:addressSelect("1","0","0");}
+                                    </div>
+                                    <!-- 获取市级城市信息 -->
+                                    <div class="consignee_address_province address_reset_select">
+                                        {:addressSelect();}
+                                    </div>
+                                    <!-- 获取区、县级城市信息 -->
+                                    <div class="consignee_address_city address_reset_select">
+                                        {:addressSelect();}
+                                    </div>
+                                    <!-- 获取乡镇、街道信息 -->
+                                    <div class="consignee_address_country address_reset_select">
+                                        {:addressSelect();}
+                                    </div>
+                                    <br>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td valign="top" align="right">
+                                    <span class="xh">*</span>详细地址：&nbsp;
+                                </td>
+                                <td>
+                                    <textarea maxlength="100" placeholder="详细收货地址" id="consignee_address_detail" name="consignee_address_detail" class="he110 wi80-BFB re-no address_reset_text"></textarea>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="right">邮编：&nbsp;</td>
+                                <td>
+                                    <input type="text" id="consignee_postcode" maxlength="10" onkeyup="this.value=this.value.replace(/[^\d]/g,'')" onpaste="this.value=this.value.replace(/[^\d]/g,'')" value="" name="consignee_postcode" class="wi80-BFB address_reset_text">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td align="right">
+                                    <span class="xh">*</span>手机或固定电话：&nbsp;
+                                </td>
+                                <td>
+                                    <input type="text" id="consignee_tel" maxlength="15" onkeyup="this.value=this.value.replace(/[^\d-]/g,'')" onpaste="this.value=this.value.replace(/[^\d-]/g,'')" value="" name="consignee_tel" class="wi40-BFB address_reset_text">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="pa-50-0">&nbsp;</td>
+                                <td align="right">
+                                    <input id="address_opt_id" class="address_reset_text" type="hidden" name="id" value="">
+                                    <input type="submit" style="background: orange;cursor: pointer;" value="保存收货人">
+                                </td>
+                            </tr>
+                        </table>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- 添加收货人地址信息end -->  
+    </div>
+	 <!-- 右侧内容区域 end -->
+</div>
+<!-- 页面主体 end -->
+
+<div style="clear:both;"></div>
+
+<!-- 引入底部导航栏  -->
+<include file="Public/bottomnav" />
+
+<!-- 页面的js代码 -->
+<script type="text/javascript">
+/******************处理点击添加收货人地址******************/
+    function address_handler(a,id){
+        //获取当前操作的类型
+        var reset = '{:addressSelect();}';
+        var total = $("input[name='user_address_amount']").val();
+        if(id === 1){
+            //如果是添加操作
+            //首先判断当前收货人数量是否已经达到上限
+            var text = $("#user_address_show").text();
+            if(total > 4 && text === "+添加地址"){
+                //如果已经达到上限数量5个，提醒用户已经达到上限
+                alert("对不起，你的收货人地址不能超过5个");
+                return false;
+            }
+            if(text === "+添加地址"){
+                //如果是添加地址操作，隐藏显示会员收货地址，显示添加收货人地址
+                $("#show_user_address").css("display","none");
+                $("#add_user_address").css("display","block");
+                $("#user_address_show").text("-取消添加");
+            }
+            if(text === "-取消添加" || text === "-取消编辑"){
+                //如果是添加地址操作，隐藏显示会员收货地址，显示添加收货人地址
+                $("#add_user_address").css("display","none");
+                $("#show_user_address").css("display","block");
+                $("#user_address_show").text("+添加地址");
+                //恢复地址栏中的默认信息
+                $(".consignee_address_info option").prop("selected",false);
+                $(".address_reset_text").val("");
+                $(".address_reset_select").html(reset);
+            }
+            return true;
+        }
+        //获取当前的收货人信息的id信息
+        var addressId = $(a).parent().parent().attr("id");
+        //如果是编辑操作
+        if(id == 2){
+            $("#show_user_address").css("display","none");
+            $("#add_user_address").css("display","block");
+            $("#user_address_show").text("-取消编辑");
+            //ajax获取当前的选中项的信息，并显示
+            $.ajax({
+                type : "GET",
+                url : "<?php echo U('User/ajaxHandlerUserAddress','',FALSE) ?>/id/"+addressId.slice(8)+"/oid/"+id,
+                // data : $('#'+formId).serialize(),// 将提交的表单id的内容进行序列化操作
+                dataType : "json",
+                success: function(data){
+                    $("#goods_consignee").val(data["goods_consignee"]);
+                    $(".consignee_address_info").html(data["consignee_address_province"]);
+                    $(".consignee_address_province").html(data["consignee_address_city"]);
+                    $(".consignee_address_city").html(data["consignee_address_country"]);
+                    $(".consignee_address_country").html(data["consignee_address_town"]);
+                    $("#consignee_address_detail").val(data["consignee_address_detail"]);
+                    $("#consignee_postcode").val(data["consignee_postcode"]);
+                    $("#consignee_tel").val(data["consignee_tel"]);
+                    $("#address_opt_id").val(data["id"]);
+                }
+            });
+        }
+        //如果是删除操作，或者设置为默认收获地址
+        if(id == 3 || id == 4){
+            if(confirm("是否确定执行？")){
+                $.ajax({
+                    type : "GET",
+                    url : "<?php echo U('User/ajaxHandlerUserAddress','',FALSE) ?>/id/"+addressId.slice(8)+"/oid/"+id,
+                    // data : $('#'+formId).serialize(),// 将提交的表单id的内容进行序列化操作
+                    success: function(data){
+                        alert(data);
+                        if(id == 3 && data === "删除成功"){
+                            //如果是删除操作，并且删除成功，移除展示表中的信息
+                            $(a).parent().parent().parent().remove();
+                            $("input[name='user_address_amount']").val(total-1);
+                        }
+                    }
+                });
+            }
+        }
+    }
+/**********处理单击触发地址四级联动菜单的js***************/
+    function get_address(s,level){
+        var id = $(s).attr("id");
+        var val = $(s).val();
+        // alert(val);
+        //ajax获取地址信息
+        $.ajax({
+            type : "GET",
+            url  : "<?php echo U('User/ajaxGetUserAddress','',FALSE) ?>/level/"+level+"/parentId/"+val,
+            // data : $('#'+formId).serialize(),// 将提交的表单id的内容进行序列化操作
+            // dataType : "json",
+            success: function(data){
+                //将数据显示页面中
+                $("."+id).html(data);
+                //如果是对上级重置操作，应该先清除后级的选项
+                var reset = '{:addressSelect();}';
+                if(level === 1){
+                    $(".consignee_address_city").html(reset);
+                    $(".consignee_address_country").html(reset);
+                }
+                if(level === 2){
+                    $(".consignee_address_country").html(reset);
+                }
+            }
+        });
+    }
+/**********添加收货人地址信息的表单验证的js***************/
+    // 表单验证js
+    function checkForm(){
+        //获取用户输入的form中的数据
+        var consignee = $('input[name="goods_consignee"]').val();
+        var province = $('select[name="consignee_address_province"]').find('option:selected').val();
+        var city = $('select[name="consignee_address_city"]').find('option:selected').val();
+        var country = $('select[name="consignee_address_country"]').find('option:selected').val();
+        var town = $('select[name="consignee_address_town"]').find('option:selected').val();
+        var address = $('textarea[name="consignee_address_detail"]').val();
+        var postcode = $('input[name="consignee_postcode"]').val();
+        var mobile = $('input[name="consignee_tel"]').val();
+        //定义表单验证的规则
+        var postcodeReg = new RegExp("^[1-9][0-9]{5}$");
+        var telReg = new RegExp("^1[3|4|5|7|8][0-9]{9}$");
+        if(consignee == ''){
+            alert('收货人不能为空');
+            return false;
+        }
+        if(province==0){
+            alert('请选择省份');
+            return false;
+        }
+        if(city==0){
+            alert('请选择城市');
+            return false;
+        }
+        if(country==0){
+            alert('请选择区域');
+            return false;
+        }
+        if(address == ''){
+            alert('请填写详细地址');
+            return false;
+        }
+        if(postcode !== "" && !postcodeReg.test(postcode)){
+            alert('邮政编码格式错误');
+            return false;
+        }
+        if(mobile == ''){
+            alert('手机号码不能为空');
+            return false;
+        }
+        if(!telReg.test(mobile)){
+            alert('手机号码格式有误');
+            return false;
+        }
+        return true;
+    }
+</script>

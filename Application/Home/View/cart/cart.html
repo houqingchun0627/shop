@@ -1,0 +1,212 @@
+<!-- 引入布局文件 -->
+<layout name="public/layout"  replace="{__CONTENT__}" />
+
+<!-- 引入页面样式文件 -->
+<link rel="stylesheet" href="__PUBLIC__/Home/Style/cart.css" type="text/css">
+<script type="text/javascript" src="__PUBLIC__/Home/Js/cart1.js"></script>	
+
+<div style="clear:both;"></div>
+
+<!-- 页面头部 start -->
+<div class="header w990 bc mt15">
+	<div class="logo w990">
+		<h2 class="fl"><a href="{:U('Home/Goods/index')}"><img src="__PUBLIC__/Home/Images/logo.png" alt="京东商城"></a></h2>
+		<div class="flow fr">
+			<ul>
+				<li class="cur">1.我的购物车</li>
+				<li>2.填写核对订单信息</li>
+				<li>3.成功提交订单</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<!-- 页面头部 end -->
+
+<div style="clear:both;"></div>
+
+<!-- 主体部分 start -->
+<div class="mycart w990 mt10 bc">
+	<h2><span>我的购物车</span></h2>
+	<table>
+		<thead>
+			<tr>
+				<th>&nbsp;</th>
+				<th class="col1">商品名称</th>
+				<th class="col2">商品信息</th>
+				<th class="col3">单价</th>
+				<th class="col4">数量</th>	
+				<th class="col5">小计</th>
+				<th class="col6">操作</th>
+			</tr>
+		</thead>
+		<tbody>
+			<volist name="cartGoodsList" id="vo">
+				<tr id="goods_amount_{$vo.id}">
+					<td>
+						<input type="checkbox" name="is_add_order[]" id="" value="{$vo.id}" style="margin-left: 10px;"/>
+					</td>
+					<td class="col1">
+						<a href="{:U('Goods/goods',array('id' => $vo['goods_id']),FALSE)}" target="_blank">
+							<img src="{$vo.goods_thumb_small}" alt="{$vo.goods_name}"/>
+						</a> 
+						<strong>
+							<a href="{:U('Goods/goods',array('id' => $vo['goods_id']),FALSE)}" target="_blank">{$vo.goods_name}</a>
+						</strong>
+					</td>
+					<td class="col2"> 
+						<?php foreach($vo["goods_spec_attr"] as $key => $value) : ?>
+						    <p>{$key}{$value}</p> 
+						<?php endforeach; ?>
+					</td>
+					<td class="col3">
+						￥<span>{$vo.goods_price}</span>
+					</td>
+					<td class="col4"> 
+						<a href="javascript:;" class="reduce_num"></a>
+						<input type="text" class="amount" name="amount" value="{$vo.goods_amount}" onchange="changeGoodsAmount(this,{$vo.id});"/>
+						<a href="javascript:;" class="add_num"></a><br/><br/>
+						<span id="goods_stock" style="float: left;">库存：{$vo.goods_stock} 件</span>
+					</td>
+					<td class="col5">
+						￥<span>{$vo.goods_price}</span>
+					</td>
+					<td class="col6">
+						<a href="javascript:;" onclick="ajaxDeleteCartGoods({$vo.id});">删除</a>
+					</td>
+				</tr>
+			</volist>
+		</tbody>
+		<tfoot>
+			<tr>
+				<td colspan="6">购物金额总计： <strong>￥ <span id="total"></span></strong></td>
+			</tr>
+		</tfoot>
+	</table>
+	<div class="cart_btn w990 bc mt10">
+		<a href="{:U('Home/Goods/index')}" class="continue">继续购物</a>
+		<a href="javascript:;" class="checkout" onclick="confirm_selsect();">结 算</a>
+	</div>
+</div>
+<!-- 主体部分 end -->
+
+<!-- 页面的js部分 -->
+<script type="text/javascript">
+/****************处理用户动态修改商品数量*********************/
+	function changeGoodsAmount(i,a){
+		//获取当前的用户修改的商品数量
+		var amount = $(i).val();
+		// alert(amount);
+		//如果服务器端验证通过，则更新数据到数据库中，否则返回错误信息
+		$.ajax({
+            type : "GET",
+            url : "<?php echo U('Home/Cart/ajaxCheckGoodsAmount', '', FALSE); ?>/id/"+a+"/amount/"+amount,
+            success : function(data){
+            	if(data != "-1"){
+            		//如果返回值是一个数字，返回错误信息，并修改商品数量为最大值
+            		alert("商品购买数量不能大于商品库存量");
+            		$(i).val(data);
+            		$(".amount").trigger('blur');
+            	}
+            }
+        });
+	}
+
+/***************处理ajax删除购物车中的商品********************************/
+	function ajaxDeleteCartGoods(id){
+        //ajax动态判断用户是否登录，如果已经登录，获取用户的user_id和user_name
+        if(confirm("确定删除该商品？")){
+	        $.ajax({
+	            type : "GET",
+	            url : "<?php echo U('Home/Cart/ajaxDeleteCartGoods', '', FALSE); ?>/id/"+id,
+	            success : function(data){
+	            	//给客户端返回添加结果
+	            	alert(data);
+	            	$("#goods_amount_"+id).remove();
+	            }
+	        });
+        }
+	}
+
+/***************处理哪些商品加入购买选项********************************/
+	function confirm_selsect(){
+        //ajax动态将用户选择确认提交的商品加入数据库
+        //首先取出勾选的商品的id
+        var cart_id_list = "";
+		$("input[name^='is_add_order']:checked").each(function(){
+			cart_id_list += $(this).val()+",";
+		});
+		if(cart_id_list !== ""){
+			// alert(cart_id_list);
+	        $.ajax({
+	            type : "GET",
+	            url : "<?php echo U('Home/Cart/ajaxCheckIsSelectGoods', '', FALSE); ?>/id/"+cart_id_list,
+	            success : function(data){
+	            	//给客户端返回添加结果
+	            	window.top.location.href = data;
+	            }
+	        });
+		}else{
+			alert("请先勾选要购买的商品");
+			return false;
+		}
+
+
+	}
+
+/***********当页面加载完成，自动触发计算商品小计、商品总价****************/
+	$(document).ready(function() {
+		//减少数量
+		$(".reduce_num").click(function(){
+			var amount = $(this).parent().find(".amount");
+			if (parseInt($(amount).val()) <= 1){
+				alert("商品数量最少为1");
+			} else{
+				$(amount).val(parseInt($(amount).val()) - 1).change();
+			}
+			//小计
+			var subtotal = parseFloat($(this).parent().parent().find(".col3 span").text()) * parseInt($(amount).val());
+			$(this).parent().parent().find(".col5 span").text(subtotal.toFixed(2));
+			//总计金额
+			var total = 0;
+			$(".col5 span").each(function(){
+				total += parseFloat($(this).text());
+			});
+			$("#total").text(total.toFixed(2));
+		});
+
+		//增加数量
+		$(".add_num").click(function(){
+			var amount = $(this).parent().find(".amount");
+			$(amount).val(parseInt($(amount).val()) + 1).change();
+			//小计
+			var subtotal = parseFloat($(this).parent().parent().find(".col3 span").text()) * parseInt($(amount).val());
+			$(this).parent().parent().find(".col5 span").text(subtotal.toFixed(2));
+			//总计金额
+			var total = 0;
+			$(".col5 span").each(function(){
+				total += parseFloat($(this).text());
+			});
+			$("#total").text(total.toFixed(2));
+		});
+
+		//直接输入数量
+		$(".amount").blur(function(){
+			if (parseInt($(this).val()) < 1){
+				alert("商品数量最少为1");
+				$(this).val(1);
+			}
+			//小计
+			var subtotal = parseFloat($(this).parent().parent().find(".col3 span").text()) * parseInt($(this).val());
+			$(this).parent().parent().find(".col5 span").text(subtotal.toFixed(2));
+			//总计金额
+			var total = 0;
+			$(".col5 span").each(function(){
+				total += parseFloat($(this).text());
+			});
+			$("#total").text(total.toFixed(2));
+		});
+		//触发onblur事件，计算商品的小计、商品总价
+		$(".amount").trigger('blur');
+	});
+
+</script>

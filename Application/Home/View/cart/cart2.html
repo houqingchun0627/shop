@@ -1,0 +1,338 @@
+<!-- 引入布局文件 -->
+<layout name="public/layout"  replace="{__CONTENT__}" />
+
+<!-- 引入页面样式文件 -->
+<link rel="stylesheet" href="__PUBLIC__/Home/Style/fillin.css" type="text/css">
+<script type="text/javascript" src="__PUBLIC__/Home/Js/cart2.js"></script>
+	
+<div style="clear:both;"></div>
+
+<!-- 页面头部 start -->
+<div class="header w990 bc mt15">
+	<div class="logo w990">
+		<h2 class="fl"><a href="{:U('Home/Goods/index')}"><img src="__PUBLIC__/Home/Images/logo.png" alt="京东商城"></a></h2>
+		<div class="flow fr flow2">
+			<ul>
+				<li>1.我的购物车</li>
+				<li class="cur">2.填写核对订单信息</li>
+				<li>3.成功提交订单</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<!-- 页面头部 end -->
+
+<div style="clear:both;"></div>
+
+<!-- 主体部分 start -->
+<div class="fillin w990 bc mt15">
+	<div class="fillin_hd">
+		<h2>填写并核对订单信息</h2>
+	</div>
+
+	<div class="fillin_bd">
+		<!-- 收货人信息  start-->
+		<div class="address">
+			<h3>收货人信息 <a href="{:U('Home/User/address')}" id="address_modify">[使用新地址 ]</a></h3>
+			<div class="address_select">
+				<ul>
+					<volist name="goodsConsignee" id="vo">
+						<li <if condition="$vo.is_default_address eq '是'">class="cur"</if>>
+							<input type="radio" name="consignee_address" value="{$vo.id}" <if condition="$vo.is_default_address eq '是'">checked="checked"</if> />&nbsp; {$vo.goods_consignee} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {$vo.consignee_address_province} {$vo.consignee_address_city} {$vo.consignee_address_country} {$vo.consignee_address_town} {$vo.consignee_address_detail} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; {$vo.consignee_tel} 
+							<a href="{:U('Home/User/address')}" style="float: right;margin-right:200px;">删除</a>
+							<a href="{:U('Home/User/address')}" style="float: right;margin-right:10px;">编辑</a>
+							<a href="javascript:void(0);" style="float: right;margin-right:40px;text-decoration: none;"><if condition="$vo.is_default_address eq '是'">默认收货地址</if></a>
+						</li>
+					</volist>
+				</ul>
+			</div>
+		</div>
+		<!-- 收货人信息  end-->
+
+		<!-- 配送方式 start -->
+		<div class="delivery">
+			<h3>送货方式</h3>
+			<div class="delivery_select">
+				<table>
+					<tr>
+						<th class="col1">送货方式</th>
+						<th class="col2">运费</th>
+						<th class="col3">运费标准</th>
+					</tr>
+					<tr class="cur">
+						<td>
+							<input type="radio" name="delivery" value="京东快递" checked="checked" />京东快递
+							<select name="delivery_time" id="">
+								<option value="时间不限" selected="selected">时间不限</option>
+								<option value="工作日，周一到周五">工作日，周一到周五</option>
+								<option value="周六日及公众假期">周六日及公众假期</option>
+							</select>
+						</td>
+						<td>￥10.00</td>
+						<td>运费10.00元，金牌会员满79元包邮，银牌会员满129元包邮，铜牌会员满199包邮</td>
+					</tr>
+					<tr>	
+						<td>
+							<input type="radio" name="delivery" value="普通快递"/>普通快递
+						</td>
+						<td>￥20.00</td>
+						<td>运费20.00元，，第三方快递，邮费由客户承担</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="radio" name="delivery" value="顺丰特快"/>顺丰特快</td>
+						<td>￥30.00</td>
+						<td>邮费30.00元，第三方快递，邮费由客户承担</td>
+					</tr>
+					<tr>
+						<td><input type="radio" name="delivery" value="平邮"/>平邮</td>
+						<td>￥40.00</td>
+						<td>邮费40.00元，第三方快递，邮费由客户承担</td>
+					</tr>
+				</table>
+			</div>
+		</div>
+		<!-- 配送方式 end --> 
+
+		<!-- 支付方式  start-->
+		<div class="pay">
+			<h3>支付方式</h3>
+			<div class="pay_select">
+				<table> 
+					<tr class="cur">
+						<td class="col1"><input type="radio" name="pay" value="支付宝" checked="checked" />支付宝</td>
+						<td class="col2">即时到帐，支持绝大数银行借记卡及部分银行信用卡</td>
+					</tr>					<tr class="cur">
+						<td class="col1"><input type="radio" name="pay" value="微信"/>
+						微信</td>
+						<td class="col2">即时到帐，支持绝大数银行借记卡及部分银行信用卡</td>
+					</tr>					
+					<tr>
+						<td class="col1"><input type="radio" name="pay" value="银联支付"/>
+						银联支付</td>
+						<td class="col2">即时到帐，支持绝大数银行借记卡及部分银行信用卡</td>
+					</tr>
+					<tr>
+						<td class="col1"><input type="radio" name="pay" value="货到付款"/>货到付款</td>
+						<td class="col2">送货上门后再收款，支持现金、POS机刷卡、支票支付</td>
+					</tr>
+<!-- 					<tr>
+						<td class="col1"><input type="radio" name="pay" value="上门自提"/>上门自提</td>
+						<td class="col2">自提时付款，支持现金、POS刷卡、支票支付</td>
+					</tr> -->
+				</table>
+			</div>
+		</div>
+		<!-- 支付方式  end-->
+
+		<!-- 发票信息 start-->
+		<div class="receipt">
+			<h3>发票信息</h3>
+			<div class="receipt_select">
+				<ul>
+					<li>
+						<label for="">发票抬头：</label>
+						<input type="radio" name="invoice_type" checked="checked" class="personal" value="个人"/>个人
+						<input type="radio" name="invoice_type" class="company" value="单位"/>单位
+						<input type="text" name ="invoice_units" class="txt company_input" placeholder="请填写单位名称" disabled="disabled" value=""/>
+					</li>
+				</ul>
+			</div>
+		</div>
+		<!-- 发票信息 end-->
+
+		<!-- 商品清单 start -->
+		<div class="goods">
+			<h3>商品清单</h3>
+			<table>
+				<thead>
+					<tr>
+						<th class="col1">商品</th>
+						<th class="col2">规格</th>
+						<th class="col3">价格</th>
+						<th class="col4">数量</th>
+						<th class="col5">小计</th>
+					</tr>	
+				</thead>
+				<tbody>
+					<volist name="cartGoodsList" id="vo">
+	                    <tr>
+	                        <td class="col1">
+	                            <a href="{:U('Goods/goods',array('id' => $vo['goods_id']),FALSE)}">
+	                                <img src="{$vo.goods_thumb_small}" alt="{$vo.goods_name}" />
+	                            </a>  
+	                            <strong>
+	                                <a href="{:U('Goods/goods',array('id' => $vo['goods_id']),FALSE)}">{$vo.goods_name}</a>
+	                            </strong>
+	                        </td>
+	                        <td class="col2"> 
+	                            <?php foreach($vo["goods_spec_attr"] as $key => $value) : ?>
+	                                <p>{$key}{$value}</p> 
+	                            <?php endforeach; ?>
+	                        </td>
+	                        <td class="col3">￥{$vo.goods_price}</td>
+	                        <td class="col4"> {$vo.goods_amount} </td>
+	                        <td class="col5">
+	                            <span>￥{$vo.goods_total_price}</span>
+	                        </td>
+	                    </tr>
+	                </volist>
+				</tbody>
+				<tfoot>
+					<tr>
+						<td colspan="5">
+							<ul>
+								<li>
+									<span>共 {$amount} 件商品，商品总金额：</span>
+									<em class="ori_price order_price">￥{$totalPrice}</em>
+								</li>
+								<li>
+									<span>商品运费：</span>
+									<em id="goods_expense" class="order_price"></em>
+								</li>
+								<li>
+									<span>优惠：</span>
+									<em id="goods_discount" class="order_price"></em>
+								</li>
+								<li>
+									<span>金币抵扣：</span>
+									<em id="coin_discount" class="order_price">￥0.00</em>
+								</li>
+								<li>
+									<span>实付金额：</span>
+									<em class="total_price"></em>
+								</li>
+							</ul>
+						</td>
+					</tr>
+				</tfoot>
+			</table>
+		</div>
+		<!-- 商品清单 end -->
+	</div>
+	<div class="fillin_ft">
+		<a href="javascript:void(0);" onclick="ajaxAddOrder();"><span>提交订单</span></a>
+		<p>实付金额：<strong class="total_price">￥5076.00</strong>元<strong></strong></p>
+	</div>
+</div>
+<!-- 主体部分 end -->
+
+<!-- 页面的js部分 -->
+<script type="text/javascript">
+/***********************处理ajax提交订单前的操作**************************/
+	function ajaxAddOrder(){
+		//获取用户勾选的选项：收货人、发货快递、支付方式、发票信息、抵扣金币使用数
+		//收货人信息
+		var goods_consignee = $("input[name=consignee_address]:checked").val();
+		//发货快递
+		var goods_delivery_method = $("input[name=delivery]:checked").val();
+		//送货时间
+		var goods_delivery_time = $("select[name=delivery_time] option:selected").val();
+		//支付方式
+		var goods_pay = $("input[name=pay]:checked").val();
+		//发表类型
+		var invoice_type = $("input[name=invoice_type]:checked").val();
+		//发票抬头
+		var invoice_units = $("input[name=invoice_units]").val();
+		//抵扣金币使用数量
+		// var coin_expense = $("input[name=coin_expense]").val();
+		var coin_expense = 0;
+		//卖家备注信息
+		// var user_note = $("input[name=user_note]").val();
+		var user_note = 0;
+		//ajax动态提交表单
+		$.ajax({
+	        type : "POST",
+	        data : {
+	        			goods_consignee: goods_consignee,
+	        			goods_shipping_method: goods_delivery_method,
+	        			goods_shipping_time: goods_delivery_time,
+	        			goods_pay_method: goods_pay,
+	        			order_invoice_type: invoice_type,
+	        			order_invoice_header: invoice_units,
+	        			order_expense_coin: coin_expense,
+	        			user_note: user_note
+	        },
+	        url : "<?php echo U('Home/User/ajaxAddGoodsToOrder', '', FALSE); ?>",
+	        dataType : "json",
+	        success : function(data){
+	        	//给客户端返回添加结果
+	        	//如果状态码为0，返回错误信息
+	        	if(data["recode"] == "0"){
+	        		alert(data["info"]);
+	        	}
+	        	//如果状态码为1，表示提交成功，进行页面跳转
+	        	if(data["recode"] == "1"){
+					window.top.location.href = data["info"];
+	        	}
+	        	//如果状态码为2，表示重复提交，提示错误信息，并进行页面跳转
+	        	if(data["recode"] == "2"){
+	        		alert(data["info"]);
+					window.top.location.href = data["url"];
+	        	}
+	        }
+	    });
+	}
+/*************************处理页面加载完成后的事件***********************/
+	$(document).ready(function() {
+		/*************处理商品的价格信息****************/		
+		$(".order_price").change(function() {
+            //如果商品价格相关信息发生变化
+            var price = 0;
+            $(".order_price").each(function(k,v) {
+	            //获取每个价格信息,并进行相加
+	            price += parseFloat($(v).text().replace(/￥/g, ""));
+	        });
+	        //将商品总的价格赋值到实付金额上
+	        $(".total_price").text("￥"+price.toFixed(2));
+        });
+		/*************处理商品邮寄方式触发运费改变****************/		
+		$("input[name=delivery]").change(function() {
+            //如果商品快递方式发生改变
+            var val = $(this).val();
+            if(val === "京东快递"){
+            	$("#goods_expense").html("￥10.00");
+            	//判断会员级别是否满足优惠要求
+            	//商品的总价格
+            	var totalPrice = parseFloat($(".ori_price").text().replace(/￥/g, ""));
+            	var user_level = "{$Think.session.user_level}";
+            	if(user_level == "1"){
+            		if(totalPrice > 199){
+						$("#goods_discount").html("-￥10.00");
+            		}else{
+            			$("#goods_discount").html("￥0.00");
+            		}
+            	}
+            	if(user_level == "2"){
+            		if(totalPrice > 129){
+						$("#goods_discount").html("-￥10.00");
+            		}else{
+            			$("#goods_discount").html("￥0.00");
+            		}
+            	}
+            	if(user_level == "3"){
+            		if(totalPrice > 79){
+						$("#goods_discount").html("-￥10.00");
+            		}else{
+            			$("#goods_discount").html("￥0.00");
+            		}
+            	}
+            }
+            if(val === "普通快递"){
+            	$("#goods_expense").html("￥20.00");
+				$("#goods_discount").html("￥0.00");
+            }
+            if(val === "顺丰特快"){
+            	$("#goods_expense").html("￥30.00");
+				$("#goods_discount").html("￥0.00");
+            }
+            if(val === "平邮"){
+            	$("#goods_expense").html("￥40.00");
+            	$("#goods_discount").html("￥0.00");
+            }
+            $(".order_price").trigger('change');
+        });
+		//触发onblur事件，计算商品的小计、商品总价
+		$("input[name=delivery]:checked").trigger('change');
+	});
+</script>

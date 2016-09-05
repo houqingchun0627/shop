@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <script type="text/javascript" src="__PUBLIC__/Plugins/UmEditor/third-party/jquery.min.js"></script>
+    </head>
+    <body>
+    </body>
+    <select name="s1" id="s1" >
+        <option value="1">1</option>
+        <option value="2" selected="selected">2</option>
+        <option value="3">3</option>
+    </select>
+    <br/>
+    <br/>
+    <select name="s2" id="s2" >
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3" selected="selected">3</option>
+    </select>
+    <script type="text/javascript">
+    $("#s1").change(function(){
+        var typeId = $(this).val();
+        var typeId2 = $("#s2").val();
+        alert(typeId);
+        alert(typeId2);
+        //设置可选属性的可为typeId
+        $("#s2 option").attr("selected",false);
+        // $("#s2 option['value'="+typeId2+"]").attr("selected",false);
+        // $("#s2 option['value'="+typeId+"]").attr("selected", true);
+    });
+    // $(".s2").change(function(){
+    //     var typeId = $(this).val();
+    //     var typeId2 = $("#s1").val();
+    //     alert(typeId);
+    //     alert(typeId2);
+    //     //设置可选属性的可为typeId
+    //     $("#s1 option").attr("selected",false);
+    //     $("#s1 option['value'="+typeId+"]").attr("selected", true);
+    // });
+    </script>
+</html>

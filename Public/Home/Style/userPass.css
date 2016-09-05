@@ -1,0 +1,79 @@
+.user_pass table {
+    border-collapse: collapse;
+    color: #333;
+    font-size: 12px;
+}
+.user_pass .fo-fa {
+    font-family: "Tahoma",微软雅黑;
+}
+.user_pass ul, ol {
+    list-style: outside none none;
+}
+.user_pass div {
+    font-size: 12px;
+}
+.user_pass a {
+    color: #333;
+    text-decoration: none;
+}
+.user_pass .uc_body_form {
+    background: rgb(249, 249, 249) none repeat scroll 0 0;
+    box-shadow: 2px 2px 10px #909090;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: 700px;
+    padding-bottom: 30px;
+    padding-top: 1px;
+    width: 1209px;
+}
+.user_pass .uc_body_form .changeAccount_theme {
+    height: 400px;
+    margin-top: 100px;
+    width: 100%;
+}
+.user_pass .uc_body_form .changeAccount_theme .tr_height {
+    height: 30px;
+}
+.user_pass table {
+    border-collapse: collapse;
+    color: #333;
+    font-size: 12px;
+}
+.user_pass .uc_body_form .changeAccount_theme .cl_left {
+    width: 440px;
+    margin-top: 100px;
+}
+.user_pass .fo-si-12 {
+    font-size: 12px;
+}
+
+.user_pass .uc_body_form .changeAccount_theme .text_width {
+    width: 200px;
+}
+.user_pass .imput_text {
+    border: 1px solid #999;
+    border-radius: 3px;
+    padding: 3px 5px;
+}
+.user_pass .btn_midefy {
+    background-color: rgb(202, 21, 30);
+    background-image: none;
+    border-color: rgb(202, 21, 30);
+    border-radius: 15px;
+    border-style: solid;
+    border-width: 0 0 2px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: normal;
+    height: 42px;
+    margin-top: 5px;
+    padding: 7px 50px;
+    text-align: center;
+    width: auto;
+    margin-left: -120px;
+}
+
+
+
+

@@ -1,0 +1,146 @@
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <meta content="MSHTML 6.00.6000.16674" name="GENERATOR" />
+
+        <title>用户登录</title>
+        <link href="/shop/Public/Admin/Style/User_Login.css" type="text/css" rel="stylesheet" />
+        <script src="/shop/Public/Admin/Js/jquery.js"></script>
+        <!-- <script src="<?php echo (ADMIN_JS_URL); ?>login.js"></script> -->
+        <script src="/shop/Public/Admin/Js/event.js"></script>
+    </head>
+    <body id="userlogin_body">
+        <div id="user_login">
+            <dl>
+                <dd id="user_top">
+                    <ul>
+                        <li class="user_top_l"></li>
+                        <li class="user_top_c"></li>
+                        <li class="user_top_r"></li>
+                    </ul>
+                </dd>
+                <dd id="user_main">
+                    <!-- <form action="/shop/index.php/Admin/Admin/checkMsg" method="post"> -->
+                        <ul>
+                            <li class="user_main_l"></li>
+                            <li class="user_main_c">
+                                <div class="user_main_box">
+                                    <ul>
+                                        <li class="user_main_text">用户名： </li>
+                                        <li class="user_main_input">
+                                            <input class="TxtUserNameCssClass" id="admin_username" maxlength="20" name="admin_name" onKeyDown="enterIn(event)"> </li></ul>
+                                    <ul>
+                                        <li class="user_main_text">密&nbsp;&nbsp;&nbsp;&nbsp;码： </li>
+                                        <li class="user_main_input">
+                                            <input class="TxtPasswordCssClass" id="admin_password" name="admin_password" type="password" onKeyDown="enterIn(event)">
+                                        </li>
+                                    </ul>
+                                    <ul>
+                                        <li class="user_main_text">验证码： </li>
+                                        <li class="user_main_input">
+                                            <input class="TxtValidateCodeCssClass" id="captcha" name="admin_captcha" type="text" onKeyDown="enterIn(event)">
+                                            <img id="imgVerify" src="<?php echo U('captcha');?>" onclick="fleshVerify();" alt="看不清，换一张？" />
+                                        </li>
+                                    </ul>
+                                    <ul>
+                                        <li>
+                                            <span id="login_msg"  tabindex="3" style="padding-left:60px;height:40px;line-height:40px;color:red;font-size:14px"></span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="user_main_r">
+                                <!-- <input style="border: medium none; background: url('<?php echo (ADMIN_IMG_URL); ?>user_botton.gif') repeat-x scroll left top transparent; height: 122px; width: 111px; display: block; cursor: pointer;" value="" type="submit"> -->
+                                <a onClick="login()" tabindex="3" style="border: medium none; background: url('/shop/Public/Admin/Images/user_botton.gif') repeat-x scroll left top transparent; height: 122px; width: 111px; display: block; cursor: pointer;" ></a>
+                            </li>
+                        </ul>
+                    <!-- </form> -->
+                </dd>
+                <dd id="user_bottom">
+                    <ul>
+                        <li class="user_bottom_l"></li>
+                        <li class="user_bottom_c"><span style="margin-top: 40px;"></span> </li>
+                        <li class="user_bottom_r"></li></ul></dd></dl></div><span id="ValrUserName" style="display: none; color: red;"></span><span id="ValrPassword" style="display: none; color: red;"></span><span id="ValrValidateCode" style="display: none; color: red;"></span>
+        <div id="ValidationSummary1" style="display: none; color: red;"></div>
+
+<script>
+    function fleshVerify(){
+      //重载验证码
+        $('#imgVerify').attr('src',"<?php echo U('captcha','',FALSE); ?>/r/"+Math.random());
+    }
+
+function login(){
+    $("#login_msg").html("登录中...");
+    var username=$("#admin_username").val();
+    var password=$("#admin_password").val();
+    var code_num=$("#captcha").val();
+
+    var usernameReg=new RegExp("^[a-zA-Z0-9_\@]{4,}$");
+    var passwordReg=new RegExp("^[a-zA-Z0-9_\@\#\+\-]{4,}$");
+    var code_numReg=new RegExp("^[a-zA-Z0-9_]{4}$");
+
+    if(!usernameReg.test(username)){
+        $("#admin_username").val("");
+        $("#admin_username")[0].focus();
+        $("#login_msg").html("请确认账号格式");
+        return(false);
+    }
+    if(!passwordReg.test(password)){
+        $("#admin_password").val("");
+        $("#admin_password")[0].focus();
+        $("#login_msg").html("请确认密码格式");    
+        return(false);
+    }
+    if(!code_numReg.test(code_num)){
+        $("#captcha").val("");
+        $("#captcha")[0].focus();
+        $("#login_msg").html("请确认验证码格式");   
+        return(false);
+    }
+    // 采用ajax进行用户验证
+    $.ajax({
+       type: "POST",
+       data: {username:username,password:password,captcha:code_num},
+       // url: "<?php echo U('login','',FALSE) ?>/username/"+username+"/password/"+password+"/captcha/"+code_num,
+       url: "<?php echo U('login','',FALSE) ?>",
+       dataType: "json",
+       success: function(msg){
+            //用户名错误，清空用户输入数据，并获取焦点
+            if(msg["focus"] === "1"){
+                $("#admin_username").val("");
+                $("#captcha").val("");
+                $("#admin_username")[0].focus();
+            }
+            //密码错误，清空用户输入数据，并获取焦点
+            if(msg["focus"] === "2"){
+                $("#admin_password").val("");
+                $("#captcha").val("");
+                $("#admin_password")[0].focus();
+            }
+            //验证码错误，清空用户输入数据，并获取焦点
+            if(msg["focus"] === "3"){
+                $("#captcha").val("");
+                $("#captcha")[0].focus();
+            }
+            if(msg["re_code"] === "0"){
+                //如果返回状态码为0,表示格式错误
+                $("#login_msg").html(msg["mess"]);
+                return false;
+            }
+            if(msg["re_code"] === "1"){
+                //如果返回状态码为1，表示格式正确，需要进行验证码刷新操作
+                fleshVerify();
+                $("#login_msg").html(msg["mess"]);
+                return false;
+            }
+            if(msg["re_code"] === "2"){
+                //如果返回的状态码为2，表示验证成功，执行跳转操作
+                top.location.href= msg["mess"];
+            }  
+        }
+    });
+}
+</script>
+    </body>
+</html>

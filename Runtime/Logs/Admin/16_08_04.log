@@ -1,0 +1,38 @@
+[ 2016-08-04T08:56:40+08:00 ] 127.0.0.1 /index.php/Admin/Admin/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003000s ]
+NOTIC: [2048] Declaration of Admin\Model\RoleModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) D:\www\shop\Application\Admin\Model\RoleModel.class.php 第 10 行.
+NOTIC: [2048] Declaration of Admin\Model\RoleModel::_after_update() should be compatible with Think\Model::_after_update($data, $options) D:\www\shop\Application\Admin\Model\RoleModel.class.php 第 10 行.
+NOTIC: [2048] Declaration of Admin\Model\RoleModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) D:\www\shop\Application\Admin\Model\RoleModel.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `yt_role` [ RunTime:0.003001s ]
+SQL: SELECT `role_auth_ca` FROM `yt_role` LIMIT 1   [ RunTime:0.000000s ]
+NOTIC: [2048] Declaration of Admin\Model\AdminModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) D:\www\shop\Application\Admin\Model\AdminModel.class.php 第 200 行.
+NOTIC: [2048] Declaration of Admin\Model\AdminModel::_after_update() should be compatible with Think\Model::_after_update($data, $options) D:\www\shop\Application\Admin\Model\AdminModel.class.php 第 200 行.
+NOTIC: [2048] Declaration of Admin\Model\AdminModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) D:\www\shop\Application\Admin\Model\AdminModel.class.php 第 200 行.
+SQL: SHOW COLUMNS FROM `yt_admin` [ RunTime:0.004000s ]
+SQL: SELECT * FROM `yt_admin` WHERE `admin_username` = 'admin' LIMIT 1   [ RunTime:0.002000s ]
+SQL: UPDATE `yt_admin` SET `last_login_time`=1470272200,`last_login_ip`='127.0.0.1' WHERE `admin_id` = '1' [ RunTime:0.003001s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.002000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.002000s ]
+
+[ 2016-08-04T18:04:12+08:00 ] 127.0.0.1 /index.php/Admin/Admin/login
+INFO: [ app_begin ] --START--
+INFO: Run Behavior\ReadHtmlCacheBehavior [ RunTime:0.001000s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of Admin\Model\RoleModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) D:\www\shop\Application\Admin\Model\RoleModel.class.php 第 10 行.
+NOTIC: [2048] Declaration of Admin\Model\RoleModel::_after_update() should be compatible with Think\Model::_after_update($data, $options) D:\www\shop\Application\Admin\Model\RoleModel.class.php 第 10 行.
+NOTIC: [2048] Declaration of Admin\Model\RoleModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) D:\www\shop\Application\Admin\Model\RoleModel.class.php 第 10 行.
+SQL: SHOW COLUMNS FROM `yt_role` [ RunTime:0.004000s ]
+SQL: SELECT `role_auth_ca` FROM `yt_role` LIMIT 1   [ RunTime:0.001000s ]
+NOTIC: [2048] Declaration of Admin\Model\AdminModel::_after_insert() should be compatible with Think\Model::_after_insert($data, $options) D:\www\shop\Application\Admin\Model\AdminModel.class.php 第 200 行.
+NOTIC: [2048] Declaration of Admin\Model\AdminModel::_after_update() should be compatible with Think\Model::_after_update($data, $options) D:\www\shop\Application\Admin\Model\AdminModel.class.php 第 200 行.
+NOTIC: [2048] Declaration of Admin\Model\AdminModel::_after_delete() should be compatible with Think\Model::_after_delete($data, $options) D:\www\shop\Application\Admin\Model\AdminModel.class.php 第 200 行.
+SQL: SHOW COLUMNS FROM `yt_admin` [ RunTime:0.004001s ]
+SQL: SELECT * FROM `yt_admin` WHERE `admin_username` = 'admin' LIMIT 1   [ RunTime:0.001000s ]
+SQL: UPDATE `yt_admin` SET `last_login_time`=1470305052,`last_login_ip`='127.0.0.1' WHERE `admin_id` = '1' [ RunTime:0.001000s ]
+INFO: [ app_end ] --START--
+INFO: Run Behavior\ShowPageTraceBehavior [ RunTime:0.001000s ]
+INFO: [ app_end ] --END-- [ RunTime:0.001000s ]
+

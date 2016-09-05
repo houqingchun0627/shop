@@ -1,0 +1,98 @@
+<!-- 引入布局文件 -->
+<layout name="public/layout"  replace="{__CONTENT__}" />
+<!-- 引入顶部导航栏 -->
+<include file="Public/header" />
+
+<!-- 引入页面样式文件 -->
+<link rel="stylesheet" href="__PUBLIC__/Home/Style/userPass.css" type="text/css">
+
+<div style="clear:both;"></div>
+
+<div class="uc_body pa-to-30 user_pass">
+    <div class="uc_body_form">
+        <form action="" method="post" onsubmit="return false">
+            <table class="changeAccount_theme">
+                <tr class="tr_height">
+                    <td class="cl_left fo-si-12" align="right"><label class="fo-si-12">原始邮箱：</label></td>
+                    <td class="cl_middle">
+                        <input class="imput_text text_width foce" id="old_mail" name="old_mail" type="text">
+                    </td>
+                    <td>
+                    </td>
+                </tr>                
+                
+                <tr class="tr_height">
+                    <td class="cl_left fo-si-12" align="right"><label class="fo-si-12">新邮箱：</label></td>
+                    <td class="cl_middle">
+                        <input class="imput_text text_width foce" id="new_mail" name="new_mail" type="text">
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+                <tr class="tr_height">
+                    <td colspan="3" style="height:120px;" align="center" valign="middle">
+                        <input type="submit" id="btn_next" class="btn_midefy" value="提交" onClick="modify_mail();">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3"></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</div>
+
+<!-- 引入底部导航栏  -->
+<div style="clear:both;"></div>
+<include file="Public/bottomnav" />
+
+<!-- 页面的js代码 -->
+<script type="text/javascript">
+/*************************ajax动态验证，修改用户邮箱*************************/
+    function modify_mail(){
+        //获取用户的旧的邮箱
+        var old_mail = $("#old_mail").val();
+        var new_mail = $("#new_mail").val();
+        var mailReg=new RegExp("^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$");
+        // 原始邮箱为空
+        if(old_mail ===""){
+            alert("原始邮箱不能为空");
+            return false;
+        }
+        //新邮箱为空
+        if(new_mail ===""){
+            alert("新邮箱不能为空");
+            return false;
+        }
+        // 原始邮箱格式错误
+        if(!mailReg.test(old_mail)){
+            alert("原始邮箱格式错误");
+            return false;
+        }
+        //新邮箱格式错误
+        if(!mailReg.test(new_mail)){
+            alert("新邮箱格式错误");
+            return false;
+        }
+        //新邮箱格式错误
+        if(old_mail === new_mail){
+            alert("新邮箱不能与原始邮箱相同");
+            return false;
+        }
+        $.ajax({
+            type    : "POST",
+            data    : {old_mail:old_mail , new_mail: new_mail},
+            url     : "<?php echo U('Home/User/modifyMail', '', FALSE); ?>",
+            dataType: "json",
+            success : function(data){
+                $(data["retMess"]).each(function(k,v){
+                    alert(v);
+                });
+                if(data["retCode"] == 0 || data["retCode"] == 3){
+                    window.top.location.href =data["url"];
+                }
+            }
+        });
+    }
+
+</script>

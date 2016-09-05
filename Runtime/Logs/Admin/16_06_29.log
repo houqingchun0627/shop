@@ -1,0 +1,39 @@
+[ 2016-06-29T10:48:20+08:00 ] 127.0.0.1 /index.php/Admin/Goods/goodsMessage/id/1.html
+ERR: 错误的查询条件:[id=>]
+
+[ 2016-06-29T10:49:02+08:00 ] 127.0.0.1 /index.php/Admin/Goods/goodsMessage/id/1.html
+ERR: 错误的查询条件:[id=>]
+
+[ 2016-06-29T10:49:06+08:00 ] 127.0.0.1 /index.php/Admin/Goods/goodsMessage/id/1.html
+ERR: 错误的查询条件:[id=>]
+
+[ 2016-06-29T10:49:45+08:00 ] 127.0.0.1 /index.php/Admin/Goods/goodsMessage/id/1.html
+ERR: 错误的查询条件:[id=>]
+
+[ 2016-06-29T13:03:34+08:00 ] 127.0.0.1 /index.php/Admin/Goods/goodsMessage?goods_cat=12&goods_brand=&is_promote=&is_onsale=&is_delete=&goods_name=&keyword=&goods_start_price=&goods_end_price=&start_addtime=&end_addtime=&order=goodsId_asc
+ERR: Think\Model:getChildren方法不存在！
+
+[ 2016-06-29T13:04:54+08:00 ] 127.0.0.1 /index.php/Admin/Goods/goodsMessage?goods_cat=12&goods_brand=&is_promote=&is_onsale=&is_delete=&goods_name=&keyword=&goods_start_price=&goods_end_price=&start_addtime=&end_addtime=&order=goodsId_asc
+ERR: 错误的查询条件:[goods_cat=>Array]
+
+[ 2016-06-29T13:07:22+08:00 ] 127.0.0.1 /index.php/Admin/Goods/goodsMessage?goods_cat=12&goods_brand=&is_promote=&is_onsale=&is_delete=&goods_name=&keyword=&goods_start_price=&goods_end_price=&start_addtime=&end_addtime=&order=goodsId_asc
+ERR: 错误的查询条件:[goods_cat=>Array]
+
+[ 2016-06-29T13:09:29+08:00 ] 127.0.0.1 /index.php/Admin/Goods/goodsMessage?goods_cat=12&goods_brand=&is_promote=&is_onsale=&is_delete=&goods_name=&keyword=&goods_start_price=&goods_end_price=&start_addtime=&end_addtime=&order=goodsId_asc
+ERR: 错误的查询条件:[goods_cat=>Array]
+
+[ 2016-06-29T13:19:56+08:00 ] 127.0.0.1 /index.php/Admin/Goods/goodsMessage?goods_cat=24&goods_brand=&is_promote=&is_onsale=&is_delete=&goods_name=&keyword=&goods_start_price=&goods_end_price=&start_addtime=&end_addtime=&order=goodsId_asc
+ERR: 错误的查询条件:[goods_cat=>Array]
+
+[ 2016-06-29T13:37:42+08:00 ] 127.0.0.1 /index.php/Admin/Goods/goodsMessage?goods_cat=1&goods_brand=&is_promote=&is_onsale=&is_delete=&goods_name=&keyword=&goods_start_price=&goods_end_price=&start_addtime=&end_addtime=&order=goodsId_asc
+ERR: 错误的查询条件:[cat_id=>Array]
+
+[ 2016-06-29T14:26:41+08:00 ] 127.0.0.1 /index.php/Admin/Goods/typeHandler/id/2/type_id/1.html
+ERR: 非法操作:typeHandler
+
+[ 2016-06-29T15:48:08+08:00 ] 127.0.0.1 /index.php/Admin/Goods/attrHandler/id/2/attr_id/1.html
+ERR: 非法操作:attrHandler
+
+[ 2016-06-29T19:09:10+08:00 ] 127.0.0.1 /index.php/admin/goods/test
+ERR: 错误的查询条件:[is_unique=>Array]
+

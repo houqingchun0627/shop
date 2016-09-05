@@ -1,0 +1,9 @@
+[ 2016-07-18T14:54:02+08:00 ] 127.0.0.1 /index.php/Home/User/fleshVerify();
+ERR: 非法操作:fleshVerify();
+
+[ 2016-07-18T15:01:12+08:00 ] 127.0.0.1 /index.php/Home/User/fleshVerify();
+ERR: 非法操作:fleshVerify();
+
+[ 2016-07-18T19:38:01+08:00 ] 127.0.0.1 /index.php/Home/User/register.html
+ERR: 非法操作:register
+

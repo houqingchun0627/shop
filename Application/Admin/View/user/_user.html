@@ -1,0 +1,92 @@
+<!-- $Id: brand_info.htm 14216 2008-03-10 02:27:21Z testyang $ -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>ECSHOP 管理中心 - 添加品牌 </title>
+<meta name="robots" content="noindex, nofollow">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<link href="__PUBLIC__/Admin/Style/general.css" rel="stylesheet" type="text/css" />
+<link href="__PUBLIC__/Admin/Style/main.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<h1>
+    <span class="action-span"><a href="{:U('brandList')}">商品品牌</a></span>
+    <span class="action-span1"><a href="{:U('Admin/index')}" target="_top">ECSHOP 管理中心</a></span>
+    <span id="search_id" class="action-span1"> - 添加品牌 </span>
+    <div style="clear:both"></div>
+</h1>
+<div class="main-div">
+    <form enctype="multipart/form-data" action="__SELF__" method="post">
+        <table cellspacing="1" cellpadding="3" width="100%">
+            <tr>
+                <td class="label">品牌名称</td>
+                <td>
+                    <input type="text" name="brand_name" maxlength="60" size="40" value="{$brandList.brand_name}" />
+                    <span class="require-field">*</span>
+                </td>
+            </tr>
+            <tr>
+                <td class="label">品牌网址</td>
+                <td>
+                    <input type="text" name="brand_site_url" maxlength="60" size="40" value="{$brandList.brand_site_url}" />
+                </td>
+            </tr>
+            <tr>
+                <td class="label">品牌LOGO</td>
+                <td>
+                    <input type="file" name="brand_image" id="logo" size="45" ><br/>
+                    <span class="notice-span" style="display:block"  id="warn_brandlogo">请上传图片，做为品牌的LOGO！</span>
+                </td>
+            </tr>
+            <tr>
+                <td class='label'>当前LOGO</td>
+                <td>
+                    <a href="{$brandList.brand_image}" target="_blank">
+                        <img src="{$brandList.brand_logo}" height="50" width="50" alt="品牌图片" title="品牌图片">
+                    </a>
+                    <span class="notice-span" style="display:block; color:red ;font-weight:bold "  id="warn_brandlogo"><if condition="$brandList.brand_logo neq ''">单击图片，查看高清大图！<else/>商品LOGO不存在，请上传！</if>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="label">品牌描述</td>
+                <td>
+                    <textarea  name="brand_desc" cols="60" rows="4"  >{$brandList.brand_desc}</textarea>
+                </td>
+            </tr>
+            <tr>
+                <td class="label">排序</td>
+                <td>
+                <input type="text" name="brand_sort" maxlength="40" size="15" value="<if condition='$brandList.brand_sort neq 0'>{$brandList.brand_sort}<else/>50</if>" />
+                </td>
+            </tr>
+            <tr>
+                <td class="label">是否显示</td>
+                <td>
+                    <input type="radio" name="is_show" value="是" <if condition="($brandList['is_show'] eq '是') OR ($brandList['is_show'] eq '')">checked="checked"</if> /> 是
+                    <input type="radio" name="is_show" value="否" <if condition="$brandList['is_show'] eq '否'">checked="checked"</if> /> 否(当品牌下还没有商品的时候，首页及分类页的品牌区将不会显示该品牌。)
+                </td>
+            </tr>
+            <tr>
+                <td class="label">是否推荐</td>
+                <td>
+                    <input type="radio" name="is_promote" value="是" <if condition="$brandList['is_promote'] eq '是'">checked="checked"</if> /> 是
+                    <input type="radio" name="is_promote" value="否" <if condition="($brandList['is_promote'] eq '否') OR ($brandList['is_promote'] eq '')">checked="checked"</if>/> 否(当加入品牌推荐后，在前台商品推荐会优先显示)
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" align="center"><br />
+                    <input type="hidden" name="brand_id" value="{$brandList.brand_id}" />
+                    <input type="submit" class="button" value=" 确定 " />
+                    <input type="reset" class="button" value=" 重置 " />
+                </td>
+            </tr>
+        </table>
+    </form>
+</div>
+
+<div id="footer">
+共执行 1 个查询，用时 0.018952 秒，Gzip 已禁用，内存占用 2.197 MB<br />
+版权所有 &copy; 2005-2012 上海商派网络科技有限公司，并保留所有权利。</div>
+</body>
+</html>

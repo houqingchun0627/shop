@@ -1,0 +1,3 @@
+<?php
+//000000086400a:5:{s:15:"searchCondition";a:3:{s:5:"brand";N;s:5:"price";a:8:{i:0;s:4:"0--0";i:1;s:4:"1--1";i:2;s:4:"2--2";i:3;s:4:"3--3";i:4;s:4:"4--4";i:5;s:4:"5--5";i:6;s:4:"6--6";i:7;s:4:"7--0";}s:4:"attr";N;}s:19:"searchConditionList";a:2:{s:6:"cat_id";s:2:"10";s:3:"url";s:46:"/shop/index.php/Home/Goods/goodsList/cat_id/10";}s:17:"curSearchConditon";a:0:{}s:12:"reqGoodsList";N;s:8:"pageShow";s:0:"";}
+?>

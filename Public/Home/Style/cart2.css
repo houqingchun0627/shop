@@ -1,0 +1,35 @@
+/* 
+* @Author: leiyongtao
+* @Date:   2016-07-31 13:36:11
+* @Last Modified by:   leiyongtao
+* @Last Modified time: 2016-07-31 15:53:40
+*/
+
+/*控制显示购物车中商品数量的css*/
+.header_cart .shopping-num{position: absolute;height: 15px;line-height: 15px;padding: 0 2px;background-color: #ca141d;right: 2px;top: -12px;color: #FFF;font-family: Arial,Helvetica,sans-serif;}
+
+/*控制显示商品详情的页面css*/
+.header_cart .ri{width: 197px;top: 31px;left: -1px;    position: absolute;z-index: 413;overflow: hidden;border: 1px solid #e5e5e5; display:none;background-color: #FFF;}
+.header_cart .micart:hover .ri{display:block;}
+.header_cart .ris{width: 466px; left:0px;top: 0px; }
+
+/*控制商品总价、去结算的css*/
+.header_cart .settle{background-color: #fafafa;position: relative;padding: 22px 0 22px 0px;height: 37px;margin-top: -1px;}
+.header_cart .settle p{line-height: 37px;  margin-left: 20px; text-align: left;}
+.header_cart .settle p em{color: #e01d20; font-size: 18px; margin: 0 4px;position: relative;top: 1px;font-family: Arial,Helvetica,sans-serif;}
+.header_cart .settle p b{font-weight: 400;font-size: 18px; color: #e01d20;margin-left: 4px;font-family: Arial,Helvetica,sans-serif;}
+
+.header_cart a.icon-minicart-del{line-height: 26px;color: #ff0000;margin-left: 26px;}
+
+.header_cart .js-button{display: inline-block;border: 1px solid #e01d20;background-color: #e01d20;color: #FFF;font-size: 16px;width: 130px;height: 35px;text-align: center;line-height: 35px;position: absolute;right: 22px;top: 22px;}
+.header_cart .goods{border-bottom: 1px solid #eaeaea;padding: 0 23px 50px 15px;margin-top: 15px;}
+.header_cart .p-img {float: left;width: 80px;}
+.header_cart .p-img img {vertical-align: top;width: 80px; height: 80px;}
+.header_cart .p-name {float:left;width: 283px;padding: 4px 0 0 15px;margin-bottom: 18px;text-align:left;}
+.header_cart .p-name a {display: block;height: 36px;line-height: 18px;overflow: hidden;}
+.header_cart .p-status {float: left;width: 283px;padding-left: 15px;}
+.header_cart .p-price {float: left;line-height: 19px;}
+.header_cart .p-price b {color: #e01d20;font-weight: 400;font-family: Arial,Helvetica,sans-serif;}
+.header_cart .p-price em {font-weight: 400;color: #888; margin: 0 7px;}
+.header_cart .p-price span {color: #888;font-family: Arial,Helvetica,sans-serif;}
+.header_cart .p-tags {float: right;}
